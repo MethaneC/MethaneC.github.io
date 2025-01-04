@@ -19,15 +19,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="有理函数 部分分式定理 若 \(P(x),Q(x)\) 互素，且 \(\deg P(x)&lt;\deg Q(x)\) ， \(Q(x)\) 有分解式 \(Q(x)&#x3D;\prod(x-r_{i})^{m_{i}}\cdot \prod(x^{2}-p_{i} x+q_{i})^{n_{i}}\) ，则 \[ \frac{P(x)}{Q(x)}&#x3D;\sum_{i}\sum_{j&#x3D;0}^{m_{i">
+    <meta name="description" content="有理函数 部分分式定理 若 \(P(x),Q(x)\) 互素，且 \(\deg P(x)&lt;\deg Q(x)\) ， \(Q(x)\) 有分解式 \[ Q(x)&#x3D;\prod(x-r_{i})^{m_{i}}\cdot \prod(x^{2}-p_{i} x+q_{i})^{n_{i}} \] 则 \[ \frac{P(x)}{Q(x)}&#x3D;\sum_{i}\sum_{j&#x3D;0}^{m_">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Integral Methods">
 <meta property="og:url" content="http://example.com/2024/12/17/Integral_Methods/index.html">
 <meta property="og:site_name" content="Methane">
-<meta property="og:description" content="有理函数 部分分式定理 若 \(P(x),Q(x)\) 互素，且 \(\deg P(x)&lt;\deg Q(x)\) ， \(Q(x)\) 有分解式 \(Q(x)&#x3D;\prod(x-r_{i})^{m_{i}}\cdot \prod(x^{2}-p_{i} x+q_{i})^{n_{i}}\) ，则 \[ \frac{P(x)}{Q(x)}&#x3D;\sum_{i}\sum_{j&#x3D;0}^{m_{i">
+<meta property="og:description" content="有理函数 部分分式定理 若 \(P(x),Q(x)\) 互素，且 \(\deg P(x)&lt;\deg Q(x)\) ， \(Q(x)\) 有分解式 \[ Q(x)&#x3D;\prod(x-r_{i})^{m_{i}}\cdot \prod(x^{2}-p_{i} x+q_{i})^{n_{i}} \] 则 \[ \frac{P(x)}{Q(x)}&#x3D;\sum_{i}\sum_{j&#x3D;0}^{m_">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-12-16T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-01-04T11:01:20.323Z">
+<meta property="article:modified_time" content="2025-01-04T11:03:12.910Z">
 <meta property="article:author" content="Methane">
 <meta property="article:tag" content="Analysis">
 <meta name="twitter:card" content="summary">
@@ -198,7 +198,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-01-04 19:01:20" itemprop="dateModified" datetime="2025-01-04T19:01:20+08:00">2025-01-04</time>
+      <time title="修改时间：2025-01-04 19:03:12" itemprop="dateModified" datetime="2025-01-04T19:03:12+08:00">2025-01-04</time>
     </span>
 
   
@@ -215,15 +215,18 @@
 <p>若 <span class="math inline">\(P(x),Q(x)\)</span> 互素，且 <span
 class="math inline">\(\deg P(x)&lt;\deg Q(x)\)</span> ， <span
 class="math inline">\(Q(x)\)</span> 有分解式 <span
-class="math inline">\(Q(x)=\prod(x-r_{i})^{m_{i}}\cdot \prod(x^{2}-p_{i}
-x+q_{i})^{n_{i}}\)</span> ，则 <span class="math display">\[
+class="math display">\[
+Q(x)=\prod(x-r_{i})^{m_{i}}\cdot \prod(x^{2}-p_{i} x+q_{i})^{n_{i}}
+\]</span> 则 <span class="math display">\[
 \frac{P(x)}{Q(x)}=\sum_{i}\sum_{j=0}^{m_{i}}
 \frac{A_{ij}}{(x-r_{i})^{j}}+\sum_{i}\sum_{j=0}^{n_{i}}
 \frac{B_{ij}x+C_{ij}}{(x^{2}-p_{i}x+q_{i})^{j}}
-\]</span> ##### 待定系数法 设 <span
-class="math inline">\(A_{ij},B_{ij},C_{ij}\)</span>
-，左右两边对应项相等。 ##### Ocтpoгpaлcкий法 <span
-class="math display">\[
+\]</span></p>
+<h5 id="待定系数法">待定系数法</h5>
+<p>设 <span class="math inline">\(A_{ij},B_{ij},C_{ij}\)</span>
+，左右两边对应项相等。</p>
+<h5 id="ocтpoгpaлcкий法">Ocтpoгpaлcкий法</h5>
+<p><span class="math display">\[
 \int \frac{P(x)}{Q(x)}\mathrm{d}x= \frac{P_{0}(x)}{Q_{0}(x)}+\int
 \frac{P&#39;(x)}{Q&#39;(x)}\mathrm{d}x
 \]</span> 其中 <span
