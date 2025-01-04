@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="2024年秋，解析几何。涵盖内容：向量代数、二次曲面、球面几何、射影几何。 Part 1 直线和平面 定义1.1.1 （向量） 既有大小，又有方向的量称为向量。 定义其相等、加减、数乘。可知其满足分配律、结合律。 性质1.1.2 （向量与直线、平面、四面体）">
+    <meta name="description" content="解析几何。涵盖内容：向量代数、二次曲面、球面三角形、射影几何。参考资料：空间解析几何（黄宣国）、解析几何（丘维生）。 Part 1 直线和平面 定义1.1.1 （向量） 既有大小，又有方向的量称为向量。 定义其相等、加减、数乘。可知其满足分配律、结合律。 性质1.1.2 （向量与直线、平面、四面体）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Analytical Geometry">
 <meta property="og:url" content="http://example.com/2024/12/24/Analytical_Geometry/index.html">
 <meta property="og:site_name" content="Methane">
-<meta property="og:description" content="2024年秋，解析几何。涵盖内容：向量代数、二次曲面、球面几何、射影几何。 Part 1 直线和平面 定义1.1.1 （向量） 既有大小，又有方向的量称为向量。 定义其相等、加减、数乘。可知其满足分配律、结合律。 性质1.1.2 （向量与直线、平面、四面体）">
+<meta property="og:description" content="解析几何。涵盖内容：向量代数、二次曲面、球面三角形、射影几何。参考资料：空间解析几何（黄宣国）、解析几何（丘维生）。 Part 1 直线和平面 定义1.1.1 （向量） 既有大小，又有方向的量称为向量。 定义其相等、加减、数乘。可知其满足分配律、结合律。 性质1.1.2 （向量与直线、平面、四面体）">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2024/12/24/Analytical_Geometry/231.png">
 <meta property="og:image" content="http://example.com/2024/12/24/Analytical_Geometry/232.png">
@@ -38,7 +38,7 @@
 <meta property="og:image" content="http://example.com/2024/12/24/Analytical_Geometry/3342.png">
 <meta property="og:image" content="http://example.com/2024/12/24/Analytical_Geometry/336.png">
 <meta property="article:published_time" content="2024-12-23T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-01-04T11:18:22.783Z">
+<meta property="article:modified_time" content="2025-01-04T11:32:07.034Z">
 <meta property="article:author" content="Methane">
 <meta property="article:tag" content="Note">
 <meta property="article:tag" content="Algebra">
@@ -211,7 +211,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-01-04 19:18:22" itemprop="dateModified" datetime="2025-01-04T19:18:22+08:00">2025-01-04</time>
+      <time title="修改时间：2025-01-04 19:32:07" itemprop="dateModified" datetime="2025-01-04T19:32:07+08:00">2025-01-04</time>
     </span>
 
   
@@ -223,7 +223,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>2024年秋，解析几何。涵盖内容：向量代数、二次曲面、球面几何、射影几何。</p>
+    <div class="post-body" itemprop="articleBody"><p>解析几何。涵盖内容：向量代数、二次曲面、球面三角形、射影几何。参考资料：空间解析几何（黄宣国）、解析几何（丘维生）。</p>
 <h3 id="part-1-直线和平面">Part 1 直线和平面</h3>
 <h5 id="定义1.1.1-向量">定义1.1.1 （向量）</h5>
 <p>既有大小，又有方向的量称为向量。
@@ -479,55 +479,70 @@ class="math inline">\(X=M^{T}X^{*}\)</span> ）</p>
 <p><span class="math display">\[
 \Phi(X)=X^{T} \operatorname{diag}\{ \lambda_{1},\lambda_{2},\lambda_{3}
 \}X+\boldsymbol\beta^{T} X+C=0
-\]</span> 表示的二次曲面为： （a） <span
+\]</span> 表示的二次曲面为：</p>
+<p><span
 class="math inline">\(\lambda_{1},\lambda_{2},\lambda_{3}\)</span>
-均不为 <span class="math inline">\(0\)</span> - <span
+均不为 <span class="math inline">\(0\)</span></p>
+<p>（1） <span
 class="math inline">\(\lambda_{1},\lambda_{2},\lambda_{3}&gt;0\)</span>
-，<span class="math inline">\(C&lt;0\)</span> ，椭球面 - <span
+，<span class="math inline">\(C&lt;0\)</span> ，椭球面</p>
+<p>（2） <span
 class="math inline">\(\lambda_{1},\lambda_{2},\lambda_{3}&gt;0\)</span>
-，<span class="math inline">\(C&gt;0\)</span> ，虚椭球面 - <span
+，<span class="math inline">\(C&gt;0\)</span> ，虚椭球面</p>
+<p>（3） <span
 class="math inline">\(\lambda_{1},\lambda_{2},\lambda_{3}&gt;0\)</span>
-，<span class="math inline">\(C=0\)</span> ，点 - <span
+，<span class="math inline">\(C=0\)</span> ，点</p>
+<p>（4） <span
 class="math inline">\(\lambda_{1},\lambda_{2}&gt;0,\lambda_{3}&lt;0\)</span>
-，<span class="math inline">\(C&lt;0\)</span> ，单叶双曲面 - <span
+，<span class="math inline">\(C&lt;0\)</span> ，单叶双曲面</p>
+<p>（5） <span
 class="math inline">\(\lambda_{1},\lambda_{2}&gt;0,\lambda_{3}&lt;0\)</span>
-，<span class="math inline">\(C&gt;0\)</span> ，双叶双曲面 - <span
+，<span class="math inline">\(C&gt;0\)</span> ，双叶双曲面</p>
+<p>（6） <span
 class="math inline">\(\lambda_{1},\lambda_{2}&gt;0,\lambda_{3}&lt;0\)</span>
 ，<span class="math inline">\(C=0\)</span> ，二次锥面</p>
-<p>（b） <span
+<p><span
 class="math inline">\(\lambda_{1},\lambda_{2},\lambda_{3}\)</span>
 有一项为 <span class="math inline">\(0\)</span> ，不妨设 <span
-class="math inline">\(\lambda_{3}=0\)</span> - <span
+class="math inline">\(\lambda_{3}=0\)</span></p>
+<p>（1） <span
 class="math inline">\(\lambda_{1},\lambda_{2}&gt;0\)</span> ， <span
-class="math inline">\(\boldsymbol\beta\neq 0\)</span> ，椭圆抛物面 -
-<span class="math inline">\(\lambda_{1}&gt;0,\lambda_{2}&lt;0\)</span>
-， <span class="math inline">\(\boldsymbol\beta\neq 0\)</span>
-，双曲抛物面 - <span
-class="math inline">\(\lambda_{1},\lambda_{2}&gt;0\)</span> ， <span
-class="math inline">\(\boldsymbol\beta= 0\)</span> ， <span
-class="math inline">\(C&lt;0\)</span> ， 椭圆柱面 - <span
-class="math inline">\(\lambda_{1},\lambda_{2}&gt;0\)</span> ， <span
-class="math inline">\(\boldsymbol\beta= 0\)</span> ， <span
-class="math inline">\(C&gt;0\)</span> ， 虚椭圆柱面 - <span
+class="math inline">\(\boldsymbol\beta\neq 0\)</span> ，椭圆抛物面</p>
+<p>（2） <span
+class="math inline">\(\lambda_{1}&gt;0,\lambda_{2}&lt;0\)</span> ，
+<span class="math inline">\(\boldsymbol\beta\neq 0\)</span>
+，双曲抛物面</p>
+<p>（3） <span
 class="math inline">\(\lambda_{1},\lambda_{2}&gt;0\)</span> ， <span
 class="math inline">\(\boldsymbol\beta= 0\)</span> ， <span
-class="math inline">\(C=0\)</span> ， 直线 - <span
+class="math inline">\(C&lt;0\)</span> ， 椭圆柱面</p>
+<p>（4） <span
+class="math inline">\(\lambda_{1},\lambda_{2}&gt;0\)</span> ， <span
+class="math inline">\(\boldsymbol\beta= 0\)</span> ， <span
+class="math inline">\(C&gt;0\)</span> ， 虚椭圆柱面</p>
+<p>（5） <span
+class="math inline">\(\lambda_{1},\lambda_{2}&gt;0\)</span> ， <span
+class="math inline">\(\boldsymbol\beta= 0\)</span> ， <span
+class="math inline">\(C=0\)</span> ， 直线</p>
+<p>（6） <span
 class="math inline">\(\lambda_{1}&gt;0,\lambda_{2}&lt;0\)</span> ，
 <span class="math inline">\(\boldsymbol\beta=0\)</span> ， <span
-class="math inline">\(C\neq 0\)</span> 双曲柱面 - <span
+class="math inline">\(C\neq 0\)</span> 双曲柱面</p>
+<p>（7） <span
 class="math inline">\(\lambda_{1}&gt;0,\lambda_{2}&lt;0\)</span> ，
 <span class="math inline">\(\boldsymbol\beta=0\)</span> ， <span
 class="math inline">\(C =0\)</span> 相交平面</p>
-<p>（c） <span
+<p><span
 class="math inline">\(\lambda_{1},\lambda_{2},\lambda_{3}\)</span>
-有两项为 <span class="math inline">\(0\)</span> - <span
-class="math inline">\(\boldsymbol\beta\neq 0\)</span> ，抛物柱面 - <span
-class="math inline">\(\boldsymbol\beta=0\)</span> ， <span
-class="math inline">\(C&lt;0\)</span> ，一对平行平面 - <span
-class="math inline">\(\boldsymbol\beta=0\)</span> ， <span
-class="math inline">\(C&gt;0\)</span> ，一对虚平行平面 - <span
-class="math inline">\(\boldsymbol\beta=0\)</span> ， <span
-class="math inline">\(C=0\)</span> ，一对重合平面</p>
+有两项为 <span class="math inline">\(0\)</span></p>
+<p>（1） <span class="math inline">\(\boldsymbol\beta\neq 0\)</span>
+，抛物柱面</p>
+<p>（2） <span class="math inline">\(\boldsymbol\beta=0\)</span> ，
+<span class="math inline">\(C&lt;0\)</span> ，一对平行平面</p>
+<p>（3） <span class="math inline">\(\boldsymbol\beta=0\)</span> ，
+<span class="math inline">\(C&gt;0\)</span> ，一对虚平行平面</p>
+<p>（4） <span class="math inline">\(\boldsymbol\beta=0\)</span> ，
+<span class="math inline">\(C=0\)</span> ，一对重合平面</p>
 <p><span class="math inline">\(6+7+4\)</span> 共 <span
 class="math inline">\(17\)</span> 种二次曲面。其中 <span
 class="math inline">\(9\)</span>
@@ -544,15 +559,16 @@ S:X(u,v)=\boldsymbol  r(u)+v\boldsymbol l(u)
 class="math inline">\(F\cap S\)</span> 形成二次曲线形状相同。</p>
 <hr />
 <h5 id="性质2.3.1-椭球面">性质2.3.1 （椭球面）</h5>
-<span class="math display">\[
+<p><span class="math display">\[
 \frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}+\frac{z^{2}}{c^{2}}=1
-\]</span> （1）对称性：关于坐标平面、坐标轴、原点对称 （2）范围： <span
-class="math inline">\(|x|\le a,|y|\le b,|z|\le c\)</span>
-（3）截面：截口是椭圆
-<style>.wxlpsbvwkclv{zoom:60%}</style>
-<img src="/2024/12/24/Analytical_Geometry/231.png" class="wxlpsbvwkclv">
+\]</span> （1）对称性：关于坐标平面、坐标轴、原点对称</p>
+<p>（2）范围： <span class="math inline">\(|x|\le a,|y|\le b,|z|\le
+c\)</span></p>
+<p>（3）截面：截口是椭圆</p>
+<style>.hvaxkhqwbrfr{zoom:60%}</style>
+<img src="/2024/12/24/Analytical_Geometry/231.png" class="hvaxkhqwbrfr">
 <h5 id="性质2.3.2-单叶双曲面">性质2.3.2 （单叶双曲面）</h5>
-<span class="math display">\[
+<p><span class="math display">\[
 \frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}-\frac{z^{2}}{c^{2}}=1
 \]</span> （1）对称性：关于坐标平面、坐标轴、原点对称 （2）范围： <span
 class="math inline">\(\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}\ge
@@ -573,46 +589,53 @@ L_{\lambda}^{2}:
 &amp;\lambda\left( \frac{x}{a}-\frac{z}{c} \right)=1+\frac{y}{b} \\
 \end{aligned}
 \right.
-\]</span> 同族的直母线异面；异族的直母线共面，且交点在单叶双曲面上。
-（4）截面：沿 <span class="math inline">\(xOy\)</span> 截口为椭圆；平行
-<span class="math inline">\(z\)</span> 轴截口为双曲线。 （5）渐进锥面：
-<span
+\]</span> 同族的直母线异面；异族的直母线共面，且交点在单叶双曲面上。</p>
+<p>（4）截面：沿 <span class="math inline">\(xOy\)</span>
+截口为椭圆；平行 <span class="math inline">\(z\)</span>
+轴截口为双曲线。</p>
+<p>（5）渐进锥面： <span
 class="math inline">\(\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}-\frac{z^{2}}{c^{2}}=0\)</span>
-。 （6）腰椭圆： <span
+。</p>
+（6）腰椭圆： <span
 class="math inline">\(\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=1,z=0\)</span>
 ，称为腰椭圆。所有直母线都与腰椭圆相交，过一点的两条直母线所确定的平面垂直于
 <span class="math inline">\(xOy\)</span> 面。
-<style>.sroqveboewfr{zoom:70%}</style>
-<img src="/2024/12/24/Analytical_Geometry/232.png" class="sroqveboewfr">
+<style>.whuuxfokowth{zoom:70%}</style>
+<img src="/2024/12/24/Analytical_Geometry/232.png" class="whuuxfokowth">
 <h5 id="性质2.3.3-双叶双曲面">性质2.3.3 （双叶双曲面）</h5>
-<span class="math display">\[
+<p><span class="math display">\[
 \frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}-\frac{z^{2}}{c^{2}}=-1
-\]</span> （1）对称性：关于坐标平面、坐标轴、原点对称 （2）范围： <span
-class="math inline">\(|z|\ge c\)</span> （3）截面：沿 <span
-class="math inline">\(xOy\)</span> 截口为椭圆；平行 <span
-class="math inline">\(z\)</span> 轴截口为双曲线。 （4）渐进锥面： <span
+\]</span> （1）对称性：关于坐标平面、坐标轴、原点对称</p>
+<p>（2）范围： <span class="math inline">\(|z|\ge c\)</span></p>
+<p>（3）截面：沿 <span class="math inline">\(xOy\)</span>
+截口为椭圆；平行 <span class="math inline">\(z\)</span>
+轴截口为双曲线。</p>
+（4）渐进锥面： <span
 class="math inline">\(\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}-\frac{z^{2}}{c^{2}}=0\)</span>
 。
-<style>.yndsiwordssz{zoom:80%}</style>
-<img src="/2024/12/24/Analytical_Geometry/233.png" class="yndsiwordssz">
+<style>.uiqeisjiblnb{zoom:80%}</style>
+<img src="/2024/12/24/Analytical_Geometry/233.png" class="uiqeisjiblnb">
 <h5 id="性质2.3.4-椭圆抛物面">性质2.3.4 （椭圆抛物面）</h5>
-<span class="math display">\[
+<p><span class="math display">\[
 \frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=2z
 \]</span> （1）对称性：关于 <span class="math inline">\(xOz,yOz\)</span>
-面、 <span class="math inline">\(z\)</span> 轴、对称 （2）范围： <span
-class="math inline">\(|z|\ge 0\)</span> （3）截面：沿 <span
-class="math inline">\(xOy\)</span> 截口为椭圆；平行 <span
-class="math inline">\(z\)</span> 轴截口为抛物线。 （4）渐进锥面： <span
+面、 <span class="math inline">\(z\)</span> 轴、对称</p>
+<p>（2）范围： <span class="math inline">\(|z|\ge 0\)</span></p>
+<p>（3）截面：沿 <span class="math inline">\(xOy\)</span>
+截口为椭圆；平行 <span class="math inline">\(z\)</span>
+轴截口为抛物线。</p>
+（4）渐进锥面： <span
 class="math inline">\(\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}-\frac{z^{2}}{c^{2}}=0\)</span>
 。
-<style>.fnowlkblpsgo{zoom:70%}</style>
-<img src="/2024/12/24/Analytical_Geometry/234.png" class="fnowlkblpsgo">
+<style>.tmmjgttsyerq{zoom:70%}</style>
+<img src="/2024/12/24/Analytical_Geometry/234.png" class="tmmjgttsyerq">
 <h5 id="性质2.3.5-双曲抛物面">性质2.3.5 （双曲抛物面）</h5>
-<span class="math display">\[
+<p><span class="math display">\[
 \frac{x^{2}}{a^{2}}-\frac{y^{2}}{b^{2}}=2z
 \]</span> （1）对称性：关于 <span class="math inline">\(xOz,yOz\)</span>
-面、 <span class="math inline">\(z\)</span> 轴、对称 （2）范围： <span
-class="math inline">\(|z|\ge 0\)</span> （3）直纹面：有两直线族 <span
+面、 <span class="math inline">\(z\)</span> 轴、对称</p>
+<p>（2）范围： <span class="math inline">\(|z|\ge 0\)</span></p>
+<p>（3）直纹面：有两直线族 <span
 class="math inline">\(L^{1}_{\lambda},L^{2}_{\lambda}\)</span> 。 <span
 class="math display">\[
 L_{\lambda}^{1}:
@@ -631,11 +654,11 @@ L_{\lambda}^{2}:
 \right.
 \]</span> 同族的直母线都平行于同一平面 <span
 class="math inline">\(\frac{x}{a}\pm \frac{y}{b}=0\)</span>
-；不同族的直母线相交；同族的两条直母线异面。 （4）截面：沿 <span
-class="math inline">\(xOy\)</span> 截口为椭圆；平行 <span
-class="math inline">\(z\)</span> 轴截口为抛物线。
-<style>.nofgjluxxuub{zoom:80%}</style>
-<img src="/2024/12/24/Analytical_Geometry/235.png" class="nofgjluxxuub">
+；不同族的直母线相交；同族的两条直母线异面。</p>
+（4）截面：沿 <span class="math inline">\(xOy\)</span> 截口为椭圆；平行
+<span class="math inline">\(z\)</span> 轴截口为抛物线。
+<style>.tqodnwifdawu{zoom:80%}</style>
+<img src="/2024/12/24/Analytical_Geometry/235.png" class="tqodnwifdawu">
 <hr />
 <h5 id="定义2.4.1-平面正交变换">定义2.4.1 （平面正交变换）</h5>
 <p>设 <span class="math inline">\(\varphi:\pi\to\pi\)</span> ，在 <span
@@ -646,20 +669,24 @@ d(x,y)=d(\varphi(x),\varphi(y))
 class="math inline">\(\pi\)</span> 上的正交变换。</p>
 <h5 id="性质2.4.2-平面正交变换的性质">性质2.4.2
 （平面正交变换的性质）</h5>
-<p>（1）群的性质
-（2）共线三点映成共线三点，并保持顺序；不共线三点映成不共线三点。
-（3）直线映成直线、线段映成线段 （4）平行直线映成平行直线 （5）正交变换
-<span class="math inline">\(\varphi\)</span> 诱导了 <span
+<p>（1）双射</p>
+<p>（2）共线三点映成共线三点，并保持顺序；不共线三点映成不共线三点。</p>
+<p>（3）直线映成直线、线段映成线段。</p>
+<p>（4）平行直线映成平行直线。</p>
+<p>（5）正交变换 <span class="math inline">\(\varphi\)</span> 诱导了
+<span
 class="math inline">\(\overline{\varphi}:\overline{\pi}\to\overline{\pi}\)</span>
 ，其中 <span class="math inline">\(\overline{\pi}\)</span> 是 <span
 class="math inline">\(\pi\)</span> 上所有向量组成的集合，定义 <span
 class="math inline">\(\overline{\varphi}(\overrightarrow{AB})=\overrightarrow{\overline{\varphi}(A)\overline{\varphi}(B)}\)</span>
-。 （6） <span class="math inline">\(\overline{\varphi}\)</span>
-线性、保内积、保夹角 （7） <span class="math inline">\(\varphi\)</span>
-由 <span class="math inline">\(\tau_{1}\)</span> 平移， <span
+。</p>
+<p>（6） <span class="math inline">\(\overline{\varphi}\)</span>
+线性、保内积、保夹角。</p>
+<p>（7） <span class="math inline">\(\varphi\)</span> 由 <span
+class="math inline">\(\tau_{1}\)</span> 平移， <span
 class="math inline">\(\tau_{2}\)</span> 旋转、 <span
-class="math inline">\(\tau_{3}\)</span> 反射生成。 （8）
-正交变换坐标表示 <span class="math display">\[
+class="math inline">\(\tau_{3}\)</span> 反射生成。</p>
+<p>（8） 正交变换坐标表示 <span class="math display">\[
 X=M^{T}X^{*}+\boldsymbol \beta
 \]</span> 其中 <span class="math inline">\(M=\begin{pmatrix} \boldsymbol
 e_{1}^{*}\\\boldsymbol e_{2}^{*} \end{pmatrix}\)</span> 在 <span
@@ -676,13 +703,14 @@ class="math inline">\(\varphi\)</span> 是 <span
 class="math inline">\(\pi\)</span> 上的仿射变换。</p>
 <h5 id="性质2.4.4-平面仿射变换的性质">性质2.4.4
 （平面仿射变换的性质）</h5>
-<p>（1）正交变换的（1）（2）（3）（4）（5） （6） <span
-class="math inline">\(\overline{\varphi}\)</span> 线性 （7） <span
-class="math inline">\(\varphi\)</span> 由 <span
+<p>（1）正交变换的（1）（2）（3）（4）（5）</p>
+<p>（6） <span class="math inline">\(\overline{\varphi}\)</span>
+线性。</p>
+<p>（7） <span class="math inline">\(\varphi\)</span> 由 <span
 class="math inline">\(\tau_{1}\)</span> 平移， <span
 class="math inline">\(\tau_{2}\)</span> 旋转、 <span
-class="math inline">\(\tau_{3}\)</span> 反射生成。 （8）
-正交变换坐标表示 <span class="math display">\[
+class="math inline">\(\tau_{3}\)</span> 反射生成。</p>
+<p>（8） 正交变换坐标表示。 <span class="math display">\[
 X=M^{T}X^{*}+\boldsymbol \beta
 \]</span> 其中 <span class="math inline">\(M=\begin{pmatrix} \boldsymbol
 e_{1}^{*}\\\boldsymbol e_{2}^{*} \end{pmatrix}\)</span> 在 <span
@@ -701,21 +729,24 @@ d(x,y)=d(\varphi(x),\varphi(y))
 class="math inline">\(V\)</span> 上的正交变换。</p>
 <h5 id="性质2.4.6-平面正交变换的性质">性质2.4.6
 （平面正交变换的性质）</h5>
-<p>（1）群的性质
-（2）共线三点映成共线三点，并保持顺序；不共线三点映成不共线三点。
-（3）直线映成直线、线段映成线段
-（4）平行直线映成平行直线、平行平面映成平行平面 （5）正交变换 <span
-class="math inline">\(\varphi\)</span> 诱导了 <span
+<p>（1）双射</p>
+<p>（2）共线三点映成共线三点，并保持顺序；不共线三点映成不共线三点。</p>
+<p>（3）直线映成直线、线段映成线段。</p>
+<p>（4）平行直线映成平行直线、平行平面映成平行平面。</p>
+<p>（5）正交变换 <span class="math inline">\(\varphi\)</span> 诱导了
+<span
 class="math inline">\(\overline{\varphi}:\overline{V}\to\overline{V}\)</span>
 ，其中 <span class="math inline">\(\overline{V}\)</span> 是 <span
 class="math inline">\(V\)</span> 上所有向量组成的集合，定义 <span
 class="math inline">\(\overline{\varphi}(\overrightarrow{AB})=\overrightarrow{\overline{\varphi}(A)\overline{\varphi}(B)}\)</span>
-。 （6） <span class="math inline">\(\overline{\varphi}\)</span>
-线性、保内积、保夹角 （7） <span class="math inline">\(\varphi\)</span>
-由 <span class="math inline">\(\tau_{1}\)</span> 平移， <span
+。</p>
+<p>（6） <span class="math inline">\(\overline{\varphi}\)</span>
+线性、保内积、保夹角。</p>
+<p>（7） <span class="math inline">\(\varphi\)</span> 由 <span
+class="math inline">\(\tau_{1}\)</span> 平移， <span
 class="math inline">\(\tau_{2}\)</span> 绕直线旋转、 <span
-class="math inline">\(\tau_{3}\)</span> 反射生成。 （8）
-正交变换坐标表示 <span class="math display">\[
+class="math inline">\(\tau_{3}\)</span> 反射生成。</p>
+<p>（8） 正交变换坐标表示 <span class="math display">\[
 X=M^{T}X^{*}+\boldsymbol \beta
 \]</span> 其中 <span class="math inline">\(M=\begin{pmatrix} \boldsymbol
 e_{1}^{*}\\\boldsymbol e_{2}^{*}\\\boldsymbol e_{3}^{*}
@@ -770,12 +801,13 @@ class="math inline">\(AOC\)</span> 的二面角， <span
 class="math inline">\(BC\)</span> 或 <span
 class="math inline">\(a\)</span> 为劣弧 <span
 class="math inline">\(\overset{\LARGE{\frown}}{BC}\)</span> 的长度。
-<style>.iqbwbecguubk{zoom:30%}</style>
-<img src="/2024/12/24/Analytical_Geometry/311.png" class="iqbwbecguubk">
+<style>.qqxjjkkdowcr{zoom:30%}</style>
+<img src="/2024/12/24/Analytical_Geometry/311.png" class="qqxjjkkdowcr">
 <h5 id="性质3.1.2-球面三角形的性质">性质3.1.2 （球面三角形的性质）</h5>
-<p>（1）两边之和大于第三边，两边之差小于第三边 （2）三角之和大于 <span
-class="math inline">\(\pi\)</span> （3） <span
-class="math inline">\(\angle XOY=\frac{XY}{R}\)</span></p>
+<p>（1）两边之和大于第三边，两边之差小于第三边</p>
+<p>（2）三角之和大于 <span class="math inline">\(\pi\)</span></p>
+<p>（3） <span class="math inline">\(\angle
+XOY=\frac{XY}{R}\)</span></p>
 <h5 id="性质3.1.2-球面三角形的面积">性质3.1.2 （球面三角形的面积）</h5>
 <p><span class="math display">\[
 S_{\triangle ABC}=R^{2}(\angle A+\angle B+\angle C-\pi)
@@ -934,19 +966,17 @@ a_{11}&amp;a_{12}&amp;a_{13}\\a_{21}&amp;a_{22}&amp;a_{23}\\a_{31}&amp;a_{32}&am
 <p>由于对偶原理，同样可以定义线束上的射影坐标，坐标变换。</p>
 <h5 id="性质3.2.9-射影坐标的应用">性质3.2.9 （射影坐标的应用）</h5>
 （ Desargues 定理）若三角形对应顶点连线交于一点，则对应边交点共线。
-<style>.gjrrdvfkmirm{zoom:40%}</style>
-<img src="/2024/12/24/Analytical_Geometry/3291.png" class="gjrrdvfkmirm">
+<style>.njlnywneswuu{zoom:40%}</style>
+<img src="/2024/12/24/Analytical_Geometry/3291.png" class="njlnywneswuu">
 （ Pappus 定理）两条直线上各三个点 <span
 class="math inline">\(a,b,c,a^{*},b^{*},c^{*}\)</span> ，则 <span
 class="math inline">\(ab^{*},a^{*}b;ac^{*},a^{*}c;bc^{*},b^{*}c\)</span>
 三个交点共线。
-<style>.xpwejhtnuexb{zoom:60%}</style>
-<img src="/2024/12/24/Analytical_Geometry/3292.png" class="xpwejhtnuexb">
+<style>.wstvcbswjite{zoom:60%}</style>
+<img src="/2024/12/24/Analytical_Geometry/3292.png" class="wstvcbswjite">
 <hr />
 <h5 id="定义3.3.1-交比">定义3.3.1 （交比）</h5>
 <p>在射影直线上取不同四点 <span class="math inline">\(y,z,u,v\)</span>
-，齐次坐标为 <span
-class="math inline">\((y_{1},y_{2},y_{3}),(z_{1},z_{2},z_{3}),(u_{1},u_{2},u_{3}),(v_{1},v_{2},v_{3})\)</span>
 ，若 <span class="math display">\[
 \begin{aligned}
 (u_{1},u_{2},u_{3})&amp;=\lambda_{1}(y_{1},y_{2},y_{3})+\lambda_{2}(z_{1},z_{2},z_{3})\\
@@ -971,16 +1001,17 @@ a_{11}&amp;a_{12}\\a_{21}&amp;a_{22}
 为一个射影变换。（ <span class="math inline">\(\pi\)</span>
 可以是直线到直线、线束到线束、直线到线束、线束到直线）</p>
 <h5 id="性质3.3.3-射影变换的性质">性质3.3.3 （射影变换的性质）</h5>
-<p>（1）射影变换 <span class="math inline">\(\pi\)</span> 是双射。
-（2）指定变换前后的三个不同元素 <span
+<p>（1）射影变换 <span class="math inline">\(\pi\)</span> 是双射。</p>
+<p>（2）指定变换前后的三个不同元素 <span
 class="math inline">\(x,y,z\)</span> 和 <span
 class="math inline">\(x^{*},y^{*},z^{*}\)</span>
-，则存在且唯一的射影变换 <span class="math inline">\(\pi\)</span> 。
-（3）射影变换前后任选四个元素 <span
+，则存在且唯一的射影变换 <span class="math inline">\(\pi\)</span> 。</p>
+<p>（3）射影变换前后任选四个元素 <span
 class="math inline">\(x,y,u,v\)</span> 和 <span
 class="math inline">\(x^{*},y^{*},u^{*},v^{*}\)</span> ，则 <span
-class="math inline">\(R(x,y;u,v)=R(x^{*},y^{*},u^{*},v^{*})\)</span> 。
-（4）若变换对于任意四个元素交比不变，则 <span
+class="math inline">\(R(x,y;u,v)=R(x^{*},y^{*},u^{*},v^{*})\)</span>
+。</p>
+<p>（4）若变换对于任意四个元素交比不变，则 <span
 class="math inline">\(\pi\)</span> 是射影变换。</p>
 <h5 id="定义3.3.4-配景">定义3.3.4 （配景）</h5>
 设 <span class="math inline">\(\eta\)</span> 为定直线 <span
@@ -990,8 +1021,8 @@ class="math inline">\(a\)</span> 中直线的齐次坐标，则称映射 <span
 class="math inline">\(\pi(\xi)=\xi \times \eta\)</span> ，为线束 <span
 class="math inline">\(a\)</span> 到直线 <span
 class="math inline">\(L\)</span> 的一个配景。
-<style>.xiqqydrjgoii{zoom:60%}</style>
-<img src="/2024/12/24/Analytical_Geometry/3341.png" class="xiqqydrjgoii">
+<style>.xlporkwoilvk{zoom:60%}</style>
+<img src="/2024/12/24/Analytical_Geometry/3341.png" class="xlporkwoilvk">
 设 <span class="math inline">\(\eta\)</span> 为点 <span
 class="math inline">\(a\)</span> 的齐次坐标， <span
 class="math inline">\(\xi\)</span> 为直线 <span
@@ -999,10 +1030,11 @@ class="math inline">\(L\)</span> 上点的齐次坐标，则称映射 <span
 class="math inline">\(\pi(\xi)=\xi \times \eta\)</span> ，为直线 <span
 class="math inline">\(L\)</span> 到线束 <span
 class="math inline">\(a\)</span> 的一个配景。
-<style>.kbhyjbbjbvyo{zoom:50%}</style>
-<img src="/2024/12/24/Analytical_Geometry/3342.png" class="kbhyjbbjbvyo">
+<style>.ujdfnkhmetjy{zoom:50%}</style>
+<img src="/2024/12/24/Analytical_Geometry/3342.png" class="ujdfnkhmetjy">
 <h5 id="性质3.3.5-配景的性质">性质3.3.5 （配景的性质）</h5>
-<p>（1）配景是射影变换。 （2）射影变换是若干个配景的复合。</p>
+<p>（1）配景是射影变换。</p>
+<p>（2）射影变换是若干个配景的复合。</p>
 <h5 id="定义3.3.6-第四调和点">定义3.3.6 （第四调和点）</h5>
 设 <span class="math inline">\(x,u,y\)</span> 是 <span
 class="math inline">\(L\)</span> 上的点，任取 <span
@@ -1025,8 +1057,8 @@ class="math inline">\(R(x,y;u,v)=-1\)</span> 。记 <span
 class="math inline">\(x,y;u,v\)</span> 为调和点列。
 同样可以定义线束上四条线 <span class="math inline">\(x,y;u,v\)</span>
 为调和线束。
-<style>.nmrrfiyfbzib{zoom:60%}</style>
-<img src="/2024/12/24/Analytical_Geometry/336.png" class="nmrrfiyfbzib">
+<style>.vrlvshrwembq{zoom:60%}</style>
+<img src="/2024/12/24/Analytical_Geometry/336.png" class="vrlvshrwembq">
 <hr />
 <h5 id="定义3.4.1-直射变换">定义3.4.1 （直射变换）</h5>
 <p>将齐次坐标映射为齐次坐标 <span
@@ -1050,12 +1082,12 @@ a_{11}&amp;a_{12}&amp;a_{13}\\a_{21}&amp;a_{22}&amp;a_{23}\\a_{31}&amp;a_{32}&am
 class="math inline">\(\pi\)</span>
 是一个配极。称映射中的点为极点，线为极线。</p>
 <h5 id="性质3.4.3-直射变换的性质">性质3.4.3 （直射变换的性质）</h5>
-<p>（1）直射变换 <span class="math inline">\(\pi\)</span> 是双射
-（2）直射变换 <span class="math inline">\(\pi\)</span>
+<p>（1）直射变换 <span class="math inline">\(\pi\)</span> 是双射</p>
+<p>（2）直射变换 <span class="math inline">\(\pi\)</span>
 是配极的充要条件是，对于 <span class="math inline">\(\forall x\)</span>
 ， <span class="math inline">\(\forall y\cdot\pi(x)=0\)</span> 有 <span
-class="math inline">\(\pi(y)=x\)</span> 。
-（3）对于点到点和线到线的直射变换 <span
+class="math inline">\(\pi(y)=x\)</span> 。</p>
+<p>（3）对于点到点和线到线的直射变换 <span
 class="math inline">\(\pi\)</span> ，诱导出线到线 <span
 class="math inline">\(\pi_{l\to l^{*}}\)</span> 和线束到线束 <span
 class="math inline">\(\pi_{x\to x^{*}}\)</span> 上的射影变换。</p>
@@ -1070,21 +1102,22 @@ class="math inline">\(X^{T}AX=0\)</span> ，即二次曲线。</p>
 <h5 id="定义3.4.5-二次曲线的性质">定义3.4.5 （二次曲线的性质）</h5>
 <p>（1） <span class="math inline">\(\pi\)</span> 为二次曲线 <span
 class="math inline">\(C\)</span> 的配极，则 <span
-class="math inline">\(\pi(x)\cdot x=0\)</span> 最多有一个解。
-（2）直线与非退化二次曲线至多两个交点。 （3，Steiner 定理）设 <span
-class="math inline">\(C\)</span> 为二次曲线， <span
-class="math inline">\(a,a^{*},z\in C\)</span> ， <span
-class="math inline">\(z\)</span> 变化时，映射 <span
+class="math inline">\(\pi(x)\cdot x=0\)</span> 最多有一个解。</p>
+<p>（2）直线与非退化二次曲线至多两个交点。</p>
+<p>（3，Steiner 定理）设 <span class="math inline">\(C\)</span>
+为二次曲线， <span class="math inline">\(a,a^{*},z\in C\)</span> ，
+<span class="math inline">\(z\)</span> 变化时，映射 <span
 class="math inline">\(\pi(a\times z)=a^{*}\times z\)</span>
 是一个射影变换；（逆定理）设 <span
 class="math inline">\(a,a^{*}\)</span> 为两个（直线）线束，则射影变换
 <span class="math inline">\(\pi:a\to a^{*}\)</span> 中 <span
-class="math inline">\(x\times \pi (x)\)</span> 是一个二次曲线。 （4）设
-<span class="math inline">\(C\)</span> 为二次曲线， <span
+class="math inline">\(x\times \pi (x)\)</span> 是一个二次曲线。</p>
+<p>（4）设 <span class="math inline">\(C\)</span> 为二次曲线， <span
 class="math inline">\(a,b,c,d,x\in C\)</span> ， <span
 class="math inline">\(x\)</span> 变化时， <span
 class="math inline">\(R(x\times a,x\times b,x\times c,x\times
-d)\)</span> 是定值 （5， Pascal 定理）二次曲线内接六边形 <span
+d)\)</span> 是定值。</p>
+<p>（5， Pascal 定理）二次曲线内接六边形 <span
 class="math inline">\(3\)</span> 对对边交点共线。</p>
 
     </div>
