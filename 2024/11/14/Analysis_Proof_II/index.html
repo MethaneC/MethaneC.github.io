@@ -12,7 +12,7 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Times+New+Roman:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
@@ -27,7 +27,7 @@
 <meta property="og:description" content="Part 2 函数极限与连续性 性质2.1.3 （反函数性质） 在定义域上严格递增（递减）的函数一定存在反函数，并且反函数也严格递增（递减）。 Proof： 严格递增，该函数为单射，反函数存在。反证法可知其单调性相同。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-11-13T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-11-22T08:51:29.853Z">
+<meta property="article:modified_time" content="2025-01-05T15:48:44.763Z">
 <meta property="article:author" content="Methane">
 <meta property="article:tag" content="Note">
 <meta property="article:tag" content="Analysis">
@@ -130,7 +130,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -199,7 +199,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-11-22 16:51:29" itemprop="dateModified" datetime="2024-11-22T16:51:29+08:00">2024-11-22</time>
+      <time title="修改时间：2025-01-05 23:48:44" itemprop="dateModified" datetime="2025-01-05T23:48:44+08:00">2025-01-05</time>
     </span>
 
   
@@ -277,11 +277,11 @@ class="math inline">\(|f(x)-a|&lt;\epsilon\)</span> ，<span
 class="math inline">\(|g(x)-b|&lt;\epsilon\)</span> ，由绝对值不等式
 <span class="math inline">\(|f(x)\pm g(x)-(a\pm
 b)|&lt;2\epsilon\)</span> ， <span
-class="math inline">\(\blacksquare\)</span> 。 （2）由收敛，<span
-class="math inline">\(g(x)\)</span> 在邻域内有上界 <span
-class="math inline">\(M\)</span> ， <span class="math inline">\(\forall
-\epsilon&gt;0\)</span> ，<span class="math inline">\(\exists
-\delta&gt;0\)</span> ，使得 <span
+class="math inline">\(\blacksquare\)</span> 。</p>
+<p>（2）由收敛，<span class="math inline">\(g(x)\)</span> 在邻域内有上界
+<span class="math inline">\(M\)</span> ， <span
+class="math inline">\(\forall \epsilon&gt;0\)</span> ，<span
+class="math inline">\(\exists \delta&gt;0\)</span> ，使得 <span
 class="math inline">\(0&lt;|x-x_{0}|&lt;\delta\)</span> 的 <span
 class="math inline">\(\forall x\)</span> 有 <span
 class="math inline">\(|f(x)-a|&lt;\epsilon\)</span> ，<span
@@ -325,7 +325,8 @@ class="math inline">\(0&lt;|x_{1}-x_{0}|&lt;\delta,0&lt;|x_{2}-x_{0}|&lt;\delta\
 <span class="math display">\[
 |f(x_{1})-f(x_{2})|&lt;\epsilon
 \]</span></p>
-<p>Proof： 充分性： Step 1. <span class="math inline">\(\forall
+<p>Proof：</p>
+<p>充分性： Step 1. <span class="math inline">\(\forall
 \epsilon&gt;0\)</span> ，由题设取 <span
 class="math inline">\(\delta\)</span> ，取一个收敛于 <span
 class="math inline">\(x_{0}\)</span> 且 <span
@@ -337,8 +338,9 @@ class="math inline">\(0&lt;|x_{n}-x_{0}|&lt;\delta\)</span> ， <span
 class="math inline">\(0&lt;|x_{m}-x_{0}|&lt;\delta\)</span> 。由题设
 <span class="math inline">\(|f(x_{m})-f(x_{n})|&lt;\epsilon\)</span>
 ，由数列 Cauchy 准则可知 <span class="math inline">\(\{ f(x_{n})
-\}\)</span> 收敛，设其收敛于 <span class="math inline">\(l\)</span> 。
-Step 2. <span class="math inline">\(\forall \epsilon&gt;0\)</span>
+\}\)</span> 收敛，设其收敛于 <span class="math inline">\(l\)</span>
+。</p>
+<p>Step 2. <span class="math inline">\(\forall \epsilon&gt;0\)</span>
 ，由题设取 <span class="math inline">\(\delta\)</span> ，由 <span
 class="math inline">\(\{ x_{n} \}\)</span> 和 <span
 class="math inline">\(\{ f(x_{n}) \}\)</span> 收敛可知， <span
@@ -353,6 +355,7 @@ class="math inline">\(|f(x)-l|\le|f(x)-f(x_{n})|+|f(x_{n})-l|&lt;2\epsilon\)</sp
 <p>注：Step 1 先找到一个像收敛的数列。Step 2 通过题设估计 <span
 class="math inline">\(|f(x)-f(x_{n})|\)</span> ，像数列收敛估计 <span
 class="math inline">\(|f(x_{n})-l|\)</span> ，放缩得证。</p>
+<p>必要性显然。</p>
 <h5 id="性质2.2.9-极限的不等式性质">性质2.2.9 （极限的不等式性质）</h5>
 <p>若 <span class="math inline">\(f,g\)</span> 在 <span
 class="math inline">\(x_{0}\)</span> 均有极限，且存在邻域使得 <span
@@ -363,7 +366,7 @@ class="math display">\[
 <p>Proof： 由极限的四则运算，仅需证明，若 <span
 class="math inline">\(f(x)\ge 0\)</span> ，设其极限为 <span
 class="math inline">\(l\)</span> ，则 <span class="math inline">\(l\ge
-0\)</span> 。 反证法：假设 <span class="math inline">\(l&lt;0\)</span>
+0\)</span> 。反证法：假设 <span class="math inline">\(l&lt;0\)</span>
 ，取 <span class="math inline">\(\epsilon=|l|\)</span> ，存在 <span
 class="math inline">\(\delta&gt;0\)</span> 使得 <span
 class="math inline">\(0&lt;|x-x_{0}|&lt;\delta\)</span> 的 <span
@@ -428,27 +431,28 @@ class="math inline">\(\delta=\min\{ \delta_{1},\delta_{2} \}\)</span> ，
 <p>（1）若 <span class="math inline">\(f,g\)</span> 在 <span
 class="math inline">\(x_{0}\)</span> 连续，则 <span
 class="math inline">\(f\pm g,f\cdot g\)</span> 在 <span
-class="math inline">\(x_{0}\)</span> 连续。 （2）若 <span
-class="math inline">\(f,g\)</span> 在 <span
+class="math inline">\(x_{0}\)</span> 连续。</p>
+<p>（2）若 <span class="math inline">\(f,g\)</span> 在 <span
 class="math inline">\(x_{0}\)</span> 连续， <span
 class="math inline">\(g(x_{0})\ne 0\)</span> ，则 <span
 class="math inline">\(\frac{f}{g}\)</span> 在 <span
-class="math inline">\(x_{0}\)</span> 连续。 （3）若 <span
-class="math inline">\(g\)</span> 在 <span
+class="math inline">\(x_{0}\)</span> 连续。</p>
+<p>（3）若 <span class="math inline">\(g\)</span> 在 <span
 class="math inline">\(t_{0}\)</span> 连续， <span
 class="math inline">\(f\)</span> 在 <span
 class="math inline">\(g(t_{0})\)</span> 连续 ，则 <span
 class="math inline">\(f \circ g\)</span> 在 <span
-class="math inline">\(t_{0}\)</span> 连续。 （4）若 <span
-class="math inline">\(f\)</span> 在 <span
+class="math inline">\(t_{0}\)</span> 连续。</p>
+<p>（4）若 <span class="math inline">\(f\)</span> 在 <span
 class="math inline">\(x_{0}\)</span> 连续，则 <span
 class="math inline">\(f^{-1}(x)\)</span> 在 <span
-class="math inline">\(f(x)\)</span> 连续。
-（5）所有初等函数都在其定义域上连续
-（这些性质可以用来证明区间连续，一致连续）</p>
-<p>Proof： （1）（2）（3）均可由函数极限证明 （4）不妨设其单调递增 对于
-<span class="math inline">\(\forall \epsilon&gt;0\)</span> ，需找 <span
-class="math inline">\(\delta&gt;0\)</span> 使得 <span
+class="math inline">\(f(x)\)</span> 连续。</p>
+<p>（5）所有初等函数都在其定义域上连续</p>
+<p>（这些性质可以用来证明区间连续，一致连续）</p>
+<p>Proof： （1）（2）（3）均可由函数极限证明</p>
+<p>（4）不妨设其单调递增</p>
+<p>对于 <span class="math inline">\(\forall \epsilon&gt;0\)</span>
+，需找 <span class="math inline">\(\delta&gt;0\)</span> 使得 <span
 class="math inline">\(0&lt;|x-x_{0}|&lt;\delta\)</span> 的 <span
 class="math inline">\(\forall x\)</span> 有 <span
 class="math inline">\(|f^{-1}(x)-f^{-1}(x_{0})|&lt;\epsilon\)</span>
@@ -458,14 +462,16 @@ class="math inline">\(f^{-1}(x)-\epsilon&lt;f^{-1}(x)&lt;f^{-1}(x)+\epsilon\)</s
 class="math inline">\(f(f^{-1}(x)-\epsilon)&lt;x&lt;f(f^{-1}(x)+\epsilon)\)</span>
 ，故取 <span class="math inline">\(\delta=\min\{
 f^{-1}(x)-\epsilon,f^{-1}(x)+\epsilon \}\)</span> ， <span
-class="math inline">\(\blacksquare\)</span> 。 （5）略。</p>
+class="math inline">\(\blacksquare\)</span> 。</p>
+<p>（5）略。</p>
 <h5 id="性质2.4.6-一致连续的性质">性质2.4.6 （一致连续的性质）</h5>
-<p>（1）有限闭区间连续函数必一致连续 若 <span
-class="math inline">\([a,b]\)</span> 是有限闭区间， <span
+<p>（1）有限闭区间连续函数必一致连续</p>
+<p>若 <span class="math inline">\([a,b]\)</span> 是有限闭区间， <span
 class="math inline">\(f\in C([a,b])\)</span> ，则 <span
 class="math inline">\(f\)</span> 在 <span class="math inline">\([a,
-b]\)</span> 一致连续 （2）开区间一致连续判别法 若 <span
-class="math inline">\(f\)</span> 在 <span
+b]\)</span> 一致连续</p>
+<p>（2）开区间一致连续判别法</p>
+<p>若 <span class="math inline">\(f\)</span> 在 <span
 class="math inline">\((a,b)\)</span> 一致连续的充要条件是 <span
 class="math inline">\(f\)</span> 在 <span
 class="math inline">\((a,b)\)</span> 连续且 <span
@@ -613,8 +619,8 @@ f(x_{n}) &gt; l-\epsilon
 \]</span> 则 <span class="math display">\[
 \limsup_{ n \to \infty } f(x) := l
 \]</span></p>
-<p>定义一 <span class="math inline">\(\implies\)</span> 定义三
-（1）反证法：假定 <span
+<p>定义一 <span class="math inline">\(\implies\)</span> 定义三</p>
+<p>（1）反证法：假定 <span
 class="math inline">\(\exists\epsilon_{0}&gt;0\)</span> ， <span
 class="math inline">\(\forall \delta=\frac{1}{n}&gt;0\)</span> ， <span
 class="math inline">\(\exists x_{n}\)</span> 满足 <span
@@ -625,8 +631,9 @@ f(x_{k_{n}}) \}\)</span> 收敛，设收敛于 <span
 class="math inline">\(L\)</span> ，由不等式可知 <span
 class="math inline">\(L\ge l+\epsilon_{0}\)</span> ，与 <span
 class="math inline">\(l\)</span> 是上确界矛盾。 <span
-class="math inline">\(\blacksquare\)</span> 。 （2）反证法：假定 <span
-class="math inline">\(\forall \epsilon&gt;0\)</span> ， <span
+class="math inline">\(\blacksquare\)</span> 。</p>
+<p>（2）反证法：假定 <span class="math inline">\(\forall
+\epsilon&gt;0\)</span> ， <span
 class="math inline">\(\exists\delta&gt;0\)</span> ，使得 <span
 class="math inline">\(0&lt;|x-x_{0}|&lt;\delta\)</span> 的 <span
 class="math inline">\(\forall x\)</span> ，有 <span
@@ -637,13 +644,13 @@ class="math inline">\(x_{n}\to x_{0},f(x_{n})\to\alpha\in E\)</span>
 class="math inline">\(\alpha\le l-\epsilon\)</span> ，左右同时取 <span
 class="math inline">\(\sup\)</span> 可知矛盾！ <span
 class="math inline">\(\blacksquare\)</span> 。</p>
-<p>定义二 <span class="math inline">\(\implies\)</span> 定义三
-（1）由下确界的定义， <span class="math inline">\(\forall
+<p>定义二 <span class="math inline">\(\implies\)</span> 定义三</p>
+<p>（1）由下确界的定义， <span class="math inline">\(\forall
 \epsilon&gt;0\)</span> ，<span class="math inline">\(\exists
 \delta&gt;0\)</span> ，使得 <span class="math inline">\(\sup
 f(x)&lt;l+\epsilon\)</span> ，故 <span
-class="math inline">\(f(x)&lt;l+\epsilon\)</span> 。
-（2）由下确界的定义， <span class="math inline">\(\forall
+class="math inline">\(f(x)&lt;l+\epsilon\)</span> 。</p>
+<p>（2）由下确界的定义， <span class="math inline">\(\forall
 \delta&gt;0\)</span> ，都有 <span class="math inline">\(\sup f(x)\ge
 l\)</span> 。取 <span class="math inline">\(x_{n}\to x_{0}\)</span> 的
 <span class="math inline">\(\{ x_{n} \}\)</span>使得 <span
@@ -651,10 +658,10 @@ class="math inline">\(f(x_{n})\ge l\)</span> ，故 <span
 class="math inline">\(\forall \epsilon&gt;0\)</span> ， <span
 class="math inline">\(f(x_{n})&gt;l-\epsilon\)</span> 。 <span
 class="math inline">\(\blacksquare\)</span> 。</p>
-<p>定义三 <span class="math inline">\(\implies\)</span> 定义一
-（1）<span class="math inline">\(\forall \epsilon&gt;0\)</span> ， <span
-class="math inline">\(\exists \delta&gt;0\)</span> ，使得满足 <span
-class="math inline">\(0&lt;|x-x_{0}|&lt;\delta\)</span> 的 <span
+<p>定义三 <span class="math inline">\(\implies\)</span> 定义一</p>
+<p>（1）<span class="math inline">\(\forall \epsilon&gt;0\)</span> ，
+<span class="math inline">\(\exists \delta&gt;0\)</span> ，使得满足
+<span class="math inline">\(0&lt;|x-x_{0}|&lt;\delta\)</span> 的 <span
 class="math inline">\(\forall x\)</span> 有 <span
 class="math inline">\(f(x)&lt;l+\epsilon\)</span> 。取 <span
 class="math inline">\(\alpha\in E\)</span> ， <span
@@ -667,24 +674,24 @@ class="math inline">\(\forall n&gt;N\)</span> 都有 <span
 class="math inline">\(0&lt;|x_{n}-x_{0}|&lt;\delta\)</span> ，故满足
 <span class="math inline">\(f(x_{n})&lt;l+\epsilon\)</span>。取极限可得
 <span class="math inline">\(\alpha\le l\)</span> ，故 <span
-class="math inline">\(\sup E&lt;l\)</span>。 （2）<span
-class="math inline">\(\forall \epsilon&gt;0\)</span> ， <span
-class="math inline">\(\exists \{ x_{n} \}\)</span> ， <span
+class="math inline">\(\sup E&lt;l\)</span>。</p>
+<p>（2）<span class="math inline">\(\forall \epsilon&gt;0\)</span> ，
+<span class="math inline">\(\exists \{ x_{n} \}\)</span> ， <span
 class="math inline">\(x_{n}\to x_{0}\)</span> 使得 <span
 class="math inline">\(f(x_{n})&gt;l-\epsilon\)</span> 。取收敛子列 <span
 class="math inline">\(f(x_{k_{n}})\)</span> ，设其极限为 <span
 class="math inline">\(\alpha\)</span> 。取极限可知 <span
 class="math inline">\(\sup E\ge\alpha\ge l\)</span> 。<span
 class="math inline">\(\blacksquare\)</span> 。</p>
-<p>定义三 <span class="math inline">\(\implies\)</span> 定义二 （1）
-<span class="math inline">\(\forall \epsilon&gt;0\)</span> ， <span
-class="math inline">\(\exists \delta&gt;0\)</span> ，使得 <span
+<p>定义三 <span class="math inline">\(\implies\)</span> 定义二</p>
+<p>（1） <span class="math inline">\(\forall \epsilon&gt;0\)</span> ，
+<span class="math inline">\(\exists \delta&gt;0\)</span> ，使得 <span
 class="math inline">\(0&lt;|x-x_{0}|&lt;\delta\)</span> 的 <span
 class="math inline">\(\forall x\)</span> 有 <span
 class="math inline">\(f(x)&lt;l+\epsilon\)</span> ，取上确界可知 <span
-class="math inline">\(\sup f(x)&lt;l+\epsilon\)</span> 。 （2） <span
-class="math inline">\(\forall \delta&gt;0\)</span> ， <span
-class="math inline">\(\forall\epsilon&gt;0\)</span> <span
+class="math inline">\(\sup f(x)&lt;l+\epsilon\)</span> 。</p>
+<p>（2） <span class="math inline">\(\forall \delta&gt;0\)</span> ，
+<span class="math inline">\(\forall\epsilon&gt;0\)</span> <span
 class="math inline">\(\exists \{ x_{n} \}\)</span> ， <span
 class="math inline">\(0&lt;|x_{n}-x_{0}|&lt;\delta\)</span> 使得 <span
 class="math inline">\(f(x_{n})&gt;l-\epsilon\)</span> ，故 <span

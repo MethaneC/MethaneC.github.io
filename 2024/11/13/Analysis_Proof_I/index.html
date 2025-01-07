@@ -12,7 +12,7 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Times+New+Roman:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
@@ -27,7 +27,7 @@
 <meta property="og:description" content="Part 1 数列极限 性质1.1.3 （收敛数列的性质） 若 \(a_{n}\to a\) ， \(\{ a_{n} \}\) 的任何子列都收敛于 \(a\) 。 Proof： 假设子列为 \(a_{k_{n}}\) 。由收敛到 \(a\) 得，对于 \(\forall\epsilon&gt;0\) ，\(\exists N\) 使得 \(\forall n&gt;N\) 有 \(|a_">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-11-12T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-01-04T10:46:13.192Z">
+<meta property="article:modified_time" content="2025-01-05T15:39:46.620Z">
 <meta property="article:author" content="Methane">
 <meta property="article:tag" content="Note">
 <meta property="article:tag" content="Analysis">
@@ -130,7 +130,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -199,7 +199,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-01-04 18:46:13" itemprop="dateModified" datetime="2025-01-04T18:46:13+08:00">2025-01-04</time>
+      <time title="修改时间：2025-01-05 23:39:46" itemprop="dateModified" datetime="2025-01-05T23:39:46+08:00">2025-01-05</time>
     </span>
 
   
@@ -255,8 +255,8 @@ N\)</span> 使得 <span class="math inline">\(\forall n&gt;N\)</span> 都有
 class="math inline">\(|a_{n}-a|&lt;\epsilon_{0},|b_{n}-b|&lt;\epsilon_{0}\)</span>
 ，由绝对值不等式， <span
 class="math inline">\(|a_{n}+b_{n}-a-b|&lt;2\epsilon_{0}\)</span> ，
-<span class="math inline">\(\blacksquare\)</span> 。 （2）由收敛，<span
-class="math inline">\(\exists M\)</span> ， <span
+<span class="math inline">\(\blacksquare\)</span> 。</p>
+<p>（2）由收敛，<span class="math inline">\(\exists M\)</span> ， <span
 class="math inline">\(|a_{n}|&lt;M,|b|&lt;M\)</span> ，并且对于 <span
 class="math inline">\(\forall \epsilon&gt;0\)</span> ，<span
 class="math inline">\(\exists N\)</span> 使得 <span
@@ -274,16 +274,17 @@ class="math inline">\(|a_{n}-a|&lt;\epsilon_{0},|b_{n}-b|&lt;\epsilon_{0}\)</spa
 class="math inline">\(k\epsilon_{0}\)</span> ，<span
 class="math inline">\(k\)</span> 是一个常数，同样可以证明收敛，仅需要取
 <span class="math inline">\(\epsilon_{0}\)</span> 时为 <span
-class="math inline">\(\frac{\epsilon}{k}\)</span> ，以后均省略这个操作。
-（3）同理。</p>
+class="math inline">\(\frac{\epsilon}{k}\)</span>
+，以后均省略这个操作。</p>
+<p>（3）同理。</p>
 <h5 id="性质1.1.7-收敛数列的不等式性质">性质1.1.7
 （收敛数列的不等式性质）</h5>
 <p>若 <span class="math inline">\(\{ a_{n} \},\{ b_{n} \}\)</span>
 收敛，且当 <span class="math inline">\(n\)</span> 充分大时，有 <span
 class="math inline">\(a_{n}\le b_{n}\)</span> ，则 <span
-class="math inline">\(a\le b\)</span> 。（保号性） 若 <span
-class="math inline">\(\{ a_{n} \},\{ b_{n} \}\)</span> 收敛，且当 <span
-class="math inline">\(n\)</span> 充分大时，有 <span
+class="math inline">\(a\le b\)</span> 。（保号性）</p>
+<p>若 <span class="math inline">\(\{ a_{n} \},\{ b_{n} \}\)</span>
+收敛，且当 <span class="math inline">\(n\)</span> 充分大时，有 <span
 class="math inline">\(a_{n}&lt; b_{n}\)</span> ，则 <span
 class="math inline">\(a\le b\)</span> 。（模糊保号性）</p>
 <p>Proof： 由极限四则运算，仅需证明，若 <span class="math inline">\(\{
@@ -333,8 +334,8 @@ class="math inline">\(\{ a_{n} \}\)</span> 有界。</p>
 \end{aligned}
 \]</span></p>
 <p>只证 <span class="math inline">\(\inf\)</span> ， <span
-class="math inline">\(\sup\)</span> 同理： （1）（2）由定义显然 （3）
-<span class="math display">\[
+class="math inline">\(\sup\)</span> 同理： （1）（2）由定义显然</p>
+<p>（3） <span class="math display">\[
 \begin{aligned}
 \inf\{ a_{n}+b_{n} \}\ge \inf\{ a_{n}+\inf b_{n} \}=\inf a_{n}+\inf
 b_{n} \quad \blacksquare  
@@ -344,10 +345,11 @@ b_{n} \quad \blacksquare
 <p>如果 <span class="math inline">\(a_{n} &gt; b_{n}\)</span> ，则 <span
 class="math inline">\(\inf\{ a_{n} \}\ge\inf\{ b_{n} \}\)</span> ，
 <span class="math inline">\(\sup\{ a_{n} \}\ge\sup\{ b_{n} \}\)</span>
-。（同样存在模糊保号性） 如果 <span class="math inline">\(a_{n} &lt;
-b_{n}\)</span> ，则 <span class="math inline">\(\inf\{ a_{n} \}\le\inf\{
-b_{n} \}\)</span> ， <span class="math inline">\(\sup\{ a_{n}
-\}\le\sup\{ b_{n} \}\)</span> 。</p>
+。（同样存在模糊保号性）</p>
+<p>如果 <span class="math inline">\(a_{n} &lt; b_{n}\)</span> ，则 <span
+class="math inline">\(\inf\{ a_{n} \}\le\inf\{ b_{n} \}\)</span> ，
+<span class="math inline">\(\sup\{ a_{n} \}\le\sup\{ b_{n} \}\)</span>
+。</p>
 <p>只证（1）的 <span class="math inline">\(\inf\)</span> ： 反证法：假设
 <span class="math inline">\(\inf \{ a_{n} \} &lt;\inf \{ b_{n}
 \}\)</span> ，设其确界分别为 <span class="math inline">\(x,y\)</span>
@@ -360,7 +362,8 @@ class="math inline">\(\blacksquare\)</span> 。</p>
 （单调数列的确界与极限）</h5>
 <p>若 <span class="math inline">\(\{ a_{n} \}\)</span>
 单调递增且收敛，则 <span class="math inline">\(a_{n}\to \sup\{ a_{n}
-\}\)</span> 若 <span class="math inline">\(\{ a_{n} \}\)</span>
+\}\)</span></p>
+<p>若 <span class="math inline">\(\{ a_{n} \}\)</span>
 单调递减且收敛，则 <span class="math inline">\(a_{n}\to \inf\{ a_{n}
 \}\)</span></p>
 <p>只证单调递增情况： 设 <span class="math inline">\(\sup \{ a_{n}
@@ -397,18 +400,17 @@ class="math inline">\(10^{-k}\)</span>
 ，且由于单调递增，一旦相同，后面数都会相同。</p>
 <h5 id="定理1.3.2-确界存在定理">定理1.3.2 （确界存在定理）</h5>
 <p>有上（下）界的数列必存在上（下）确界。</p>
-<p>只证上界：d （Bolzano二分法）取 <span
-class="math inline">\(a_{1}\)</span> 是集合 <span
+<p>只证上界：取 <span class="math inline">\(a_{1}\)</span> 是集合 <span
 class="math inline">\(E\)</span> 中的任何一个数， <span
 class="math inline">\(b_{1}\)</span> 是集合的上界。令 <span
 class="math inline">\(c_{n}= \frac{a_{n}+b_{n}}{2}\)</span> ，若 <span
 class="math inline">\(c_{n}\)</span> 是上界，则令 <span
 class="math inline">\(a_{n+1}=c_{n},b_{n+1}=b_{n}\)</span> ；若 <span
 class="math inline">\(c_{n}\)</span> 不是上界，则令 <span
-class="math inline">\(a_{n+1}=a_{n},b_{n+1}=c_{n}\)</span> 。 令 <span
-class="math inline">\(n\to \infty\)</span> ，由闭区间套定理，存在唯一的
-<span class="math inline">\(M&gt;x,x\in E\)</span> ， <span
-class="math inline">\(M\)</span> 是上界。对于 <span
+class="math inline">\(a_{n+1}=a_{n},b_{n+1}=c_{n}\)</span> 。</p>
+<p>令 <span class="math inline">\(n\to \infty\)</span>
+，由闭区间套定理，存在唯一的 <span class="math inline">\(M&gt;x,x\in
+E\)</span> ， <span class="math inline">\(M\)</span> 是上界。对于 <span
 class="math inline">\(\forall \epsilon&gt;0\)</span> ，由 <span
 class="math inline">\(a_{n}\to M\)</span> 可知存在 <span
 class="math inline">\(N\)</span> 使得 <span
@@ -426,7 +428,8 @@ n\)</span> ，且 <span class="math inline">\(a_{n},b_{n}\to \xi\)</span>
 。</p>
 <p>如果没有 <span class="math inline">\(b_{n}-a_{n}\to 0\)</span>
 的条件，则闭区间交为闭区间。</p>
-<p>同时证明（1）（2）： 由 <span
+<p>同时证明（1）（2）：</p>
+<p>由 <span
 class="math inline">\([a_{n+1},b_{n+1}]\subset[a_{n},b_{n}]\)</span>
 ，则 <span class="math inline">\(a_{n}\le a_{n+1}\le b_{n+1}\le
 b_{n}\)</span> ，故 <span class="math inline">\(\{ a_{n} \},\{ b_{n}
@@ -438,14 +441,14 @@ class="math inline">\(b_{n}-a_{n} \to 0\)</span> ，故 <span
 class="math inline">\(a=b\)</span> ，存在唯一 <span
 class="math inline">\(\xi=a=b\)</span> ，（1） <span
 class="math inline">\(\blacksquare\)</span> 。</p>
-<p>用 Heine-Borel 证（1）： 唯一性：假设存在 <span
-class="math inline">\(\xi_{1},\xi_{2}\)</span> 满足，存在区间 <span
-class="math inline">\(\xi_{1},\xi_{2}\in I\)</span> ，由 <span
-class="math inline">\(|I|\le|a_{n}-b_{n}|,a_{n}-b_{n}\to 0\)</span> 可知
-<span class="math inline">\(|I|=0\)</span> ， <span
-class="math inline">\(\xi_{1}=\xi_{2}\)</span> 。 反证法：假设不存在
-<span class="math inline">\(\xi\)</span> ，即 <span
-class="math inline">\(\bigcap_{n}[a_{n},b_{n}]=\emptyset\)</span>
+<p>用 Heine-Borel 证（1）：</p>
+<p>唯一性：假设存在 <span class="math inline">\(\xi_{1},\xi_{2}\)</span>
+满足，存在区间 <span class="math inline">\(\xi_{1},\xi_{2}\in I\)</span>
+，由 <span class="math inline">\(|I|\le|a_{n}-b_{n}|,a_{n}-b_{n}\to
+0\)</span> 可知 <span class="math inline">\(|I|=0\)</span> ， <span
+class="math inline">\(\xi_{1}=\xi_{2}\)</span> 。</p>
+<p>反证法：假设不存在 <span class="math inline">\(\xi\)</span> ，即
+<span class="math inline">\(\bigcap_{n}[a_{n},b_{n}]=\emptyset\)</span>
 ，取一个 <span class="math inline">\(a_{n},b_{n}\)</span> 的上下界 <span
 class="math inline">\(a,b\)</span> ，以 <span
 class="math inline">\((a,b)\)</span> 为全集取补，得 <span
@@ -466,8 +469,8 @@ class="math inline">\(\min,\max\)</span>
 <p>Proof： 先证明：有界数列均包含单调子列。 设 <span
 class="math inline">\(b_{n}=\sup_{k\ge n} a_{k}\)</span> 。由 <span
 class="math inline">\(\sup\)</span> 集合逐渐减少， <span
-class="math inline">\(b_{n}\)</span> （非严格）单调递减。 若 <span
-class="math inline">\(\exists n\)</span> 使得 <span
+class="math inline">\(b_{n}\)</span> （非严格）单调递减。</p>
+<p>若 <span class="math inline">\(\exists n\)</span> 使得 <span
 class="math inline">\(b_{n} \ne a_{k},k\ge n\)</span> ，令 <span
 class="math inline">\(k_{1}=k\)</span> ，<span
 class="math inline">\(k_{n+1}\)</span> 为最小 <span
@@ -534,16 +537,17 @@ class="math inline">\(\sigma\)</span> 称为 Lebesgue 数。</p>
 <p>Proof： 先取一个有限开覆盖，将其端点从大到小排列（去重） <span
 class="math inline">\(x_{1}&lt;x_{2}&lt;x_{3}&lt;\dots&lt;x_{n}\)</span>
 ，令 <span class="math inline">\(\sigma=\min\{ x_{n+1}-x_{n} \}\)</span>
-。下证明合理： 任取闭区间 <span
-class="math inline">\(I=[x,y],|I|&lt;\sigma\)</span> 。由取法可知，
-<span class="math inline">\(I\)</span> 至多含一个端点。 若 <span
-class="math inline">\(I\)</span> 不含端点，设 <span
+。下证明合理：</p>
+<p>任取闭区间 <span class="math inline">\(I=[x,y],|I|&lt;\sigma\)</span>
+。由取法可知， <span class="math inline">\(I\)</span>
+至多含一个端点。</p>
+<p>若 <span class="math inline">\(I\)</span> 不含端点，设 <span
 class="math inline">\(x_{0}\in[x,y]\)</span> 被 <span
 class="math inline">\(I_{s}\)</span> 覆盖，则 <span
 class="math inline">\(I_{s}\)</span> 左右端点一定大于/小于 <span
 class="math inline">\(x,y\)</span> ，故 <span
-class="math inline">\(I\subset I_{s}\)</span> 。 若 <span
-class="math inline">\(I\)</span> 含端点 <span
+class="math inline">\(I\subset I_{s}\)</span> 。</p>
+<p>若 <span class="math inline">\(I\)</span> 含端点 <span
 class="math inline">\(x_{s}\)</span> ，不妨设是左端点，设 <span
 class="math inline">\(x_{s}\)</span> 左邻域被 <span
 class="math inline">\(I_{s}\)</span> 覆盖，其右端点大于 <span
@@ -552,17 +556,17 @@ class="math inline">\(I\subset I_{s}\)</span> 。 <span
 class="math inline">\(\blacksquare\)</span> 。</p>
 <h5 id="性质1.4.5-无穷大无穷小的性质">性质1.4.5
 （无穷大/无穷小的性质）</h5>
-<p>（1）无穷小（大）的和（差/积）为无穷小（大） （2）<span
-class="math inline">\(\{ a_{n} \}\)</span> 无穷小（大）， <span
-class="math inline">\(\{ c_{n} \}\)</span> 有界， <span
-class="math inline">\(\{ a_{n}c_{n} \}\)</span> 为无穷小（大）
-（3）若对于充分大的 <span class="math inline">\(n\)</span> ，有 <span
+<p>（1）无穷小（大）的和（差/积）为无穷小（大）</p>
+<p>（2）<span class="math inline">\(\{ a_{n} \}\)</span> 无穷小（大），
+<span class="math inline">\(\{ c_{n} \}\)</span> 有界， <span
+class="math inline">\(\{ a_{n}c_{n} \}\)</span> 为无穷小（大）</p>
+<p>（3）若对于充分大的 <span class="math inline">\(n\)</span> ，有 <span
 class="math inline">\(0\le |a_{n}|\le |b_{n}|\)</span> 。若 <span
 class="math inline">\(\{ b_{n} \}\)</span> 无穷小，则 <span
 class="math inline">\(\{ a_{n} \}\)</span> 为无穷小；若 <span
 class="math inline">\(\{ a_{n} \}\)</span> 无穷大，则 <span
-class="math inline">\(\{ b_{n} \}\)</span> 无穷大。
-（4）无穷大数列必无界；无穷大数列任意子列必为无穷大数列；无界数列必有无穷大子列。</p>
+class="math inline">\(\{ b_{n} \}\)</span> 无穷大。</p>
+<p>（4）无穷大数列必无界；无穷大数列任意子列必为无穷大数列；无界数列必有无穷大子列。</p>
 <p>Proof： （1）（2）（3）（4）证明与有限形式相似，略。</p>
 <h5 id="定义-1.5.3-1.5.4-1.5.5-上下极限">定义 1.5.3 1.5.4 1.5.5
 （上下极限）</h5>
@@ -593,14 +597,14 @@ a_{k_{n}} &gt; l-\epsilon
 \]</span> 则 <span class="math display">\[
 \limsup_{ n \to \infty } a_{n} := l
 \]</span> 上下极限为无穷时定义于极限类似。</p>
-<p>定义二的合理性： <span class="math inline">\(b_{n}=\sup_{k\ge n}\{
-a_{k} \}\)</span>
+<p>定义二的合理性：</p>
+<p><span class="math inline">\(b_{n}=\sup_{k\ge n}\{ a_{k} \}\)</span>
 数列单调递减，由性质1.2.6单调数列一定收敛于其下确界，即 <span
 class="math inline">\(\lim=\inf\)</span> ，右端两式相等。</p>
-<p>定义三的合理性： 证明 <span class="math inline">\(l\)</span>
-的唯一性：若 <span class="math inline">\(l_{1}&lt;l_{2}\)</span>
-都满足定义三条件，取 <span class="math inline">\(\epsilon=
-\frac{l_{2}-l_{1}}{2}\)</span> 对 <span
+<p>定义三的合理性：</p>
+<p>证明 <span class="math inline">\(l\)</span> 的唯一性：若 <span
+class="math inline">\(l_{1}&lt;l_{2}\)</span> 都满足定义三条件，取 <span
+class="math inline">\(\epsilon= \frac{l_{2}-l_{1}}{2}\)</span> 对 <span
 class="math inline">\(l_{2}\)</span> 使用条件（2）， <span
 class="math inline">\(\exists \{ a_{k_{n}} \}\)</span> 使得 <span
 class="math inline">\(a_{k_{n}}&gt;l_{2}-\epsilon\)</span> ，对 <span
@@ -612,55 +616,55 @@ class="math inline">\(a_{n}&lt;l_{1}+\epsilon=
 class="math inline">\(n&gt;N\)</span> 时，<span
 class="math inline">\(\frac{l_{1}+l_{2}}{2}&gt;a_{k_{n}}&gt;
 \frac{l_{1}+l_{2}}{2}\)</span> ，矛盾！ <span
-class="math inline">\(\blacksquare\)</span> 。 证明 <span
-class="math inline">\(l\)</span> 的存在性：定义一、二给出了 <span
-class="math inline">\(l\)</span>
+class="math inline">\(\blacksquare\)</span> 。</p>
+<p>证明 <span class="math inline">\(l\)</span>
+的存在性：定义一、二给出了 <span class="math inline">\(l\)</span>
 的构造方案。（暂时想不到怎么直接证明）</p>
-<p>定义一 <span class="math inline">\(\implies\)</span> 定义三
-（1）反证法：假定 <span class="math inline">\(\exists
+<p>定义一 <span class="math inline">\(\implies\)</span> 定义三</p>
+<p>（1）反证法：假定 <span class="math inline">\(\exists
 \epsilon&gt;0\)</span> ， <span class="math inline">\(\forall N\)</span>
 ， <span class="math inline">\(\exists n_{N}\)</span> 使得 <span
 class="math inline">\(a_{n_{N}}\ge l+\epsilon\)</span> ，由
 Bolzano-Weierstrass ， <span class="math inline">\(a_{n_{N}}\)</span>
 存在一个收敛子列，并且由不等式，其极限大于 <span
-class="math inline">\(l\)</span> 。矛盾！ （2）反证法：假定 <span
-class="math inline">\(\exists \epsilon&gt;0\)</span> ， <span
-class="math inline">\(\forall \{ a_{k_{n}} \}\le l-\epsilon\)</span>
-，则对于收敛子列其极限 <span
+class="math inline">\(l\)</span> 。矛盾！</p>
+<p>（2）反证法：假定 <span class="math inline">\(\exists
+\epsilon&gt;0\)</span> ， <span class="math inline">\(\forall \{
+a_{k_{n}} \}\le l-\epsilon\)</span> ，则对于收敛子列其极限 <span
 class="math inline">\(l&#39;&lt;l-\epsilon\)</span> ，取 <span
 class="math inline">\(\sup\)</span> ，故 <span
 class="math inline">\(l&lt;l-\epsilon\)</span> 矛盾！ <span
 class="math inline">\(\blacksquare\)</span> 。</p>
-<p>定义三 <span class="math inline">\(\implies\)</span> 定义一 （1）
-<span class="math inline">\(\forall \epsilon&gt;0\)</span> ， <span
-class="math inline">\(\exists N\)</span> ，使得 <span
+<p>定义三 <span class="math inline">\(\implies\)</span> 定义一</p>
+<p>（1） <span class="math inline">\(\forall \epsilon&gt;0\)</span> ，
+<span class="math inline">\(\exists N\)</span> ，使得 <span
 class="math inline">\(\forall n&gt;N\)</span> 满足 <span
 class="math inline">\(a_{n}&lt;l+\epsilon\)</span> 。则对于收敛子列，
 其极限 <span class="math inline">\(l&#39;&lt;l+\epsilon\)</span> ，令
 <span class="math inline">\(\epsilon\to 0\)</span> ，则 <span
 class="math inline">\(\forall l&#39;\in E\)</span> ，有 <span
-class="math inline">\(l&#39;\le l\)</span> 。 （2）<span
-class="math inline">\(\forall \epsilon&gt;0\)</span> ，<span
-class="math inline">\(\exists \{ a_{k_{n}} \}\)</span> 使得 <span
-class="math inline">\(a_{k_{n}}&gt;l-\epsilon\)</span> ，由
+class="math inline">\(l&#39;\le l\)</span> 。</p>
+<p>（2）<span class="math inline">\(\forall \epsilon&gt;0\)</span>
+，<span class="math inline">\(\exists \{ a_{k_{n}} \}\)</span> 使得
+<span class="math inline">\(a_{k_{n}}&gt;l-\epsilon\)</span> ，由
 Bolzano-Weierstrass ，可知存在收敛子列 <span class="math inline">\(\{
 a_{p_{n}} \}\)</span> ，其极限 <span class="math inline">\(l&#39;\ge
 l\)</span> 。<span class="math inline">\(\blacksquare\)</span> 。</p>
-<p>定义二 <span class="math inline">\(\implies\)</span> 定义三 （1）由
-<span class="math inline">\(\inf\)</span> 定义， <span
+<p>定义二 <span class="math inline">\(\implies\)</span> 定义三</p>
+<p>（1）由 <span class="math inline">\(\inf\)</span> 定义， <span
 class="math inline">\(\forall \epsilon&gt;0\)</span> ，<span
 class="math inline">\(\exists N\)</span> ，使得 <span
 class="math inline">\(\sup_{n\ge k} a_{n}&lt;l-\epsilon\)</span> ，故
 <span class="math inline">\(\forall n\ge k\)</span> 由 <span
-class="math inline">\(a_{n}&lt;l-\epsilon\)</span> 。 （2-1）若 <span
-class="math inline">\(\exists k_{0}\)</span> 使得 <span
-class="math inline">\(\sup_{n\ge k_{0}}a_{n}\ne a_{k},\forall k\ge
+class="math inline">\(a_{n}&lt;l-\epsilon\)</span> 。</p>
+<p>（2-1）若 <span class="math inline">\(\exists k_{0}\)</span> 使得
+<span class="math inline">\(\sup_{n\ge k_{0}}a_{n}\ne a_{k},\forall k\ge
 k_{0}\)</span> ，由 <span class="math inline">\(\sup\)</span> 定义，
 <span class="math inline">\(\forall \epsilon=1/n\)</span> ， <span
 class="math inline">\(\exists a_{k_{n}}&gt;l-\epsilon\)</span> ，故
 <span class="math inline">\(\{ a_{k_{n}} \}\)</span> 满足 <span
-class="math inline">\(a_{k_{n}}&gt;l-\epsilon\)</span> 。 （2-2）若
-<span class="math inline">\(\forall k_{0}\)</span> 都 <span
+class="math inline">\(a_{k_{n}}&gt;l-\epsilon\)</span> 。</p>
+<p>（2-2）若 <span class="math inline">\(\forall k_{0}\)</span> 都 <span
 class="math inline">\(\exists k\)</span> 满足 <span
 class="math inline">\(\sup_{n\ge k_{0}}a_{n}= a_{k},\forall k\ge
 k_{0}\)</span> ，取 <span class="math inline">\(k_{n+1}\)</span> 为满足
@@ -681,9 +685,9 @@ class="math inline">\(\{ \sup_{k\ge n} a_{k} \}\)</span>
 class="math inline">\(\exists N\)</span> 使得 <span
 class="math inline">\(\forall n&gt;N\)</span> 由 <span
 class="math inline">\(a_{n}&lt;l+\epsilon\)</span> ，即 <span
-class="math inline">\(\sup a_{n}&lt;l+\epsilon\)</span>。 （2）<span
-class="math inline">\(\forall \epsilon&gt;0\)</span> ， <span
-class="math inline">\(\exists \{ a_{k_{n}} \}\)</span> 使得 <span
+class="math inline">\(\sup a_{n}&lt;l+\epsilon\)</span>。</p>
+<p>（2）<span class="math inline">\(\forall \epsilon&gt;0\)</span> ，
+<span class="math inline">\(\exists \{ a_{k_{n}} \}\)</span> 使得 <span
 class="math inline">\(a_{k_{n}}&gt;l-\epsilon\)</span> 。有不等式 <span
 class="math inline">\(\sup_{k\ge n} a_{n}\ge\sup_{k\ge
 n}a_{k_{n}}&gt;l-\epsilon\)</span> 。令 <span
@@ -695,7 +699,8 @@ class="math inline">\(\blacksquare\)</span> 。</p>
 class="math inline">\(E\)</span> 的性质）</h5>
 <p><span class="math inline">\(E\)</span> 非空。 <span
 class="math inline">\(\sup E \in E,\inf E\in E\)</span> 。</p>
-<p>Proof： （1）Bolzano-Weierstrass （2）定义三。</p>
+<p>Proof： （1）Bolzano-Weierstrass</p>
+<p>（2）定义三。</p>
 <h5 id="性质1.5.6-上下极限与极限">性质1.5.6 （上下极限与极限）</h5>
 <p><span class="math display">\[
 \liminf_{ n \to \infty } a_{n} \le \limsup_{ n \to \infty } a_{n}
@@ -890,17 +895,18 @@ class="math inline">\(k\)</span> 为压缩 常数。</p>
 <p>压缩映射函数 <span class="math inline">\(f\)</span> 满足以下命题：
 （1） <span class="math inline">\(f\)</span> 在 <span
 class="math inline">\([a,b]\)</span> 存在唯一的不动点 <span
-class="math inline">\(\xi=f(\xi)\)</span> （2）若 <span
-class="math inline">\(\{ a_{n} \}\)</span> 递推式为 <span
-class="math inline">\(a_{n+1}=f(a_{n})\)</span> ，则 <span
+class="math inline">\(\xi=f(\xi)\)</span></p>
+<p>（2）若 <span class="math inline">\(\{ a_{n} \}\)</span> 递推式为
+<span class="math inline">\(a_{n+1}=f(a_{n})\)</span> ，则 <span
 class="math inline">\(\{ a_{n} \}\)</span> 收敛于 <span
-class="math inline">\(\xi\)</span> （3） <span
-class="math inline">\(|a_{n}-\xi|\le
+class="math inline">\(\xi\)</span></p>
+<p>（3） <span class="math inline">\(|a_{n}-\xi|\le
 \frac{k}{1-k}|a_{n}-a_{n-1}|\)</span> ， <span
 class="math inline">\(|a_{n}-\xi|\le
 \frac{k^{n}}{1-k}|a_{1}-a_{0}|\)</span></p>
-<p>Proof： （1） 存在性：任取一个数列 <span class="math inline">\(\{
-a_{n} \}\)</span> ，则 <span class="math display">\[
+<p>Proof： （1）</p>
+<p>存在性：任取一个数列 <span class="math inline">\(\{ a_{n} \}\)</span>
+，则 <span class="math display">\[
 \begin{aligned}
 |a_{n+p}-a_{n}|&amp;\le\sum_{i=1}^{p}|a_{n+i}-a_{n+i-1}|\\
 &amp;\le \left( \sum_{i=1}^{p} k^{n+i} \right) |a_{1}-a_{0}| \\
@@ -910,12 +916,13 @@ a_{n} \}\)</span> ，则 <span class="math display">\[
 <span class="math inline">\(a_{n}\to \xi\)</span> ，则 <span
 class="math inline">\(f(a_{n})\to f(\xi)\)</span> ，由 <span
 class="math inline">\(a_{n+1}=f(a_{n})\)</span> 得 <span
-class="math inline">\(f(\xi)=\xi\)</span> 唯一性：假定有不动点 <span
+class="math inline">\(f(\xi)=\xi\)</span></p>
+<p>唯一性：假定有不动点 <span
 class="math inline">\(\xi_{1},\xi_{2}\)</span> ，则 <span
 class="math inline">\(|\xi_{1}-\xi_{2}|=|f(\xi_{1})-f(\xi_{2})|&lt;|\xi_{1}-\xi_{2}|\)</span>
 。矛盾！ <span class="math inline">\(\blacksquare\)</span> 。</p>
-<p>（2）收敛在（1）已证。 （3）对于第一个不等式，有 <span
-class="math display">\[
+<p>（2）收敛在（1）已证。</p>
+<p>（3）对于第一个不等式，有 <span class="math display">\[
 \begin{aligned}
 |a_{n}-\xi|&amp;=|f(a_{n-1})-f(\xi)|&lt;|a_{n-1}-\xi|\\
 &amp;\le|a_{n}-\xi|+|a_{n}-a_{n-1}|
@@ -937,16 +944,17 @@ e_{n}&amp;:=\left( 1+\frac{1}{n} \right)^{n}\\
 s_{n}&amp;:=1+\frac{1}{1!}+\frac{1}{2!}+\dots+\frac{1}{n!}
 \end{aligned}
 \]</span> 有以下性质 （1） <span
-class="math inline">\(e_{n},s_{n}\)</span> 均严格递增， （2）<span
-class="math inline">\(e_{n}\le s_{n}\)</span> （3） <span
-class="math inline">\(e_{n},s_{n}\)</span> 收敛且相等 定义： <span
-class="math display">\[
+class="math inline">\(e_{n},s_{n}\)</span> 均严格递增，有界，收敛</p>
+<p>（2）<span class="math inline">\(e_{n}\le s_{n}\)</span></p>
+<p>（3） <span class="math inline">\(e_{n},s_{n}\)</span> 收敛且相等</p>
+<p>定义： <span class="math display">\[
 e:=\lim_{ n \to +\infty } e_{n} =\lim_{ n \to +\infty } s_{n}
 \]</span></p>
 <p>Proof： （1）严格递增：<span class="math inline">\(e_{n}\)</span>
-使用 AM-GM ， <span class="math inline">\(s_{n}\)</span> 显然。
-（2）展开即证 （3） 先证明 <span class="math inline">\(s_{n}\)</span>
-收敛： <span class="math display">\[
+使用 AM-GM ， <span class="math inline">\(s_{n}\)</span> 显然。</p>
+<p>（2）展开即证</p>
+<p>（3） 先证明 <span class="math inline">\(s_{n}\)</span> 收敛： <span
+class="math display">\[
 \begin{aligned}
 s_{n}&amp;=1+\frac{1}{1!}+\frac{1}{2!}+\dots+\frac{1}{n!}\\
 &amp;&lt;1+\frac{1}{1}+\frac{1}{2}+\frac{1}{4}+\dots+\frac{1}{2^{n-1}}\\
