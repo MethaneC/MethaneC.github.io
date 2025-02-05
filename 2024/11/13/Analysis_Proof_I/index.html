@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.2.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Times+New+Roman:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Part 1 数列极限 性质1.1.3 （收敛数列的性质） 若 \(a_{n}\to a\) ， \(\{ a_{n} \}\) 的任何子列都收敛于 \(a\) 。 Proof： 假设子列为 \(a_{k_{n}}\) 。由收敛到 \(a\) 得，对于 \(\forall\epsilon&gt;0\) ，\(\exists N\) 使得 \(\forall n&gt;N\) 有 \(|a_">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Analysis Proof I">
+<meta property="og:url" content="http://example.com/2024/11/13/Analysis_Proof_I/index.html">
+<meta property="og:site_name" content="Methane">
+<meta property="og:description" content="Part 1 数列极限 性质1.1.3 （收敛数列的性质） 若 \(a_{n}\to a\) ， \(\{ a_{n} \}\) 的任何子列都收敛于 \(a\) 。 Proof： 假设子列为 \(a_{k_{n}}\) 。由收敛到 \(a\) 得，对于 \(\forall\epsilon&gt;0\) ，\(\exists N\) 使得 \(\forall n&gt;N\) 有 \(|a_">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-11-12T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-01-11T08:29:27.953Z">
+<meta property="article:author" content="Methane">
+<meta property="article:tag" content="Note">
+<meta property="article:tag" content="Analysis">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2024/11/13/Analysis_Proof_I/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2024/11/13/Analysis_Proof_I/","path":"2024/11/13/Analysis_Proof_I/","title":"Analysis Proof I"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Analysis Proof I | Methane</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Methane</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">subtitle</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Methane"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Methane</p>
+  <div class="site-description" itemprop="description">description</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/11/13/Analysis_Proof_I/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Methane">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Methane">
+      <meta itemprop="description" content="description">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Analysis Proof I | Methane">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Analysis Proof I
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-11-13 00:00:00" itemprop="dateCreated datePublished" datetime="2024-11-13T00:00:00+08:00">2024-11-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-01-11 16:29:27" itemprop="dateModified" datetime="2025-01-11T16:29:27+08:00">2025-01-11</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Valine：</span>
+  
+    <a title="valine" href="/2024/11/13/Analysis_Proof_I/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2024/11/13/Analysis_Proof_I/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h3 id="part-1-数列极限">Part 1 数列极限</h3>
+<h5 id="性质1.1.3-收敛数列的性质">性质1.1.3 （收敛数列的性质）</h5>
+<p>若 <span class="math inline">\(a_{n}\to a\)</span> ， <span
+class="math inline">\(\{ a_{n} \}\)</span> 的任何子列都收敛于 <span
+class="math inline">\(a\)</span> 。</p>
+<p>Proof： 假设子列为 <span class="math inline">\(a_{k_{n}}\)</span>
+。由收敛到 <span class="math inline">\(a\)</span> 得，对于 <span
+class="math inline">\(\forall\epsilon&gt;0\)</span> ，<span
+class="math inline">\(\exists N\)</span> 使得 <span
+class="math inline">\(\forall n&gt;N\)</span> 有 <span
+class="math inline">\(|a_{n}-a|&lt;\epsilon\)</span> ，由于 <span
+class="math inline">\(k_{n}&gt;n&gt;N\)</span> ，故 <span
+class="math inline">\(|a_{k_{n}}-a|&lt;\epsilon\)</span> ， <span
+class="math inline">\(\blacksquare\)</span> 。</p>
+<h5 id="性质1.1.5-极限的唯一性">性质1.1.5 （极限的唯一性）</h5>
+<p>一个收敛数列的极限是唯一的。</p>
+<p>Proof： 反证法：假设收敛到 <span class="math inline">\(x,y\)</span>
+，其中 <span class="math inline">\(x\ne y\)</span> ，取 <span
+class="math inline">\(\epsilon = \frac{|x-y|}{2}\)</span> ，存在 <span
+class="math inline">\(N_{1},N_{2}\)</span> 使得 <span
+class="math inline">\(|a_{n_{1}}-x|&lt;\epsilon\)</span> ，<span
+class="math inline">\(a_{n_{2}}-y&lt;\epsilon\)</span> ，令 <span
+class="math inline">\(n&gt;\max\{ N_{1},N_{2} \}\)</span> ，此时 <span
+class="math inline">\(|a_{n}-x|&lt;\epsilon,|a_{n}-y|&lt;\epsilon\)</span>
+，由绝对值不等式 <span
+class="math inline">\(|x-y|&lt;|a_{n}-x|+|a_{n}-y|&lt;2\epsilon=|x-y|\)</span>
+矛盾！<span class="math inline">\(\blacksquare\)</span> 。</p>
+<h5 id="性质1.1.6极限的四则运算">性质1.1.6（极限的四则运算）</h5>
+<p>若 <span class="math inline">\(\{ a_{n} \},\{ b_{n} \}\)</span>
+收敛，且 <span class="math inline">\(a_{n}\to a,b_{n}\to b\)</span>
+，那么： <span class="math display">\[
+\begin{aligned}
+&amp;\lim_{ n \to \infty } (a_{n} \pm b_{n})=a\pm b \\
+&amp;\lim_{ n \to \infty } (a_{n} b_{n})=ab \\
+&amp;\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}=\frac{a}{b},(b \ne 0)
+\end{aligned}
+\]</span></p>
+<p>（1）由收敛，对于 <span class="math inline">\(\forall \epsilon_{0}=
+\frac{\epsilon}{2}&gt;0\)</span> ，<span class="math inline">\(\exists
+N\)</span> 使得 <span class="math inline">\(\forall n&gt;N\)</span> 都有
+<span
+class="math inline">\(|a_{n}-a|&lt;\epsilon_{0},|b_{n}-b|&lt;\epsilon_{0}\)</span>
+，由绝对值不等式， <span
+class="math inline">\(|a_{n}+b_{n}-a-b|&lt;2\epsilon_{0}\)</span> ，
+<span class="math inline">\(\blacksquare\)</span> 。</p>
+<p>（2）由收敛，<span class="math inline">\(\exists M\)</span> ， <span
+class="math inline">\(|a_{n}|&lt;M,|b|&lt;M\)</span> ，并且对于 <span
+class="math inline">\(\forall \epsilon&gt;0\)</span> ，<span
+class="math inline">\(\exists N\)</span> 使得 <span
+class="math inline">\(\forall n&gt;N\)</span> 都有 <span
+class="math inline">\(|a_{n}-a|&lt;\epsilon_{0},|b_{n}-b|&lt;\epsilon_{0}\)</span>
+，由绝对值不等式， <span class="math display">\[
+\begin{aligned}
+&amp;|a_{n}b_{n}-ab|\\
+&amp;=|a_{n}b_{n}-a_{n}b+a_{n}b-ab|\\
+&amp;&lt;|a_{n}||b_{n}-b|+|b||a_{n}-a|\\&amp;&lt;2M\epsilon
+\quad\blacksquare  
+\end{aligned}
+\]</span> 注：在这里省略了 <span class="math inline">\(N\)</span>
+取较大的值，后文均省略；若在极限最后算出来 <span
+class="math inline">\(k\epsilon_{0}\)</span> ，<span
+class="math inline">\(k\)</span> 是一个常数，同样可以证明收敛，仅需要取
+<span class="math inline">\(\epsilon_{0}\)</span> 时为 <span
+class="math inline">\(\frac{\epsilon}{k}\)</span>
+，以后均省略这个操作。</p>
+<p>（3）同理。</p>
+<h5 id="性质1.1.7-收敛数列的不等式性质">性质1.1.7
+（收敛数列的不等式性质）</h5>
+<p>若 <span class="math inline">\(\{ a_{n} \},\{ b_{n} \}\)</span>
+收敛，且当 <span class="math inline">\(n\)</span> 充分大时，有 <span
+class="math inline">\(a_{n}\le b_{n}\)</span> ，则 <span
+class="math inline">\(a\le b\)</span> 。（保号性）</p>
+<p>若 <span class="math inline">\(\{ a_{n} \},\{ b_{n} \}\)</span>
+收敛，且当 <span class="math inline">\(n\)</span> 充分大时，有 <span
+class="math inline">\(a_{n}&lt; b_{n}\)</span> ，则 <span
+class="math inline">\(a\le b\)</span> 。（模糊保号性）</p>
+<p>Proof： 由极限四则运算，仅需证明，若 <span class="math inline">\(\{
+a_{n} \}\)</span> 中 <span class="math inline">\(a_{n}\ge 0\)</span>
+，那么 <span class="math inline">\(a\ge 0\)</span> 。 反证法：假定 <span
+class="math inline">\(a&lt;0\)</span> ，取 <span
+class="math inline">\(\epsilon=|a|\)</span> ，存在 <span
+class="math inline">\(N\)</span> 使得 <span
+class="math inline">\(\forall n&gt;N\)</span> 有 <span
+class="math inline">\(|a_{n}-a|&lt;\epsilon\)</span> ，故 <span
+class="math inline">\(a-\epsilon&lt;a_{n}&lt;a+\epsilon=0\)</span>
+，矛盾！ <span class="math inline">\(\blacksquare\)</span> 。</p>
+<h5 id="性质1.1.8-夹逼定理">性质1.1.8 （夹逼定理）</h5>
+<p>若对于充分大的 <span class="math inline">\(n\)</span> 有 <span
+class="math inline">\(a_{n}\le b_{n}\le c_{n}\)</span> ，且 <span
+class="math display">\[
+\lim_{ n \to \infty } a_{n}=\lim_{ n \to \infty } c_{n}=x
+\]</span> 则 <span class="math display">\[
+\lim_{ n \to \infty } b_{n}=x
+\]</span></p>
+<p>Proof： 由收敛，对于 <span class="math inline">\(\forall
+\epsilon&gt;0\)</span> ，<span class="math inline">\(\exists N\)</span>
+使得 <span class="math inline">\(\forall n&gt;N\)</span> 都有 <span
+class="math inline">\(|a_{n}-x|&lt;\epsilon\,|c_{n}-x|&lt;\epsilon\)</span>
+，即 <span
+class="math inline">\(x-\epsilon&lt;a_{n}&lt;b_{n}&lt;c_{n}&lt;x+\epsilon\)</span>
+，<span class="math inline">\(\blacksquare\)</span> 。</p>
+<hr />
+<h5 id="性质1.2.2-收敛必有界">性质1.2.2 （收敛必有界）</h5>
+<p>收敛数列必有界。</p>
+<p>Proof： 由收敛， <span class="math inline">\(\forall
+\epsilon&gt;0\)</span> ， <span class="math inline">\(\exists N\)</span>
+，满足 <span class="math inline">\(\forall n&gt;N\)</span> ， <span
+class="math inline">\(|a_{n}-a|&lt;\epsilon\)</span> ，由于 <span
+class="math inline">\(a_{1}\dots a_{N}\)</span> 有界， <span
+class="math inline">\(a_{N+1},a_{N+2}\dots\)</span> 有界，故 <span
+class="math inline">\(\{ a_{n} \}\)</span> 有界。</p>
+<h5 id="性质1.2.4-确界的性质">性质1.2.4 （确界的性质）</h5>
+<p><span class="math display">\[
+\begin{aligned}  
+\inf\{ a_{n} \}&amp;\le a_{n}\\
+\sup\{ a_{n} \}&amp;\ge a_{n}\\
+\inf\{ a_{n} +x\}&amp;=\inf\{ a_{n} \}+x,\text{x is constant}  \\
+\sup\{ a_{n} +x\}&amp;=\sup\{ a_{n} \}+x,\text{x is constant}\\
+\inf\{ a_{n}+b_{n} \}&amp;\ge \inf a_{n}+\inf b_{n} \\
+\sup\{ a_{n}+b_{n} \}&amp;\le \sup a_{n}+\sup b_{n} \\
+\end{aligned}
+\]</span></p>
+<p>只证 <span class="math inline">\(\inf\)</span> ， <span
+class="math inline">\(\sup\)</span> 同理： （1）（2）由定义显然</p>
+<p>（3） <span class="math display">\[
+\begin{aligned}
+\inf\{ a_{n}+b_{n} \}\ge \inf\{ a_{n}+\inf b_{n} \}=\inf a_{n}+\inf
+b_{n} \quad \blacksquare  
+\end{aligned}
+\]</span></p>
+<h5 id="性质1.2.5-确界的不等式性质">性质1.2.5 （确界的不等式性质）</h5>
+<p>如果 <span class="math inline">\(a_{n} &gt; b_{n}\)</span> ，则 <span
+class="math inline">\(\inf\{ a_{n} \}\ge\inf\{ b_{n} \}\)</span> ，
+<span class="math inline">\(\sup\{ a_{n} \}\ge\sup\{ b_{n} \}\)</span>
+。（同样存在模糊保号性）</p>
+<p>如果 <span class="math inline">\(a_{n} &lt; b_{n}\)</span> ，则 <span
+class="math inline">\(\inf\{ a_{n} \}\le\inf\{ b_{n} \}\)</span> ，
+<span class="math inline">\(\sup\{ a_{n} \}\le\sup\{ b_{n} \}\)</span>
+。</p>
+<p>只证（1）的 <span class="math inline">\(\inf\)</span> ： 反证法：假设
+<span class="math inline">\(\inf \{ a_{n} \} &lt;\inf \{ b_{n}
+\}\)</span> ，设其确界分别为 <span class="math inline">\(x,y\)</span>
+，由定义， 取 <span class="math inline">\(\epsilon=y-x&gt;0\)</span>
+，存在 <span class="math inline">\(a_{t}&lt; x+\epsilon=y\)</span>
+；对于 <span class="math inline">\(b_{n}\)</span> 有 <span
+class="math inline">\(b_{n}\ge y&gt; a_{t}\)</span> ，矛盾！<span
+class="math inline">\(\blacksquare\)</span> 。</p>
+<h5 id="性质1.2.6-单调数列的确界与极限">性质1.2.6
+（单调数列的确界与极限）</h5>
+<p>若 <span class="math inline">\(\{ a_{n} \}\)</span>
+单调递增且收敛，则 <span class="math inline">\(a_{n}\to \sup\{ a_{n}
+\}\)</span></p>
+<p>若 <span class="math inline">\(\{ a_{n} \}\)</span>
+单调递减且收敛，则 <span class="math inline">\(a_{n}\to \inf\{ a_{n}
+\}\)</span></p>
+<p>只证单调递增情况： 设 <span class="math inline">\(\sup \{ a_{n}
+\}=l\)</span> ，由定义， <span class="math inline">\(a_{n}\le l\)</span>
+，<span class="math inline">\(\forall \epsilon&gt;0\)</span> ， <span
+class="math inline">\(\exists N\)</span> 满足 <span
+class="math inline">\(a_{N}&gt;l+\epsilon\)</span> ，由单调递增，对于
+<span class="math inline">\(\forall n&gt;N\)</span> 都有 <span
+class="math inline">\(l-\epsilon&lt;a_{n}&lt;l&lt;l+\epsilon\)</span>
+，<span class="math inline">\(\blacksquare\)</span> 。</p>
+<p>注：广义极限时，单调数列一定收敛，同样可以证明这个结论成立。</p>
+<hr />
+<h5 id="定理1.3.1-单调有界定理">定理1.3.1 （单调有界定理）</h5>
+<p>若 <span class="math inline">\(\{ a_{n} \}\)</span>
+单调递增（减），则 <span class="math inline">\(\{ a_{n} \}\)</span>
+存在极限的充要条件是 <span class="math inline">\(\{ a_{n} \}\)</span>
+有上（下）界。</p>
+<p>Proof： 设 <span
+class="math inline">\(a_{n}=\overline{x_{n}.y_{n1}y_{n2}y_{n3}\dots}\)</span>
+写成十进制小数，由数列有界，则 <span
+class="math inline">\(x_{n}\)</span> 有界，且 <span
+class="math inline">\(y_{nk}\)</span> 一定有界。设 <span
+class="math inline">\(a=\overline{T.t_{1}t_{2}\dots}\)</span> 其中 <span
+class="math inline">\(T=\max\{ x_{n} \},t_{n}=\max\{ y_{nk} \}\)</span>
+，由单调，且一定存在 <span
+class="math inline">\(N_{1},N_{2},N_{3}\dots\)</span> 使得所有 <span
+class="math inline">\(n&gt;N_{k}\)</span> 都有 <span
+class="math inline">\(|a_{n}-a|&lt;10^{-k}\)</span> 。令 <span
+class="math inline">\(k\to \infty\)</span> ，可得 <span
+class="math inline">\(a_{n}\to a\)</span> 。</p>
+<p>注：这个证明的思路是，前 <span class="math inline">\(k\)</span>
+位小数相同，则两数之差绝对值一定小于 <span
+class="math inline">\(10^{-k}\)</span>
+，且由于单调递增，一旦相同，后面数都会相同。</p>
+<h5 id="定理1.3.2-确界存在定理">定理1.3.2 （确界存在定理）</h5>
+<p>有上（下）界的数列必存在上（下）确界。</p>
+<p>只证上界：取 <span class="math inline">\(a_{1}\)</span> 是集合 <span
+class="math inline">\(E\)</span> 中的任何一个数， <span
+class="math inline">\(b_{1}\)</span> 是集合的上界。令 <span
+class="math inline">\(c_{n}= \frac{a_{n}+b_{n}}{2}\)</span> ，若 <span
+class="math inline">\(c_{n}\)</span> 是上界，则令 <span
+class="math inline">\(a_{n+1}=c_{n},b_{n+1}=b_{n}\)</span> ；若 <span
+class="math inline">\(c_{n}\)</span> 不是上界，则令 <span
+class="math inline">\(a_{n+1}=a_{n},b_{n+1}=c_{n}\)</span> 。</p>
+<p>令 <span class="math inline">\(n\to \infty\)</span>
+，由闭区间套定理，存在唯一的 <span class="math inline">\(M&gt;x,x\in
+E\)</span> ， <span class="math inline">\(M\)</span> 是上界。对于 <span
+class="math inline">\(\forall \epsilon&gt;0\)</span> ，由 <span
+class="math inline">\(a_{n}\to M\)</span> 可知存在 <span
+class="math inline">\(N\)</span> 使得 <span
+class="math inline">\(a_{n}&gt;M-\epsilon\)</span> ，由 <span
+class="math inline">\(a_{n}\)</span> 不是上界可知， <span
+class="math inline">\(\exists x\in E\)</span> 使得 <span
+class="math inline">\(M&gt;x&gt;a_{n}&gt;M-\epsilon\)</span> 。 <span
+class="math inline">\(\blacksquare\)</span> 。</p>
+<h5 id="定理1.3.3-闭区间套定理">定理1.3.3 （闭区间套定理）</h5>
+<p>若 <span
+class="math inline">\([a_{n+1},b_{n+1}]\subset[a_{n},b_{n}]\)</span>
+，且 <span class="math inline">\(b_{n}-a_{n}\to 0\)</span>
+，则存在唯一的 <span class="math inline">\(\xi \in[a_{n},b_{n}], \forall
+n\)</span> ，且 <span class="math inline">\(a_{n},b_{n}\to \xi\)</span>
+。</p>
+<p>如果没有 <span class="math inline">\(b_{n}-a_{n}\to 0\)</span>
+的条件，则闭区间交为闭区间。</p>
+<p>同时证明（1）（2）：</p>
+<p>由 <span
+class="math inline">\([a_{n+1},b_{n+1}]\subset[a_{n},b_{n}]\)</span>
+，则 <span class="math inline">\(a_{n}\le a_{n+1}\le b_{n+1}\le
+b_{n}\)</span> ，故 <span class="math inline">\(\{ a_{n} \},\{ b_{n}
+\}\)</span> 单调有界，故 <span
+class="math inline">\(a_{n},b_{n}\)</span> 有极限，设其为 <span
+class="math inline">\([a,b]\)</span> ，（2）<span
+class="math inline">\(\blacksquare\)</span> 。由于 <span
+class="math inline">\(b_{n}-a_{n} \to 0\)</span> ，故 <span
+class="math inline">\(a=b\)</span> ，存在唯一 <span
+class="math inline">\(\xi=a=b\)</span> ，（1） <span
+class="math inline">\(\blacksquare\)</span> 。</p>
+<p>用 Heine-Borel 证（1）：</p>
+<p>唯一性：假设存在 <span class="math inline">\(\xi_{1},\xi_{2}\)</span>
+满足，存在区间 <span class="math inline">\(\xi_{1},\xi_{2}\in I\)</span>
+，由 <span class="math inline">\(|I|\le|a_{n}-b_{n}|,a_{n}-b_{n}\to
+0\)</span> 可知 <span class="math inline">\(|I|=0\)</span> ， <span
+class="math inline">\(\xi_{1}=\xi_{2}\)</span> 。</p>
+<p>反证法：假设不存在 <span class="math inline">\(\xi\)</span> ，即
+<span class="math inline">\(\bigcap_{n}[a_{n},b_{n}]=\emptyset\)</span>
+，取一个 <span class="math inline">\(a_{n},b_{n}\)</span> 的上下界 <span
+class="math inline">\(a,b\)</span> ，以 <span
+class="math inline">\((a,b)\)</span> 为全集取补，得 <span
+class="math inline">\(\bigcup_n((a,a_{n})\bigcup(b_{n},b))=(a,b)\)</span>
+，是 <span class="math inline">\([a_{1},b_{1}]\)</span> 的一个开覆盖。由
+Heine-Borel ，<span class="math inline">\(\{
+(a,a_{p_{i}})\bigcup(b_{q_{i}},b) \}\)</span> ，能覆盖 <span
+class="math inline">\((a_{1},b_{1})\)</span> ，而取 <span
+class="math inline">\(x\in [\max\{ a_{p_{i}} \},\min\{ a_{q_{i}}
+\}]\)</span> ，不能被覆盖，矛盾！ <span
+class="math inline">\(\blacksquare\)</span> 。</p>
+<p>注：使用有限覆盖定理，化无限为有限，有限的数可以取 <span
+class="math inline">\(\min,\max\)</span>
+。有限覆盖定理与闭区间套条件恰好相反，取补集后可以互相证明。</p>
+<h5 id="定理1.3.4-bolzano-weierstrass列紧性定理">定理1.3.4
+（Bolzano-Weierstrass，列紧性定理）</h5>
+<p>有界数列必包含收敛子列。（广义：一个数列必包含广义收敛子列）</p>
+<p>Proof： 先证明：有界数列均包含单调子列。 设 <span
+class="math inline">\(b_{n}=\sup_{k\ge n} a_{k}\)</span> 。由 <span
+class="math inline">\(\sup\)</span> 集合逐渐减少， <span
+class="math inline">\(b_{n}\)</span> （非严格）单调递减。</p>
+<p>若 <span class="math inline">\(\exists n\)</span> 使得 <span
+class="math inline">\(b_{n} \ne a_{k},k\ge n\)</span> ，令 <span
+class="math inline">\(k_{1}=k\)</span> ，<span
+class="math inline">\(k_{n+1}\)</span> 为最小 <span
+class="math inline">\(t&gt; k_{n}\)</span> 满足 <span
+class="math inline">\(a_{t}&gt;a_{k_{n}}\)</span> ，由上确界的定义，
+<span class="math inline">\(t\)</span> 一定能找到，此时 <span
+class="math inline">\(a_{k_{n}}\)</span> 满足单调递增。 若 <span
+class="math inline">\(\forall n\)</span> ， <span
+class="math inline">\(\exists k_{n}\)</span> 使得 <span
+class="math inline">\(b_{n}=a_{k_{n}}\)</span> ，此时 <span
+class="math inline">\(a_{k_{n}}\)</span> 单调递减。</p>
+<p>由单调有界定理，<span class="math inline">\(\blacksquare\)</span>
+。</p>
+<h5 id="定理1.3.5-heine-borel有限覆盖定理">定理1.3.5
+（Heine-Borel有限覆盖定理）</h5>
+<p>有限闭区间的任意开覆盖中，必定存在有限个子覆盖。</p>
+<p>（Bolzano二分法）反证法：假设 <span
+class="math inline">\([a,b]\)</span> 不能被开覆盖，令 <span
+class="math inline">\(a_{1}=a,b_{1}=b\)</span> ，设 <span
+class="math inline">\(c_{n}=\frac{a_{n}+b_{n}}{2}\)</span> ，若 <span
+class="math inline">\([a_{n},b_{n}]\)</span> 不能被开覆盖 ，则 <span
+class="math inline">\([a_{n},c_{n}],[c_{n},b_{n}]\)</span>
+至少有一个不能开覆盖，前者令 <span
+class="math inline">\(a_{n+1}=a_{n},b_{n+1}=c_{n}\)</span> ，后者令
+<span class="math inline">\(a_{n+1}=c_{n},b_{n+1}=b_{n}\)</span> ，那么
+<span class="math inline">\([a_{n+1},b_{n+1}]\)</span> 不能被开覆盖。
+<span class="math inline">\(b_{n}-a_{n}=2^{-n+1}(b-a)\to 0\)</span>
+，由闭区间套定理，存在唯一 <span class="math inline">\(\xi\)</span> 使得
+<span class="math inline">\([\xi,\xi]\)</span> 不能被开覆盖，矛盾！
+<span class="math inline">\(\blacksquare\)</span> 。</p>
+<h5 id="定理1.2.9-cauchy收敛准则">定理1.2.9 （Cauchy收敛准则）</h5>
+<p>数列收敛的充要条件是该数列为基本列。</p>
+<p>Proof： 必要性：由数列收敛，<span class="math inline">\(\forall
+\epsilon&gt;0\)</span> ， <span class="math inline">\(\exists N\)</span>
+使得 <span class="math inline">\(\forall n,m&gt;N\)</span> 满足 <span
+class="math inline">\(|a_{n}-a|&lt;\epsilon,|a_{m}-a|&lt;\epsilon\)</span>
+，由绝对值不等式， <span
+class="math inline">\(|a_{m}-a_{n}|&lt;|a_{m}-a|+|a_{n}-a|&lt;2\epsilon\)</span>
+， <span class="math inline">\(\blacksquare\)</span> 。</p>
+<p>充分性：随便取一个 <span class="math inline">\(N\)</span> ， <span
+class="math inline">\(|a_{m}-a_{N+1}|&lt;\epsilon\)</span> ，并且 <span
+class="math inline">\(a_{1},a_{2}\dots a_{N}\)</span> 有界，故 <span
+class="math inline">\(\{ a_{n} \}\)</span> 有界。由 Bolzano-Weierstrass
+，存在收敛子列 <span class="math inline">\(\{ a_{k_{n}} \}\)</span>
+，设其收敛到 <span class="math inline">\(a\)</span>
+。由收敛子列和柯西列，任意 <span
+class="math inline">\(\epsilon&gt;0\)</span> ， <span
+class="math inline">\(\exists\epsilon&gt;0\)</span> 使得 <span
+class="math inline">\(|a_{k_{n}}-a|&lt;\epsilon\)</span> ，<span
+class="math inline">\(|a_{n}-a_{k_{n}}|&lt;\epsilon\)</span>
+。由绝对值不等式， <span
+class="math inline">\(|a_{n}-a|&lt;|a_{n}-a_{k_{n}}|+|a_{k_{n}}-a|&lt;2\epsilon\)</span>
+， <span class="math inline">\(\blacksquare\)</span> 。</p>
+<h5 id="定理1.3.6-lesbege数heine-borel定理加强">定理1.3.6
+（Lesbege数/Heine-Borel定理加强）</h5>
+<p><span class="math inline">\([a,b]\)</span> 的一个开覆盖 <span
+class="math inline">\(\{ I_{n} \}\)</span> 中，必存在 <span
+class="math inline">\(\sigma&gt;0\)</span> ，使得只要 <span
+class="math inline">\(A\subset[a,b]\)</span> ，且 <span
+class="math inline">\(|A|&lt;\sigma\)</span> ，必有 <span
+class="math inline">\(\{ I_{n} \}\)</span> 中的一个开区间包含 <span
+class="math inline">\(A\)</span> 。其中 <span
+class="math inline">\(\sigma\)</span> 称为 Lebesgue 数。</p>
+<p>Proof： 先取一个有限开覆盖，将其端点从大到小排列（去重） <span
+class="math inline">\(x_{1}&lt;x_{2}&lt;x_{3}&lt;\dots&lt;x_{n}\)</span>
+，令 <span class="math inline">\(\sigma=\min\{ x_{n+1}-x_{n} \}\)</span>
+。下证明合理：</p>
+<p>任取闭区间 <span class="math inline">\(I=[x,y],|I|&lt;\sigma\)</span>
+。由取法可知， <span class="math inline">\(I\)</span>
+至多含一个端点。</p>
+<p>若 <span class="math inline">\(I\)</span> 不含端点，设 <span
+class="math inline">\(x_{0}\in[x,y]\)</span> 被 <span
+class="math inline">\(I_{s}\)</span> 覆盖，则 <span
+class="math inline">\(I_{s}\)</span> 左右端点一定大于/小于 <span
+class="math inline">\(x,y\)</span> ，故 <span
+class="math inline">\(I\subset I_{s}\)</span> 。</p>
+<p>若 <span class="math inline">\(I\)</span> 含端点 <span
+class="math inline">\(x_{s}\)</span> ，不妨设是左端点，设 <span
+class="math inline">\(x_{s}\)</span> 左邻域被 <span
+class="math inline">\(I_{s}\)</span> 覆盖，其右端点大于 <span
+class="math inline">\(x_{s}\)</span> ，故 <span
+class="math inline">\(I\subset I_{s}\)</span> 。 <span
+class="math inline">\(\blacksquare\)</span> 。</p>
+<h5 id="性质1.4.5-无穷大无穷小的性质">性质1.4.5
+（无穷大/无穷小的性质）</h5>
+<p>（1）无穷小（大）的和（差/积）为无穷小（大）</p>
+<p>（2）<span class="math inline">\(\{ a_{n} \}\)</span> 无穷小（大），
+<span class="math inline">\(\{ c_{n} \}\)</span> 有界， <span
+class="math inline">\(\{ a_{n}c_{n} \}\)</span> 为无穷小（大）</p>
+<p>（3）若对于充分大的 <span class="math inline">\(n\)</span> ，有 <span
+class="math inline">\(0\le |a_{n}|\le |b_{n}|\)</span> 。若 <span
+class="math inline">\(\{ b_{n} \}\)</span> 无穷小，则 <span
+class="math inline">\(\{ a_{n} \}\)</span> 为无穷小；若 <span
+class="math inline">\(\{ a_{n} \}\)</span> 无穷大，则 <span
+class="math inline">\(\{ b_{n} \}\)</span> 无穷大。</p>
+<p>（4）无穷大数列必无界；无穷大数列任意子列必为无穷大数列；无界数列必有无穷大子列。</p>
+<p>Proof： （1）（2）（3）（4）证明与有限形式相似，略。</p>
+<h5 id="定义-1.5.3-1.5.4-1.5.5-上下极限">定义 1.5.3 1.5.4 1.5.5
+（上下极限）</h5>
+<p>定义一： <span class="math display">\[
+\begin{aligned}
+\limsup_{ n \to \infty } a_{n} &amp;:= \sup E \\
+\liminf_{ n \to \infty } a_{n} &amp;:= \inf E
+\end{aligned}
+\]</span> 定义二： <span class="math display">\[
+\begin{aligned}
+\limsup_{ n \to \infty } a_{n} :&amp;=\lim_{ n \to \infty } \sup_{k\ge
+n} a_{k} \\
+&amp;= \inf_{ n } \sup_{k\ge n} a_{k} \\
+\liminf_{ n \to \infty } a_{n} :&amp;=\lim_{ n \to \infty } \inf_{k\ge
+n} a_{k} \\
+&amp;= \sup_{ n } \inf_{k\ge n} a_{k} \\
+\end{aligned}
+\]</span> 定义三： 若 <span class="math inline">\(l\)</span> 满足：
+（1）对于 <span class="math inline">\(\forall \epsilon&gt;0\)</span> ，
+<span class="math inline">\(\exists N&gt;0\)</span> ，使得对于 <span
+class="math inline">\(\forall n&gt;N\)</span> 有 <span
+class="math display">\[
+a_{n}&lt;l+\epsilon
+\]</span> （2）对于 <span class="math inline">\(\forall
+\epsilon&gt;0\)</span> ，<span class="math inline">\(\exists \{
+a_{k_{n}} \}\)</span> 使得 <span class="math display">\[
+a_{k_{n}} &gt; l-\epsilon
+\]</span> 则 <span class="math display">\[
+\limsup_{ n \to \infty } a_{n} := l
+\]</span> 上下极限为无穷时定义于极限类似。</p>
+<p>定义二的合理性：</p>
+<p><span class="math inline">\(b_{n}=\sup_{k\ge n}\{ a_{k} \}\)</span>
+数列单调递减，由性质1.2.6单调数列一定收敛于其下确界，即 <span
+class="math inline">\(\lim=\inf\)</span> ，右端两式相等。</p>
+<p>定义三的合理性：</p>
+<p>证明 <span class="math inline">\(l\)</span> 的唯一性：若 <span
+class="math inline">\(l_{1}&lt;l_{2}\)</span> 都满足定义三条件，取 <span
+class="math inline">\(\epsilon= \frac{l_{2}-l_{1}}{2}\)</span> 对 <span
+class="math inline">\(l_{2}\)</span> 使用条件（2）， <span
+class="math inline">\(\exists \{ a_{k_{n}} \}\)</span> 使得 <span
+class="math inline">\(a_{k_{n}}&gt;l_{2}-\epsilon\)</span> ，对 <span
+class="math inline">\(l_{1}\)</span> 使用条件（1） <span
+class="math inline">\(\exists N&gt;0\)</span> ，使得 <span
+class="math inline">\(\forall n&gt;N\)</span> 都有 <span
+class="math inline">\(a_{n}&lt;l_{1}+\epsilon=
+\frac{l_{1}+l_{2}}{2}\)</span> 。故当 <span
+class="math inline">\(n&gt;N\)</span> 时，<span
+class="math inline">\(\frac{l_{1}+l_{2}}{2}&gt;a_{k_{n}}&gt;
+\frac{l_{1}+l_{2}}{2}\)</span> ，矛盾！ <span
+class="math inline">\(\blacksquare\)</span> 。</p>
+<p>证明 <span class="math inline">\(l\)</span>
+的存在性：定义一、二给出了 <span class="math inline">\(l\)</span>
+的构造方案。（暂时想不到怎么直接证明）</p>
+<p>定义一 <span class="math inline">\(\implies\)</span> 定义三</p>
+<p>（1）反证法：假定 <span class="math inline">\(\exists
+\epsilon&gt;0\)</span> ， <span class="math inline">\(\forall N\)</span>
+， <span class="math inline">\(\exists n_{N}\)</span> 使得 <span
+class="math inline">\(a_{n_{N}}\ge l+\epsilon\)</span> ，由
+Bolzano-Weierstrass ， <span class="math inline">\(a_{n_{N}}\)</span>
+存在一个收敛子列，并且由不等式，其极限大于 <span
+class="math inline">\(l\)</span> 。矛盾！</p>
+<p>（2）反证法：假定 <span class="math inline">\(\exists
+\epsilon&gt;0\)</span> ， <span class="math inline">\(\forall \{
+a_{k_{n}} \}\le l-\epsilon\)</span> ，则对于收敛子列其极限 <span
+class="math inline">\(l&#39;&lt;l-\epsilon\)</span> ，取 <span
+class="math inline">\(\sup\)</span> ，故 <span
+class="math inline">\(l&lt;l-\epsilon\)</span> 矛盾！ <span
+class="math inline">\(\blacksquare\)</span> 。</p>
+<p>定义三 <span class="math inline">\(\implies\)</span> 定义一</p>
+<p>（1） <span class="math inline">\(\forall \epsilon&gt;0\)</span> ，
+<span class="math inline">\(\exists N\)</span> ，使得 <span
+class="math inline">\(\forall n&gt;N\)</span> 满足 <span
+class="math inline">\(a_{n}&lt;l+\epsilon\)</span> 。则对于收敛子列，
+其极限 <span class="math inline">\(l&#39;&lt;l+\epsilon\)</span> ，令
+<span class="math inline">\(\epsilon\to 0\)</span> ，则 <span
+class="math inline">\(\forall l&#39;\in E\)</span> ，有 <span
+class="math inline">\(l&#39;\le l\)</span> 。</p>
+<p>（2）<span class="math inline">\(\forall \epsilon&gt;0\)</span>
+，<span class="math inline">\(\exists \{ a_{k_{n}} \}\)</span> 使得
+<span class="math inline">\(a_{k_{n}}&gt;l-\epsilon\)</span> ，由
+Bolzano-Weierstrass ，可知存在收敛子列 <span class="math inline">\(\{
+a_{p_{n}} \}\)</span> ，其极限 <span class="math inline">\(l&#39;\ge
+l\)</span> 。<span class="math inline">\(\blacksquare\)</span> 。</p>
+<p>定义二 <span class="math inline">\(\implies\)</span> 定义三</p>
+<p>（1）由 <span class="math inline">\(\inf\)</span> 定义， <span
+class="math inline">\(\forall \epsilon&gt;0\)</span> ，<span
+class="math inline">\(\exists N\)</span> ，使得 <span
+class="math inline">\(\sup_{n\ge k} a_{n}&lt;l-\epsilon\)</span> ，故
+<span class="math inline">\(\forall n\ge k\)</span> 由 <span
+class="math inline">\(a_{n}&lt;l-\epsilon\)</span> 。</p>
+<p>（2-1）若 <span class="math inline">\(\exists k_{0}\)</span> 使得
+<span class="math inline">\(\sup_{n\ge k_{0}}a_{n}\ne a_{k},\forall k\ge
+k_{0}\)</span> ，由 <span class="math inline">\(\sup\)</span> 定义，
+<span class="math inline">\(\forall \epsilon=1/n\)</span> ， <span
+class="math inline">\(\exists a_{k_{n}}&gt;l-\epsilon\)</span> ，故
+<span class="math inline">\(\{ a_{k_{n}} \}\)</span> 满足 <span
+class="math inline">\(a_{k_{n}}&gt;l-\epsilon\)</span> 。</p>
+<p>（2-2）若 <span class="math inline">\(\forall k_{0}\)</span> 都 <span
+class="math inline">\(\exists k\)</span> 满足 <span
+class="math inline">\(\sup_{n\ge k_{0}}a_{n}= a_{k},\forall k\ge
+k_{0}\)</span> ，取 <span class="math inline">\(k_{n+1}\)</span> 为满足
+<span class="math inline">\(\sup_{t\ge k_{n}}a_{t}= a_{k},\forall k\ge
+k_{n}\)</span> 的一个 <span class="math inline">\(k\)</span> ，由 <span
+class="math inline">\(\lim\)</span> 可知 <span
+class="math inline">\(a_{k_{n}}\to l\)</span> ，即 <span
+class="math inline">\(\forall\epsilon&gt;0\)</span> ， <span
+class="math inline">\(\exists N\)</span> 使得 <span
+class="math inline">\(\forall n&gt;N\)</span> ， <span
+class="math inline">\(a_{k_{n}}&gt;l-\epsilon\)</span> 。 <span
+class="math inline">\(\blacksquare\)</span> 。</p>
+<p>注：（2）中两个讨论类似 Bolzano-Weierstrass 的证法，即对于数列 <span
+class="math inline">\(\{ \sup_{k\ge n} a_{k} \}\)</span>
+，讨论其是否能取到。</p>
+<p>定义三 <span class="math inline">\(\implies\)</span> 定义二
+（1）<span class="math inline">\(\forall \epsilon&gt;0\)</span> ， <span
+class="math inline">\(\exists N\)</span> 使得 <span
+class="math inline">\(\forall n&gt;N\)</span> 由 <span
+class="math inline">\(a_{n}&lt;l+\epsilon\)</span> ，即 <span
+class="math inline">\(\sup a_{n}&lt;l+\epsilon\)</span>。</p>
+<p>（2）<span class="math inline">\(\forall \epsilon&gt;0\)</span> ，
+<span class="math inline">\(\exists \{ a_{k_{n}} \}\)</span> 使得 <span
+class="math inline">\(a_{k_{n}}&gt;l-\epsilon\)</span> 。有不等式 <span
+class="math inline">\(\sup_{k\ge n} a_{n}\ge\sup_{k\ge
+n}a_{k_{n}}&gt;l-\epsilon\)</span> 。令 <span
+class="math inline">\(\epsilon\to 0\)</span> ，则 <span
+class="math inline">\(\sup_{k\ge n}a_{n}\ge l\)</span> 。由 <span
+class="math inline">\(\inf\)</span> 的两个条件 <span
+class="math inline">\(\blacksquare\)</span> 。</p>
+<h5 id="性质1.5.2-e-的性质">性质1.5.2 （ <span
+class="math inline">\(E\)</span> 的性质）</h5>
+<p><span class="math inline">\(E\)</span> 非空。 <span
+class="math inline">\(\sup E \in E,\inf E\in E\)</span> 。</p>
+<p>Proof： （1）Bolzano-Weierstrass</p>
+<p>（2）定义三。</p>
+<h5 id="性质1.5.6-上下极限与极限">性质1.5.6 （上下极限与极限）</h5>
+<p><span class="math display">\[
+\liminf_{ n \to \infty } a_{n} \le \limsup_{ n \to \infty } a_{n}
+\]</span> 取等条件条件：当且仅当， <span class="math inline">\(\{ a_{n}
+\}\)</span> 收敛，其极限等于其上下极限的值。</p>
+<p>Proof： 定义一、二显然。</p>
+<h5 id="性质1.5.7-上下极限的性质">性质1.5.7 （上下极限的性质）</h5>
+<p><span class="math display">\[
+\begin{aligned}
+\liminf_{ n \to \infty } a_{n} + \limsup_{ n \to \infty } b_{n}
+&amp;\le\limsup_{ n \to \infty } (a_{n}+b_{n}) \\
+&amp;\le\limsup_{ n \to \infty } a_{n}+\limsup_{ n \to \infty } b_{n}\\
+\liminf_{ n \to \infty } a_{n} + \limsup_{ n \to \infty } b_{n}
+&amp;\ge\liminf_{ n \to \infty } (a_{n}+b_{n}) \\
+&amp;\ge\liminf_{ n \to \infty } a_{n}+\liminf_{ n \to \infty } b_{n}
+\end{aligned}
+\]</span> Proof： 左半边 <span class="math display">\[
+\begin{aligned}
+\limsup_{ n \to \infty } (a_{n}+b_{n}) &amp;\ge
+\limsup_{ n \to \infty } (a_{n}+\liminf_{ n \to \infty } b_{n} ) \\
+&amp;=\limsup_{ n \to \infty } a_{n}+\limsup_{ n \to \infty } b_{n}
+\end{aligned}
+\]</span> 右半边 <span class="math display">\[
+\begin{aligned}
+\limsup_{ n \to \infty } (a_{n}+b_{n}) &amp;\le
+\limsup_{ n \to \infty } (a_{n}+\limsup_{ n \to \infty } b_{n} ) \\
+&amp;=\limsup_{ n \to \infty } a_{n}+\limsup_{ n \to \infty } b_{n}
+\end{aligned}
+\]</span> <span class="math inline">\(\inf\)</span> 同理。</p>
+<h5 id="性质1.5.8-上下极限的不等式性质">性质1.5.8
+（上下极限的不等式性质）</h5>
+<p>若对于充分大的 <span class="math inline">\(n\)</span> 有 <span
+class="math display">\[
+a_{n}&lt; b_{n}
+\]</span> 则 <span class="math display">\[
+\begin{aligned}
+&amp;\limsup_{ n \to \infty } a_{n} \le \limsup_{ n \to \infty } b_{n}
+\\
+&amp;\liminf_{ n \to \infty } a_{n} \le \liminf_{ n \to \infty } b_{n}
+\end{aligned}
+\]</span></p>
+<p>Proof： 定义二显然。</p>
+<hr />
+<h5 id="定理1.6.1-cauchy命题">定理1.6.1 （Cauchy命题）</h5>
+<p>如果 <span class="math inline">\(\{ a_{n} \}\)</span>
+收敛，则其均值极限存在且等于： <span class="math display">\[
+\lim_{ n \to \infty } \frac{a_{1}+\dots +a_{n}}{n}=\lim_{ n \to \infty }
+a_{n}
+\]</span></p>
+<p>如果 <span class="math inline">\(\{ a_{n} \}\)</span> 收敛，且 <span
+class="math inline">\(a_{n}&gt;0\)</span>，则其均值极限存在且等于：
+<span class="math display">\[
+\lim_{ n \to \infty } \sqrt[n]{ a_{1}\dots a_{n} }=\lim_{ n \to \infty }
+a_{n}
+\]</span></p>
+<p>Proof： （1）由 <span class="math inline">\(\{ a_{n} \}\)</span>
+有极限，设其为 <span class="math inline">\(l\)</span> ， <span
+class="math inline">\(\forall \epsilon&gt;0\)</span> ， <span
+class="math inline">\(\exists N\)</span> ， <span
+class="math inline">\(\forall n&gt;N\)</span> 有 <span
+class="math inline">\(|a_{n}-l|&lt;\epsilon\)</span> 。那么 <span
+class="math display">\[
+\begin{aligned}
+&amp;\left|\frac{a_{1}+a_{2}+\dots a_{n}}{n}-l\right|\\
+&amp;\le \frac{1}{n}\left( \sum_{k=1}^{N}|a_{k}-l|+
+\sum_{k=N+1}^{n}|a_{k}-l| \right)\\
+&amp; \le \frac{\sum_{k=1}^{N}|a_{k}-l|}{n} + \frac{(n-N)\epsilon}{n}\\
+&amp;&lt; \frac{M}{n}+\epsilon
+\end{aligned}
+\]</span> 令 <span class="math inline">\(N&gt;
+\frac{M}{\epsilon}\)</span> , <span
+class="math inline">\(\blacksquare\)</span> 。</p>
+<p>（2）由 AM-GM 不等式 <span class="math display">\[
+\frac{n}{\frac{1}{a_{1}}+\dots+\frac{1}{a_{n}}}\le \sqrt[n]{
+a_{1}a_{2}\dots a_{n} }\le \frac{a_{1}+\dots+a_{n}}{n}
+\]</span> 由（1）、极限四则运算、夹逼定理 <span
+class="math inline">\(\blacksquare\)</span> 。</p>
+<h5 id="定理1.6.2-toeplitz定理">定理1.6.2 （Toeplitz定理）</h5>
+<p>设 <span class="math inline">\(n,k\in \mathbb{N^{*}}\)</span> ，<span
+class="math inline">\(t_{n,k}\ge 0\)</span> ，且 <span
+class="math inline">\(\sum_{k=1}^{n} t_{n,k}=1\)</span> ，<span
+class="math inline">\(\lim_{ n \to \infty } t_{n,k}=0\)</span> 如果
+<span class="math inline">\(\{ a_{n} \}\)</span> 收敛，则 <span
+class="math display">\[
+\lim_{ n \to \infty } \sum_{k=1}^{n} t_{n,k}a_{k}=\lim_{ n \to \infty }
+a_{n}
+\]</span></p>
+<p>Proof： （1）由 <span class="math inline">\(\{ a_{n} \}\)</span>
+有极限，设其为 <span class="math inline">\(l\)</span> ，其上界记为 <span
+class="math inline">\(M\)</span> ，故 <span
+class="math inline">\(\forall \epsilon&gt;0\)</span> ， <span
+class="math inline">\(\exists N_{1}\)</span> ， <span
+class="math inline">\(\forall n&gt;N\)</span> 有 <span
+class="math inline">\(|a_{n}-l|&lt;\epsilon\)</span> ，由 <span
+class="math inline">\(t_{n,k}\)</span> 收敛可知，<span
+class="math inline">\(\exists N_{2}\)</span> ， <span
+class="math inline">\(\forall n&gt;N_{2}\)</span> 有 <span
+class="math inline">\(t_{n,k}\le \frac{\epsilon}{MN_{1}}\)</span>。那么
+<span class="math display">\[
+\begin{aligned}
+&amp;\left|\sum_{k=1}^{n}t_{n,k}a_{k}-l\right|\\
+&amp;\le
+\sum_{k=1}^{N_{1}}t_{n,k}|a_{k}-l|+\sum_{k=N_{1}+1}^{n}t_{n,k}|a_{k}-l|\\
+&amp;\le M\sum_{k=1}^{N_{1}}t_{n,k}+\epsilon\sum_{k=N+1}^{n}t_{n,k}\\
+&amp;&lt;\epsilon+\epsilon
+&lt;2\epsilon \quad \blacksquare  
+\\
+\end{aligned}
+\]</span></p>
+<h5 id="定理1.6.3-stolz定理-fracinfty-型">定理1.6.3 （Stolz定理 <span
+class="math inline">\(\frac{*}{\infty}\)</span> 型）</h5>
+<p>如果 <span class="math inline">\(\{ b_{n} \}\)</span> 严格递增且
+<span class="math inline">\(b_{n}\to +\infty\)</span> ，且 <span
+class="math inline">\(\frac{a_{n+1}-a_{n}}{b_{n+1}-b_{n}}\)</span>
+收敛，则 <span class="math display">\[
+\lim_{ n \to \infty } \frac{a_{n}}{b_{n}} = \lim_{ n \to \infty }
+\frac{a_{n+1}-a_{n}}{b_{n+1}-b_{n}}
+\]</span></p>
+<p>Lemma：若 <span class="math inline">\(\frac{a}{b}\ge
+\frac{c}{d}\)</span> ，且 <span class="math inline">\(bd&gt;0\)</span>
+则 <span class="math inline">\(\frac{a}{b}\ge \frac{a+c}{b+d} \ge
+\frac{c}{d}\)</span> 。对于多元情况同理。</p>
+Proof： 设极限为 <span class="math inline">\(l\)</span> ，由收敛定义，
+<span class="math inline">\(\forall \epsilon&gt;0\)</span> ，<span
+class="math inline">\(\exists N\)</span> 使得 <span
+class="math inline">\(\forall n&gt;N\)</span> 有 <span
+class="math inline">\(l-\epsilon&lt;
+\frac{a_{n+1}-a_{n}}{b_{n+1}-b_{n}}&lt;l+\epsilon\)</span> 。令 <span
+class="math inline">\(n\)</span> 取遍 <span
+class="math inline">\(N,N+1\dots n\)</span> ，使用 Lemma 可得 <span
+class="math inline">\(l-\epsilon&lt; \frac{a_{n}-a_{N}}{b_{n}-b_{N}}&lt;
+l+\epsilon\)</span> ，乘开并除以 <span
+class="math inline">\(b_{n}\)</span> 得 $$
+<span class="math display">\[\begin{aligned}
+&amp;(l-\epsilon)\left( 1-\frac{b_{N}}{b_{n}} \right)+
+\frac{a_{N}}{b_{n}}&lt; \frac{a_{n}}{b_{n}}\\
+&amp;&lt;(l+\epsilon)\left( 1-\frac{b_{N}}{b_{n}} \right)+
+\frac{a_{N}}{b_{n}}
+\end{aligned}\]</span>
+<span class="math display">\[
+令 $n\to \infty$ ，左右两边同时取上下极限，可得
+\]</span>
+<span class="math display">\[\begin{aligned}
+\limsup_{ n \to \infty } \frac{a_{n}}{b_{n}}&lt;l-\epsilon \\
+\liminf_{ n \to \infty } \frac{a_{n}}{b_{n}}&gt;l+\epsilon \\
+\end{aligned}\]</span>
+<p>$$ 令 <span class="math inline">\(\epsilon\to 0\)</span>
+可得极限存在且为 <span class="math inline">\(l\)</span> 。</p>
+<h5 id="定理1.6.3-stolz定理-frac0-型">定理1.6.3 （Stolz定理 <span
+class="math inline">\(\frac{*}{0}\)</span> 型）</h5>
+<p>如果 <span class="math inline">\(\{ b_{n} \}\)</span> 严格递减且
+<span class="math inline">\(b_{n}\to 0\)</span> ，且 <span
+class="math inline">\(\frac{a_{n+1}-a_{n}}{b_{n+1}-b_{n}}\)</span>
+收敛，则 <span class="math display">\[
+\lim_{ n \to \infty } \frac{a_{n}}{b_{n}} = \lim_{ n \to \infty }
+\frac{a_{n+1}-a_{n}}{b_{n+1}-b_{n}}
+\]</span></p>
+<p>Proof： 设极限为 <span class="math inline">\(l\)</span>
+，由收敛定义， <span class="math inline">\(\forall
+\epsilon&gt;0\)</span> ，<span class="math inline">\(\exists N\)</span>
+使得 <span class="math inline">\(\forall n&gt;N\)</span> 有 <span
+class="math inline">\(l-\epsilon&lt;
+\frac{a_{n+1}-a_{n}}{b_{n+1}-b_{n}}&lt;l+\epsilon\)</span> 。令 <span
+class="math inline">\(n\)</span> 取遍 <span
+class="math inline">\(N,N+1\dots n\)</span> ，使用 Lemma 可得 <span
+class="math inline">\(l-\epsilon&lt; \frac{a_{n}-a_{N}}{b_{n}-b_{N}}&lt;
+l+\epsilon\)</span> ，直接取左右极限，则 <span class="math display">\[
+\begin{aligned}
+\limsup_{ n \to \infty } \frac{a_{n}}{b_{n}}&lt;l-\epsilon \\
+\liminf_{ n \to \infty } \frac{a_{n}}{b_{n}}&gt;l+\epsilon \\
+\end{aligned}
+\]</span> 令 <span class="math inline">\(\epsilon\to 0\)</span>
+可得极限存在且为 <span class="math inline">\(l\)</span> 。</p>
+<h5 id="定理1.6.4-不动点原理">定理1.6.4 （不动点原理）</h5>
+<p>若 <span class="math inline">\(\{ x_{n} \}\)</span> 满足 <span
+class="math inline">\(x_{n+1}=f(x_{n})\)</span> ， <span
+class="math inline">\(x_n\to\xi\)</span> ，<span
+class="math inline">\(f(x_{n})\to f(\xi)\)</span> ，则 <span
+class="math inline">\(\xi\)</span> 一定满足： <span
+class="math display">\[
+f(\xi)=\xi
+\]</span></p>
+<p>Proof： 等式两边同时取极限即得。</p>
+<h5 id="定理1.6.5-压缩映射原理">定理1.6.5 （压缩映射原理）</h5>
+<p>对于 <span class="math inline">\(f\)</span> ，若 <span
+class="math inline">\(\exists k\in(0,1)\)</span> 满足 <span
+class="math inline">\(\forall x,y\in[a,b]\)</span> ，<span
+class="math inline">\(|f(x)-f(y)|\le k|x-y|\)</span> ，则称 <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\([a,b]\)</span> 上是一个压缩映射， <span
+class="math inline">\(k\)</span> 为压缩 常数。</p>
+<p>压缩映射函数 <span class="math inline">\(f\)</span> 满足以下命题：
+（1） <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\([a,b]\)</span> 存在唯一的不动点 <span
+class="math inline">\(\xi=f(\xi)\)</span></p>
+<p>（2）若 <span class="math inline">\(\{ a_{n} \}\)</span> 递推式为
+<span class="math inline">\(a_{n+1}=f(a_{n})\)</span> ，则 <span
+class="math inline">\(\{ a_{n} \}\)</span> 收敛于 <span
+class="math inline">\(\xi\)</span></p>
+<p>（3） <span class="math inline">\(|a_{n}-\xi|\le
+\frac{k}{1-k}|a_{n}-a_{n-1}|\)</span> ， <span
+class="math inline">\(|a_{n}-\xi|\le
+\frac{k^{n}}{1-k}|a_{1}-a_{0}|\)</span></p>
+<p>Proof： （1）</p>
+<p>存在性：任取一个数列 <span class="math inline">\(\{ a_{n} \}\)</span>
+，则 <span class="math display">\[
+\begin{aligned}
+|a_{n+p}-a_{n}|&amp;\le\sum_{i=1}^{p}|a_{n+i}-a_{n+i-1}|\\
+&amp;\le \left( \sum_{i=1}^{p} k^{n+i} \right) |a_{1}-a_{0}| \\
+&amp;&lt; \frac{k^{n+1}}{1-k}|a_{1}-a_{0}|
+\end{aligned}
+\]</span> 故 <span class="math inline">\(\{ a_{n} \}\)</span> 收敛。设
+<span class="math inline">\(a_{n}\to \xi\)</span> ，则 <span
+class="math inline">\(f(a_{n})\to f(\xi)\)</span> ，由 <span
+class="math inline">\(a_{n+1}=f(a_{n})\)</span> 得 <span
+class="math inline">\(f(\xi)=\xi\)</span></p>
+<p>唯一性：假定有不动点 <span
+class="math inline">\(\xi_{1},\xi_{2}\)</span> ，则 <span
+class="math inline">\(|\xi_{1}-\xi_{2}|=|f(\xi_{1})-f(\xi_{2})|&lt;|\xi_{1}-\xi_{2}|\)</span>
+。矛盾！ <span class="math inline">\(\blacksquare\)</span> 。</p>
+<p>（2）收敛在（1）已证。</p>
+<p>（3）对于第一个不等式，有 <span class="math display">\[
+\begin{aligned}
+|a_{n}-\xi|&amp;=|f(a_{n-1})-f(\xi)|&lt;|a_{n-1}-\xi|\\
+&amp;\le|a_{n}-\xi|+|a_{n}-a_{n-1}|
+\end{aligned}
+\]</span> 移项即可证。对于第二个不等式，使用第一个不等式 <span
+class="math display">\[
+\begin{aligned}
+|a_{n}-\xi|&amp;\le \frac{k}{1-k}|a_{n}-a_{n-1}|\\
+&amp;\le\frac{k^{2}}{1-k}|a_{n-1}-a_{n-2}|\\
+&amp;\le\frac{k^{n}}{1-k}|a_{1}-a_{0}| \quad \blacksquare  
+\end{aligned}
+\]</span></p>
+<hr />
+<h5 id="定义1.7.1-e-的定义">定义1.7.1 （ <span
+class="math inline">\(e\)</span> 的定义）</h5>
+<p>考虑两个数列： <span class="math display">\[
+\begin{aligned}
+e_{n}&amp;:=\left( 1+\frac{1}{n} \right)^{n}\\
+s_{n}&amp;:=1+\frac{1}{1!}+\frac{1}{2!}+\dots+\frac{1}{n!}
+\end{aligned}
+\]</span> 有以下性质 （1） <span
+class="math inline">\(e_{n},s_{n}\)</span> 均严格递增，有界，收敛</p>
+<p>（2）<span class="math inline">\(e_{n}\le s_{n}\)</span></p>
+<p>（3） <span class="math inline">\(e_{n},s_{n}\)</span> 收敛且相等</p>
+<p>定义： <span class="math display">\[
+e:=\lim_{ n \to +\infty } e_{n} =\lim_{ n \to +\infty } s_{n}
+\]</span></p>
+<p>Proof： （1）严格递增：<span class="math inline">\(e_{n}\)</span>
+使用 AM-GM ， <span class="math inline">\(s_{n}\)</span> 显然。</p>
+<p>（2）展开即证</p>
+<p>（3） 先证明 <span class="math inline">\(s_{n}\)</span> 收敛： <span
+class="math display">\[
+\begin{aligned}
+s_{n}&amp;=1+\frac{1}{1!}+\frac{1}{2!}+\dots+\frac{1}{n!}\\
+&amp;&lt;1+\frac{1}{1}+\frac{1}{2}+\frac{1}{4}+\dots+\frac{1}{2^{n-1}}\\
+&amp;=3- \frac{1}{2^{n}}
+\end{aligned}
+\]</span> 令 <span class="math inline">\(n\to 0\)</span> ，可得 <span
+class="math inline">\(s_{n}&lt;3\)</span>
+有界。由单调有界定理可知有极限。</p>
+<p>再证明 <span class="math inline">\(e_{n}\)</span> 收敛： 由于 <span
+class="math inline">\(s_{n}\)</span> 有界，且 <span
+class="math inline">\(0&lt;e_{n}\le s_{n}\)</span> ，故 <span
+class="math inline">\(e_{n}\)</span> 有界。由单调有界定理可知 <span
+class="math inline">\(e_{n}\)</span> 收敛。</p>
+<p>再证明 <span class="math inline">\(s_{n} \le \lim_{ n \to \infty }
+e_{n}\)</span> ： <span class="math display">\[
+\begin{aligned}
+e_{n}&amp;=\left( 1+\frac{1}{n} \right)^{n}=\sum_{k=0}^{n} \binom{n}{k}
+\frac{1}{n^{k}}\\
+&amp;=1+\frac{1}{1!}+\frac{1}{2!}+\left( 1-\frac{1}{n} \right)\left(
+1-\frac{2}{n}  \right) \frac{1}{3!}\\
+&amp;+\dots+\left( 1-\frac{1}{n} \right)\left( 1-\frac{2}{n}
+\right)\dots\left( 1- \frac{n-1}{n} \right) \frac{1}{n!} \\
+&amp;\ge1+\frac{1}{1!}+\frac{1}{2!}+\left( 1-\frac{1}{n} \right)\left(
+1-\frac{2}{n}  \right) \frac{1}{3!}\\
+&amp;+\dots+\left( 1-\frac{1}{n} \right)\left( 1-\frac{2}{n}
+\right)\dots\left( 1- \frac{n-1}{n} \right) \frac{1}{\color{red}m!} \\
+\end{aligned}
+\]</span> 令 <span class="math inline">\(n\to \infty\)</span> 即得 <span
+class="math display">\[
+\lim_{ n \to \infty } e_{n} \ge s_{m}
+\]</span> 令 <span class="math inline">\(m\to \infty\)</span> ，并用
+<span class="math inline">\(e_{n}\le s_{n}\)</span> 夹可得极限相等。</p>
+<h5 id="性质1.7.2-e-是无理数">性质1.7.2 （ <span
+class="math inline">\(e\)</span> 是无理数）</h5>
+<p><span class="math inline">\(e\)</span> 是无理数</p>
+<p>Proof： 反证法： 设 <span
+class="math inline">\(e=\frac{p}{q}\)</span> ， <span
+class="math inline">\(p,q\in \mathbb{Z}\)</span> 互素且 <span
+class="math inline">\(q&gt;1\)</span> 。用 <span
+class="math inline">\(e\)</span> 的估计前 <span
+class="math inline">\(q\)</span> 项： <span class="math display">\[
+\frac{p}{q}=1+\frac{1}{1!}+\frac{1}{2!}+\dots+\frac{1}{q!}+
+\frac{\theta_{q}}{q!q}
+\]</span> 左右两边同乘以 <span class="math inline">\(q!\)</span>
+，左端为整数，右端不为整数。矛盾！ <span
+class="math inline">\(\blacksquare\)</span> 。</p>
+<h5 id="性质1.7.3-有关不等式">性质1.7.3 （有关不等式）</h5>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\left( 1+\frac{1}{n} \right)^{n}&lt;e&lt;\left( 1+\frac{1}{n}
+\right)^{n+1} \\
+&amp;\frac{1}{n+1}&lt;\ln \left( 1+\frac{1}{n} \right)&lt; \frac{1}{n}
+\end{aligned}
+\]</span></p>
+<p>Proof： 仅证明第一个式子的右端。设 <span
+class="math inline">\(a_{n}=\left( 1+\frac{1}{n} \right)^{n+1}\)</span>
+。使用 AM-GM 可知 <span class="math inline">\(a_{n}\)</span>
+单调递减；令 <span class="math inline">\(n\to \infty\)</span> 可得 <span
+class="math inline">\(a_{n}\to e\)</span> ，故 <span
+class="math inline">\(\inf{a_{n}}=e\)</span> ，即 <span
+class="math inline">\(a_{n}\ge e\)</span> 。</p>
+<h5 id="性质1.7.4-e-的估计">性质1.7.4 （ <span
+class="math inline">\(e\)</span> 的估计）</h5>
+<p><span class="math display">\[
+e=1+\frac{1}{1!}+\frac{1}{2!}+\dots+\frac{1}{n!}+\frac{\theta_{n}}{n!n}
+\]</span> 其中 <span class="math inline">\(\theta_{n} \in\left(
+\frac{n}{n+1} , 1\right)\)</span></p>
+<p>Proof： <span class="math inline">\(\theta_{n}\)</span> 下界使用
+<span class="math inline">\(\{ s_{n} \}\)</span> 性质即可。对于上界：
+<span class="math display">\[
+\begin{aligned}
+&amp;(n+1)!\left( s_{n+p}-\sum_{k=0}^{n} \frac{1}{k!} \right)\\
+&amp;=1+\frac{1}{(n+2)} +\frac{1}{(n+2)(n+3)}\\
+&amp;\qquad+\dots+ \frac{1}{(n+2)\dots(n+p)} \\
+&amp;&lt;1+ \frac{1}{n+1}
++\frac{1}{(n+1)^{2}}+\dots+\frac{1}{(n+1)^{p-1}}\\
+&amp;&lt; \frac{n+1}{n}
+\end{aligned}
+\]</span> 移项得证。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Note/" rel="tag"># Note</a>
+              <a href="/tags/Analysis/" rel="tag"># Analysis</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/11/11/Analysis_II/" rel="prev" title="Analysis II">
+                  <i class="fa fa-angle-left"></i> Analysis II
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/11/14/Analysis_Proof_II/" rel="next" title="Analysis Proof II">
+                  Analysis Proof II <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="valine-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Methane</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","single_dollars":true,"cjk_width":0.9,"normal_width":0.6,"append_css":true,"every_page":true,"cdn":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+<script>
+NexT.utils.loadComments('#valine-comments', () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
+    new Valine(Object.assign({"enable":true,"appId":"tphu2Q2JWb6juWQpRpoq2E77-gzGzoHsz","appKey":"k3cLBOlnwtC7Y23V4qvdXGAY","serverURLs":"https://tphu2q2j.lc-cn-n1-shared.com","placeholder":"Just go go","avatar":"mp","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":false,"enableQQ":false,"requiredFields":[],"avatar_cdn":"https://cravatar.cn/avatar/"}, {
+      el: '#valine-comments',
+      path: "/2024/11/13/Analysis_Proof_I/",
+      serverURLs: "https://tphu2q2j.lc-cn-n1-shared.com"
+    }));
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

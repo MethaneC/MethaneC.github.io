@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.2.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Times+New+Roman:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Part 3 一元微分学 定义3.1.1 （导数） 若极限 \[ \lim_{ h \to 0 } \frac{f(x_{0}+h) -f(x_{0}) }{h} \] 存在且有限，则称这个极限值为 \(f\) 在 \(x_{0}\) 处的导数，记作 \(f&#39;(x_{0})\) 或 \(\dfrac{\mathrm{d}f}{\mathrm{d}x}(x_{0})\) 或 \(\">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Analysis III">
+<meta property="og:url" content="http://example.com/2024/11/16/Analysis_III/index.html">
+<meta property="og:site_name" content="Methane">
+<meta property="og:description" content="Part 3 一元微分学 定义3.1.1 （导数） 若极限 \[ \lim_{ h \to 0 } \frac{f(x_{0}+h) -f(x_{0}) }{h} \] 存在且有限，则称这个极限值为 \(f\) 在 \(x_{0}\) 处的导数，记作 \(f&#39;(x_{0})\) 或 \(\dfrac{\mathrm{d}f}{\mathrm{d}x}(x_{0})\) 或 \(\">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-11-15T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-01-06T07:11:34.377Z">
+<meta property="article:author" content="Methane">
+<meta property="article:tag" content="Note">
+<meta property="article:tag" content="Analysis">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2024/11/16/Analysis_III/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2024/11/16/Analysis_III/","path":"2024/11/16/Analysis_III/","title":"Analysis III"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Analysis III | Methane</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Methane</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">subtitle</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Methane"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Methane</p>
+  <div class="site-description" itemprop="description">description</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/11/16/Analysis_III/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Methane">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Methane">
+      <meta itemprop="description" content="description">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Analysis III | Methane">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Analysis III
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-11-16 00:00:00" itemprop="dateCreated datePublished" datetime="2024-11-16T00:00:00+08:00">2024-11-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-01-06 15:11:34" itemprop="dateModified" datetime="2025-01-06T15:11:34+08:00">2025-01-06</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Valine：</span>
+  
+    <a title="valine" href="/2024/11/16/Analysis_III/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2024/11/16/Analysis_III/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h3 id="part-3-一元微分学">Part 3 一元微分学</h3>
+<h5 id="定义3.1.1-导数">定义3.1.1 （导数）</h5>
+<p>若极限 <span class="math display">\[
+\lim_{ h \to 0 } \frac{f(x_{0}+h) -f(x_{0}) }{h}
+\]</span> 存在且有限，则称这个极限值为 <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\(x_{0}\)</span> 处的导数，记作 <span
+class="math inline">\(f&#39;(x_{0})\)</span> 或 <span
+class="math inline">\(\dfrac{\mathrm{d}f}{\mathrm{d}x}(x_{0})\)</span>
+或 <span
+class="math inline">\(\left.\dfrac{\mathrm{d}f}{\mathrm{d}x}\right|_{x=x_{0}}\)</span>，称
+<span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(x_{0}\)</span> 处可导。对 <span
+class="math inline">\(\forall x\in I\)</span> ，<span
+class="math inline">\(f&#39;(x)\)</span> 定义了 <span
+class="math inline">\(I\)</span> 上的一个函数，记为 <span
+class="math inline">\(f&#39;(x)\)</span>， <span
+class="math inline">\(f&#39;\)</span> 或 <span
+class="math inline">\(\dfrac{\mathrm{d}f}{\mathrm{d}x}\)</span> 。</p>
+<p>同样可以定义左右导数。可导的充要条件是左右导数存在且相等。</p>
+<p>若 <span class="math inline">\(f\)</span> 在开区间 <span
+class="math inline">\((a,b)\)</span> 上可导，当且仅当 <span
+class="math inline">\(\forall x_{0}\in(a,b)\)</span> ， <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\(x_{0}\)</span> 可导。 若 <span
+class="math inline">\(f\)</span> 在闭区间 <span
+class="math inline">\([a,b]\)</span> 上连续，当且仅当 <span
+class="math inline">\(\forall x_{0}\in(a,b)\)</span> ， <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\(x_{0}\)</span> 可导，且 <span
+class="math inline">\(a\)</span> 处有右导数， <span
+class="math inline">\(b\)</span> 处有左导数。
+同样可以推广到端点为无穷。</p>
+<h5 id="性质3.1.2-可导必连续">性质3.1.2 （可导必连续）</h5>
+<p>若 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(x_{0}\)</span> 处可导，则 <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\(x_{0}\)</span> 处连续。</p>
+<h5 id="性质3.1.3-导数的四则运算">性质3.1.3 （导数的四则运算）</h5>
+<p>若 <span class="math inline">\(f\)</span> 和 <span
+class="math inline">\(g\)</span> 在 <span
+class="math inline">\(x_{0}\)</span> 处可导，则下列左式可导且值为右式
+<span class="math display">\[
+\begin{aligned}
+&amp;(f\pm g)&#39;(x_{0})=f&#39;(x_{0})\pm g&#39;(x_{0})\\
+&amp;(f\cdot
+g)&#39;(x_{0})=f&#39;(x_{0})g(x_{0})+f(x_{0})g&#39;(x_{0})\\
+\end{aligned}
+\]</span> 若 <span class="math inline">\(g(x_{0})\ne 0\)</span> ，则
+<span class="math display">\[
+\left( \frac{f}{g} \right)&#39;(x_{0})=
+\frac{f&#39;(x_{0})g(x_{0})-f(x_{0})g&#39;(x_{0})}{g^{2}(x_{0})}
+\]</span></p>
+<h5 id="性质3.1.4-复合函数求导">性质3.1.4 （复合函数求导）</h5>
+<p>若 <span class="math inline">\(g\)</span> 在 <span
+class="math inline">\(t_{0}\)</span> 处可导， <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\(g(t_{0})\)</span> 处可导，则 <span
+class="math inline">\(f\circ g\)</span> 在 <span
+class="math inline">\(t_{0}\)</span> 处可导，且 <span
+class="math inline">\((f\circ
+g)&#39;(t_{0})=f&#39;(g(t_{0}))g&#39;(t_{0})\)</span> 。</p>
+<h5 id="性质3.1.5-反函数求导">性质3.1.5 （反函数求导）</h5>
+<p>若 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(I\)</span> 上严格单调， <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\(f^{-1}(x_{0})\)</span> 处可导且 <span
+class="math inline">\(f&#39;(f^{-1}(x_{0}))\ne 0\)</span> ，则反函数
+<span class="math inline">\(f^{-1}\)</span> 在 <span
+class="math inline">\(x_{0}\)</span> 处可导，且 <span
+class="math display">\[
+(f^{-1}(x_{0}))&#39;= \frac{1}{f&#39;(f^{-1}(x_{0}))}
+\]</span></p>
+<hr />
+<h5 id="定义3.2.1-高阶导数">定义3.2.1 （高阶导数）</h5>
+<p>对于 <span class="math inline">\(f\)</span> ，记 <span
+class="math inline">\(n\)</span> 阶导数为 <span
+class="math inline">\(f^{(n)}\)</span> ，其中 <span
+class="math inline">\(f^{(1)}=f&#39;\)</span> ，<span
+class="math inline">\(f^{(n)}=(f^{(n-1)})&#39;\)</span> 。 若 <span
+class="math inline">\(f^{(n)}\)</span> 连续，则称 <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\(I\)</span> 上 <span
+class="math inline">\(k\)</span> 阶连续可导，记为 <span
+class="math inline">\(f\in C^{k}(I)\)</span> 。无穷阶可导 <span
+class="math inline">\(f\in C^{\infty}(I)\)</span> 。</p>
+<h5 id="性质3.2.2-leibniz-法则">性质3.2.2 （ Leibniz 法则）</h5>
+<p>若 <span class="math inline">\(f,g\)</span> 在 <span
+class="math inline">\(I\)</span> 上有 <span
+class="math inline">\(n\)</span> 阶导数，则 <span
+class="math inline">\(f\cdot g\)</span> 在 <span
+class="math inline">\(I\)</span> 上有 <span
+class="math inline">\(n\)</span> 阶导数，且 <span
+class="math display">\[
+(f\cdot g)^{(n)}=\sum_{k=0}^{n}\binom{n}{k}f^{(k)}g^{(n-k)}
+\]</span></p>
+<hr />
+<h5 id="定理3.3.1-fermat-定理">定理3.3.1 （ Fermat 定理）</h5>
+<p>可导的极值点一定是驻点，即 <span
+class="math inline">\(f&#39;(x_{0})=0\)</span> 。（极值点、驻点的概念在
+3.4.1 3.4.2）</p>
+<h5 id="定理3.3.2-rolle-定理">定理3.3.2 （ Rolle 定理）</h5>
+<p>若 <span class="math inline">\(f\in C([a,b])\)</span> ，在 <span
+class="math inline">\((a,b)\)</span> 可导，且 <span
+class="math inline">\(f(a)=f(b)\)</span> ，则 <span
+class="math inline">\(\exists \xi\in(a,b)\)</span> 使得 <span
+class="math inline">\(f&#39;(\xi)=0\)</span> 。</p>
+<h5 id="定理3.3.3-lagrange-中值定理">定理3.3.3 （ Lagrange
+中值定理）</h5>
+<p>若 <span class="math inline">\(f\in C([a,b])\)</span> ，在 <span
+class="math inline">\((a,b)\)</span> 可导，则 <span
+class="math inline">\(\exists \xi\in(a,b)\)</span> 使得 <span
+class="math display">\[
+\frac{f(a)-f(b)}{a-b}=f&#39;(\xi)
+\]</span> 等价形式： <span class="math display">\[
+\begin{aligned}
+f(b)-f(a)&amp;=f&#39;(\xi)(b-a),\\
+&amp;\quad\xi\in(a,b)\\
+f(b)-f(a)&amp;=f&#39;(\xi)(a+\theta(b-a))(b-a)\\
+&amp;\quad\theta\in(0,1)\\
+f(a+h)-f(a)&amp;=f&#39;(\xi)(a+\theta h)h,\\
+&amp;\quad\theta\in(0,1)\\
+\end{aligned}
+\]</span></p>
+<h5 id="定理3.3.4-cauchy-中值定理">定理3.3.4 （ Cauchy 中值定理）</h5>
+<p>若 <span class="math inline">\(f,g\in C([a,b])\)</span> ，在 <span
+class="math inline">\((a,b)\)</span> 可导，且 <span
+class="math inline">\(g&#39;(x)\ne 0\)</span> ， 则 <span
+class="math inline">\(\exists \xi\in(a,b)\)</span> 使得 <span
+class="math display">\[
+\frac{f(a)-f(b)}{g(a)-g(b)}=\frac{f&#39;(\xi)}{g&#39;(\xi)}
+\]</span></p>
+<h5 id="定理3.3.5-darboux-定理">定理3.3.5 （ Darboux 定理）</h5>
+<p>若 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\([a,b]\)</span> 上可导，则</p>
+<p>（1） <span class="math inline">\(f&#39;(x)\)</span> 能取到 <span
+class="math inline">\(f&#39;(a)\)</span> 与 <span
+class="math inline">\(f&#39;(b)\)</span> 之间的一切值。</p>
+<p>（2） <span class="math inline">\(f&#39;\)</span>
+无第一类间断点。</p>
+<hr />
+<h5 id="性质-3.4.1-导函数的保号性">性质 3.4.1 （导函数的保号性）</h5>
+<p>若 <span class="math inline">\(f&#39;(x_{0})&gt;0\)</span> ，则 <span
+class="math inline">\(\exists\delta&gt;0\)</span> ，使得 <span
+class="math inline">\(\forall x\in(x_{0}-\delta,x_{0}),y\in
+(x_{0},x_{0}+\delta)\)</span> 都有 <span
+class="math inline">\(f(x)&lt;f(x_{0})&lt;f(y)\)</span> 。</p>
+<p>若 <span class="math inline">\(f&#39;(x_{0})&lt;0\)</span> ，则 <span
+class="math inline">\(\exists\delta&gt;0\)</span> ，使得 <span
+class="math inline">\(\forall x\in(x_{0}-\delta,x_{0}),y\in
+(x_{0},x_{0}+\delta)\)</span> 都有 <span
+class="math inline">\(f(x)&gt;f(x_{0})&gt;f(y)\)</span> 。</p>
+<h5 id="性质3.4.2-单调性与导函数">性质3.4.2 （单调性与导函数）</h5>
+<p>若 <span class="math inline">\(f\in C([a,b])\)</span> ，且在 <span
+class="math inline">\((a,b)\)</span> 内可导，则 <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\([a,b]\)</span> 上单调递增的充要条件是 <span
+class="math inline">\(\forall x\in(a,b)\)</span> 上有 <span
+class="math inline">\(f&#39;(x)\ge 0\)</span> 。</p>
+<p>若 <span class="math inline">\(f\in C([a,b])\)</span> ，且在 <span
+class="math inline">\((a,b)\)</span> 内可导，则 <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\((a,b)\)</span> 上严格递增的充要条件是</p>
+<p>（1） <span class="math inline">\(\forall x\in (a,b)\)</span> ，有
+<span class="math inline">\(f&#39;(x)\ge 0\)</span></p>
+<p>（2）在 <span class="math inline">\((a,b)\)</span> 的任何开子区间内，
+<span class="math inline">\(f&#39;(x)\)</span> 不恒为 <span
+class="math inline">\(0\)</span> 。</p>
+<p>单调递减、严格递减同理。</p>
+<h5 id="定义3.4.3-极值">定义3.4.3 （极值）</h5>
+<p>对于 <span class="math inline">\(x_{0}\in I\)</span> ，若存在 <span
+class="math inline">\(\delta\)</span> 使得 <span
+class="math inline">\(0&lt;|x-x_{0}|&lt;\delta\)</span> 的 <span
+class="math inline">\(\forall x\)</span> 都有 <span
+class="math inline">\(f(x)\le f(x_{0})\)</span> ，则称 <span
+class="math inline">\(f(x_{0})\)</span> 为 <span
+class="math inline">\(I\)</span> 上的一个极大值。 <span
+class="math inline">\(x_{0}\)</span> 为一个极大值点。（若 <span
+class="math inline">\(\le\)</span> 改为 <span
+class="math inline">\(&lt;\)</span> ，则为严格极大值）</p>
+<p>对于 <span class="math inline">\(x_{0}\in I\)</span> ，若存在 <span
+class="math inline">\(\delta\)</span> 使得 <span
+class="math inline">\(0&lt;|x-x_{0}|&lt;\delta\)</span> 的 <span
+class="math inline">\(\forall x\)</span> 都有 <span
+class="math inline">\(f(x)\ge f(x_{0})\)</span> ，则称 <span
+class="math inline">\(f(x_{0})\)</span> 为 <span
+class="math inline">\(I\)</span> 上的一个极小值。 <span
+class="math inline">\(x_{0}\)</span> 为一个极小值点。（若 <span
+class="math inline">\(\le\)</span> 改为 <span
+class="math inline">\(&lt;\)</span> ，则为严格极小值）</p>
+<h5 id="性质3.4.4-导函数与极值">性质3.4.4 （导函数与极值）</h5>
+<p>极值点的必要条件：</p>
+<p>若 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(x_{0}\)</span> 处可导，则 <span
+class="math inline">\(x_{0}\)</span> 为 <span
+class="math inline">\(f\)</span> 极值点的必要条件是 <span
+class="math inline">\(f&#39;(x_{0})=0\)</span> 。</p>
+<p>极值点的充分条件：</p>
+<p>若 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(x_{0}\)</span> 连续，则 <span
+class="math inline">\(x_{0}\)</span> 为 <span
+class="math inline">\(f\)</span> 严格极大值点的充分条件是 <span
+class="math inline">\(\exists \delta&gt;0\)</span> ，使得 <span
+class="math inline">\((x_{0}-\delta,x_{0})\)</span> 内 <span
+class="math inline">\(f&#39;&gt;0\)</span> ，<span
+class="math inline">\((x_{0},x_{0}+\delta)\)</span> 内 <span
+class="math inline">\(f&#39;&lt;0\)</span> 。</p>
+<p>若 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(x_{0}\)</span> 连续，则 <span
+class="math inline">\(x_{0}\)</span> 为 <span
+class="math inline">\(f\)</span> 严格极小值点的充分条件是 <span
+class="math inline">\(\exists \delta&gt;0\)</span> ，使得 <span
+class="math inline">\((x_{0}-\delta,x_{0})\)</span> 内 <span
+class="math inline">\(f&#39;&lt;0\)</span> ，<span
+class="math inline">\((x_{0},x_{0}+\delta)\)</span> 内 <span
+class="math inline">\(f&#39;&gt;0\)</span> 。（ 若改 <span
+class="math inline">\(&lt;\)</span> 为 <span
+class="math inline">\(\le\)</span> ，改 <span
+class="math inline">\(&gt;\)</span> 为 <span
+class="math inline">\(\ge\)</span> ，则为非严格极小值）</p>
+<p>若 <span class="math inline">\(f&#39;(x_{0})=0\)</span> ，且 <span
+class="math inline">\(f&#39;&#39;(x_{0})\)</span> 存在，则 <span
+class="math inline">\(x_{0}\)</span> 为 <span
+class="math inline">\(f\)</span> 严格极大值点的充分条件是 <span
+class="math inline">\(f&#39;&#39;(x_{0})&lt;0\)</span> 。</p>
+<p>若 <span class="math inline">\(f&#39;(x_{0})=0\)</span> ，且 <span
+class="math inline">\(f&#39;&#39;(x_{0})\)</span> 存在，则 <span
+class="math inline">\(x_{0}\)</span> 为 <span
+class="math inline">\(f\)</span> 严格极小值点的充分条件是 <span
+class="math inline">\(f&#39;&#39;(x_{0})&gt;0\)</span>
+。（这里不能改变不等号转化为非严格极值）</p>
+<hr />
+<h5 id="定义3.5.1-凸函数">定义3.5.1 （凸函数）</h5>
+<p>若 <span class="math inline">\(f\)</span> 的定义域为 <span
+class="math inline">\(I\)</span> ，且满足： <span
+class="math inline">\(\forall x_{1}, x_{2}\in I\)</span> ，<span
+class="math inline">\(\forall \lambda_{1},\lambda_{2}&gt;0\)</span>
+，其中 <span class="math inline">\(x_{1}\ne
+x_{2},\lambda_{1}\ne\lambda_{2}\)</span> ，都满足 <span
+class="math display">\[
+f(\lambda_{1}x_{1}+\lambda_{2}x_{2})\le\lambda_{1}f(x_{1})+\lambda_{2}f(x_{2})
+\]</span> 则称 <span class="math inline">\(f\)</span> 为 <span
+class="math inline">\(I\)</span> 上的凸函数。（若 <span
+class="math inline">\(\le\)</span> 改为 <span
+class="math inline">\(&lt;\)</span> ，则 <span
+class="math inline">\(f\)</span> 为 <span
+class="math inline">\(I\)</span> 上严格凸函数）</p>
+<p>同样可以定义凹函数、严格凹函数。下面只讨论凸函数。</p>
+<h5 id="性质3.5.2-凸函数的性质">性质3.5.2 （凸函数的性质）</h5>
+<p>凸函数的充要条件： （1） <span class="math inline">\(f\)</span> 在
+<span class="math inline">\(I\)</span> 上是凸函数的充要条件是 <span
+class="math inline">\(\forall x_{1},x_{2}\in I\)</span> 和 <span
+class="math inline">\(\forall x\in (x_{1},x_{2})\)</span> ，有 <span
+class="math display">\[
+\frac{f(x)-f(x_{1})}{x-x_{1}}\le\frac{f(x_{2})-f(x_{1})}{x_{2}-x_{1}}\le
+\frac{f(x_{2})-f(x)}{x_{2}-x}
+\]</span>
+注：这三个不等式是互相等价的，只要满足其中的一个，就能推出是凸函数。若
+<span class="math inline">\(\le\)</span> 改为 <span
+class="math inline">\(&lt;\)</span> ，则为严格凸函数。</p>
+<p>（2）若 <span class="math inline">\(f\in C([a,b])\)</span> 且 <span
+class="math inline">\((a,b)\)</span> 内可导，则 <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\([a,b]\)</span> 上是（严格）凸函数的充要条件是
+<span class="math inline">\(f&#39;(x)\)</span> （严格）递增。</p>
+<p>（3）若 <span class="math inline">\(f\in C([a,b])\)</span> 且 <span
+class="math inline">\((a,b)\)</span> 内可导，则 <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\([a,b]\)</span> 上是（严格）凸函数的充要条件是
+<span class="math inline">\(\forall x_{1},x_{2}\in (a,b)\)</span> ，有
+<span class="math inline">\(f(x_{2})\ge
+f(x_{1})+f&#39;(x_{1})(x_{2}-x_{1})\)</span> （ <span
+class="math inline">\(\ge\)</span> 改为 <span
+class="math inline">\(&gt;\)</span> ）。</p>
+<p>（4）若 <span class="math inline">\(f\in C([a,b])\)</span> 且 <span
+class="math inline">\((a,b)\)</span> 内有二阶导数，则 <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\([a,b]\)</span> 上是（严格）凸函数的充要条件是
+<span class="math inline">\(\forall x\in(a,b)\)</span> ，有 <span
+class="math inline">\(f&#39;&#39;\ge 0\)</span> （在 <span
+class="math inline">\((a,b)\)</span> 的任何开子区间内， <span
+class="math inline">\(f&#39;&#39;\)</span> 不恒为 <span
+class="math inline">\(0\)</span> ）。</p>
+<p>凸函数的性质：</p>
+<p>（1）若 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\((a,b)\)</span> 上是凸函数，则 <span
+class="math inline">\(\forall x_{0}\in(a,b)\)</span> 都有 <span
+class="math inline">\(f\)</span> 在 <span
+class="math inline">\(x_{0}\)</span>
+处左右导数存在（但不一定相等）。</p>
+<p>（2）若 <span class="math inline">\(f\)</span> 为 <span
+class="math inline">\([a,b]\)</span> 上的凸函数，则 <span
+class="math inline">\(f\in C([a,b])\)</span> 。</p>
+<h5 id="定义3.5.3-拐点">定义3.5.3 （拐点）</h5>
+<p>对于 <span class="math inline">\(x_{0}\in I\)</span> ，若存在 <span
+class="math inline">\(\delta\)</span> 使得 <span
+class="math inline">\((x_{0}-\delta,x_{0})\)</span> 与 <span
+class="math inline">\((x_{0},x_{0}+\delta)\)</span>
+分别是严格凸和严格凹的，则称 <span class="math inline">\(x_{0}\)</span>
+是 <span class="math inline">\(f(x)\)</span> 的一个拐点。</p>
+<h5 id="性质3.5.3-导函数与拐点">性质3.5.3 （导函数与拐点）</h5>
+<p>拐点的必要条件： 若 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(x_{0}\)</span> 处二阶可导，则 <span
+class="math inline">\(x_{0}\)</span> 为 <span
+class="math inline">\(f\)</span> 拐点的必要条件是 <span
+class="math inline">\(f&#39;&#39;(x_{0})=0\)</span> 。</p>
+<p>拐点的充分条件： 若 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(x_{0}\)</span> 处连续，则 <span
+class="math inline">\(x_{0}\)</span> 为 <span
+class="math inline">\(f\)</span> 严格极大值点的充分条件是 <span
+class="math inline">\(\exists \delta&gt;0\)</span> ，使得 <span
+class="math inline">\((x_{0}-\delta,x_{0})\)</span> 与<span
+class="math inline">\((x_{0},x_{0}+\delta)\)</span> 内 <span
+class="math inline">\(f&#39;&#39;\)</span> 符号相反。</p>
+<p>若 <span class="math inline">\(f&#39;&#39;(x)=0\)</span> ，且 <span
+class="math inline">\(f&#39;&#39;&#39;(x_{0})\)</span> 存在，则 <span
+class="math inline">\(x_{0}\)</span> 为 <span
+class="math inline">\(f\)</span> 拐点的充分条件是 <span
+class="math inline">\(f&#39;&#39;&#39;(x_{0})&lt;0\)</span> 或 <span
+class="math inline">\(f&#39;&#39;&#39;(x_{0})&gt;0\)</span> 。</p>
+<p>极值点、拐点，单调性、凹凸性与 <span
+class="math inline">\(f&#39;\)</span> 、 <span
+class="math inline">\(f&#39;&#39;\)</span> 、 <span
+class="math inline">\(f&#39;&#39;&#39;\)</span>
+的联系是不是很混乱？不过上述性质可以总结在表中：</p>
+<table>
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 45%" />
+<col style="width: 46%" />
+</colgroup>
+<thead>
+<tr>
+<th><span class="math inline">\(x_{0}\)</span></th>
+<th>极值点</th>
+<th>拐点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>定义</td>
+<td>左右邻域函数值大小关系相反</td>
+<td>左右邻域凹凸性相反</td>
+</tr>
+<tr>
+<td>必要条件</td>
+<td><span class="math inline">\(f&#39;(x_{0})=0\)</span> （若存在 <span
+class="math inline">\(f&#39;(x_{0})\)</span> ）</td>
+<td><span class="math inline">\(f&#39;&#39;(x_{0})=0\)</span> （若存在
+<span class="math inline">\(f&#39;&#39;(x_{0})\)</span> ）</td>
+</tr>
+<tr>
+<td>充分条件</td>
+<td>1. <span class="math inline">\(x_{0}\)</span> 处连续，左右邻域 <span
+class="math inline">\(f&#39;\)</span> 符号相反</td>
+<td>1. <span class="math inline">\(x_{0}\)</span> 处连续，左右邻域 <span
+class="math inline">\(f&#39;&#39;\)</span> 符号相反</td>
+</tr>
+<tr>
+<td></td>
+<td>2. <span class="math inline">\(f&#39;(x_{0})=0\)</span> 且 <span
+class="math inline">\(f&#39;&#39;(x_{0})\ne 0\)</span>
+（若二阶可导）</td>
+<td>2. <span class="math inline">\(f&#39;&#39;(x_{0})=0\)</span> 且
+<span class="math inline">\(f&#39;&#39;&#39;(x_{0})\ne
+0\)</span>（若三阶可导）</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 31%" />
+<col style="width: 56%" />
+</colgroup>
+<thead>
+<tr>
+<th><span class="math inline">\(f(x)\)</span></th>
+<th>单调函数</th>
+<th>凸函数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>充要条件</td>
+<td><span class="math inline">\(f\)</span> 单调递增</td>
+<td><span class="math inline">\(f&#39;\)</span> 单调递增（若可导）</td>
+</tr>
+<tr>
+<td></td>
+<td><span class="math inline">\(f&#39;\ge 0\)</span> （若可导）</td>
+<td><span class="math inline">\(f&#39;&#39;\ge 0\)</span>
+（若二阶可导）</td>
+</tr>
+<tr>
+<td>性质</td>
+<td><span class="math inline">\(f(x)\)</span> 在任意点有极限</td>
+<td><span class="math inline">\(f&#39;(x)\)</span> 任意点有左右极限，
+<span class="math inline">\(f(x)\)</span> 连续</td>
+</tr>
+<tr>
+<td>分界点</td>
+<td>极值点</td>
+<td>拐点</td>
+</tr>
+</tbody>
+</table>
+<p>注：所述均为非严格极值点、非严格单调、非严格凸。</p>
+<hr />
+<h5 id="性质3.6.1-lhospital-frac00-型">性质3.6.1 （ L’Hospital <span
+class="math inline">\(\frac{0}{0}\)</span> 型）</h5>
+<p>设 <span class="math inline">\(f,g\)</span> 在 <span
+class="math inline">\((x_{0}, x_{0}+\delta)\)</span> 可导，且 <span
+class="math inline">\(\forall x\in(x_{0},x_{0}+\delta)\)</span> 有 <span
+class="math inline">\(g&#39;(x)\ne 0\)</span> ，还有 <span
+class="math inline">\(f(x)\to 0,g(x)\to 0(x\to x_{0}^{+})\)</span>
+，那么若存在广义极限 <span class="math display">\[
+\lim_{ x \to x_{0}^{+} } \frac{f&#39;(x)}{g&#39;(x)}
+\]</span> 则 <span class="math display">\[
+\lim_{ x \to x_{0}^{+} } \frac{f(x)}{g(x)}=\lim_{ x \to x_{0}^{+} }
+\frac{f&#39;(x)}{g&#39;(x)}
+\]</span></p>
+<p>对于左极限也同理。</p>
+<p>若极限过程是 <span class="math inline">\(x\to +\infty\)</span>
+，需要将条件改为存在 <span class="math inline">\(a\)</span> ，使得 <span
+class="math inline">\((a,+\infty)\)</span> 可导，且 <span
+class="math inline">\(\forall x\in(a,+\infty)\)</span> 有 <span
+class="math inline">\(g&#39;(x)\ne 0\)</span> 。 <span
+class="math inline">\(-\infty\)</span> 也同理。</p>
+<h5 id="性质3.6.2-lhospital-fracinfty-型">性质3.6.2 （ L’Hospital <span
+class="math inline">\(\frac{*}{\infty}\)</span> 型）</h5>
+<p>设 <span class="math inline">\(f,g\)</span> 在 <span
+class="math inline">\((x_{0}, x_{0}+\delta)\)</span> 可导，且 <span
+class="math inline">\(\forall x\in(x_{0},x_{0}+\delta)\)</span> 有 <span
+class="math inline">\(g&#39;(x)\ne 0\)</span> ，还有 <span
+class="math inline">\(g(x)\to \infty(x\to x_{0}^{+})\)</span>
+，那么若存在广义极限 <span class="math display">\[
+\lim_{ x \to x_{0}^{+} } \frac{f&#39;(x)}{g&#39;(x)}
+\]</span> 则 <span class="math display">\[
+\lim_{ x \to x_{0}^{+} } \frac{f(x)}{g(x)}=\lim_{ x \to x_{0}^{+} }
+\frac{f&#39;(x)}{g&#39;(x)}
+\]</span> 左极限， <span class="math inline">\(x_{0}\)</span>
+为无穷时同理。</p>
+<hr />
+<h5 id="定义3.7.1-taylor-多项式">定义3.7.1 （ Taylor 多项式）</h5>
+<p>若 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(x_{0}\)</span> 处有 <span
+class="math inline">\(n\)</span> 阶导数，则称 <span
+class="math display">\[
+P_{n}(f)(x-x_{0})=\sum_{k=0}^{n}f^{k}(x_{0})(x-x_{0})^{k}
+\]</span> 是 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(x_{0}\)</span> 处的 <span
+class="math inline">\(n\)</span> 次 Taylor 多项式。并记其余项 <span
+class="math display">\[
+R_{n}(f)(x-x_{0})=f(x)-P_{n}(f)(x-x_{0})
+\]</span></p>
+<h5 id="性质3.7.2-taylor-多项式的性质">性质3.7.2（ Taylor
+多项式的性质）</h5>
+<p><span class="math display">\[
+\frac{\mathrm{d}}{\mathrm{d}x}
+P_{n}(f)(x-x_{0})=P_{n-1}(f&#39;)(x-x_{0})
+\]</span> <span class="math display">\[
+\frac{\mathrm{d}}{\mathrm{d}\color{red}{x_{0}}} P_{n}(f)(x-x_{0})=
+\frac{f^{(n+1)}(x_{0})}{n!} (x-x_{0})^{n}
+\]</span></p>
+<h5 id="定理3.7.2-taylor-公式-peano-余项">定理3.7.2 （ Taylor 公式 Peano
+余项）</h5>
+<p>若 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(x_{0}\)</span> 点有 <span
+class="math inline">\(n\)</span> 阶导数，则 <span
+class="math display">\[
+R_{n}(f)(x-x_{0})=o((x-x_{0})^{n})
+\]</span></p>
+<h5 id="定理3.7.3-taylor-公式-lagrange-余项cauchy-余项">定理3.7.3 （
+Taylor 公式 Lagrange 余项、Cauchy 余项）</h5>
+<p>若 <span class="math inline">\(f\)</span> 在 <span
+class="math inline">\(x_{0}\)</span> 点有 <span
+class="math inline">\(n+1\)</span> 阶导数，那么记 <span
+class="math display">\[
+R_{n}(f)(x-x_{0})= \frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_{0})^{n+1}
+\]</span> 为 Lagrange 余项， <span class="math display">\[
+R_{n}(f)(x-x_{0})= \frac{f^{(n+1)}(\xi)}{n!}(x-\xi)^{n}(x-x_{0})
+\]</span> 为 Cauchy 余项，其中 <span
+class="math inline">\(\xi\in(x_{0},x)\)</span> 。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Note/" rel="tag"># Note</a>
+              <a href="/tags/Analysis/" rel="tag"># Analysis</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/11/16/Advanced_Algebra_I/" rel="prev" title="Advanced Algebra I">
+                  <i class="fa fa-angle-left"></i> Advanced Algebra I
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/11/22/Analysis_2024_Midterm_Test/" rel="next" title="Analysis 2024 Midterm Test">
+                  Analysis 2024 Midterm Test <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="valine-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Methane</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","single_dollars":true,"cjk_width":0.9,"normal_width":0.6,"append_css":true,"every_page":true,"cdn":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+<script>
+NexT.utils.loadComments('#valine-comments', () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
+    new Valine(Object.assign({"enable":true,"appId":"tphu2Q2JWb6juWQpRpoq2E77-gzGzoHsz","appKey":"k3cLBOlnwtC7Y23V4qvdXGAY","serverURLs":"https://tphu2q2j.lc-cn-n1-shared.com","placeholder":"Just go go","avatar":"mp","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":false,"enableQQ":false,"requiredFields":[],"avatar_cdn":"https://cravatar.cn/avatar/"}, {
+      el: '#valine-comments',
+      path: "/2024/11/16/Analysis_III/",
+      serverURLs: "https://tphu2q2j.lc-cn-n1-shared.com"
+    }));
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

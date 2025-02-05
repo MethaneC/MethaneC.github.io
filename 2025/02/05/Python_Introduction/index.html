@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.2.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Times+New+Roman:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Python introduction 简要记录。oop 部分先搁置。 运算符  算数运算符：+-*&#x2F;% ** &#x2F;&#x2F; 比较运算符：&#x3D;&#x3D; !&#x3D; &gt; &lt; &gt;&#x3D; &lt;&#x3D; 赋值运算符：&#x3D; +&#x3D; -&#x3D; *&#x3D; &#x2F;&#x3D; **&#x3D; &#x2F;&#x2F;&#x3D; 逻辑运算符：and or not 成员运算符：in&#x2F;not in 对象是否存在于某个集合中（字符串，列表，元组） 身份运算符：is&#x2F;is n">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Introduction">
+<meta property="og:url" content="http://example.com/2025/02/05/Python_Introduction/index.html">
+<meta property="og:site_name" content="Methane">
+<meta property="og:description" content="Python introduction 简要记录。oop 部分先搁置。 运算符  算数运算符：+-*&#x2F;% ** &#x2F;&#x2F; 比较运算符：&#x3D;&#x3D; !&#x3D; &gt; &lt; &gt;&#x3D; &lt;&#x3D; 赋值运算符：&#x3D; +&#x3D; -&#x3D; *&#x3D; &#x2F;&#x3D; **&#x3D; &#x2F;&#x2F;&#x3D; 逻辑运算符：and or not 成员运算符：in&#x2F;not in 对象是否存在于某个集合中（字符串，列表，元组） 身份运算符：is&#x2F;is n">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-02-05T12:52:16.460Z">
+<meta property="article:modified_time" content="2025-02-05T13:49:46.109Z">
+<meta property="article:author" content="Methane">
+<meta property="article:tag" content="ComputerScience">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2025/02/05/Python_Introduction/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2025/02/05/Python_Introduction/","path":"2025/02/05/Python_Introduction/","title":"Python Introduction"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Python Introduction | Methane</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Methane</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">subtitle</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Methane"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Methane</p>
+  <div class="site-description" itemprop="description">description</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/02/05/Python_Introduction/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Methane">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Methane">
+      <meta itemprop="description" content="description">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Python Introduction | Methane">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python Introduction
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2025-02-05 20:52:16 / 修改时间：21:49:46" itemprop="dateCreated datePublished" datetime="2025-02-05T20:52:16+08:00">2025-02-05</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Valine：</span>
+  
+    <a title="valine" href="/2025/02/05/Python_Introduction/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2025/02/05/Python_Introduction/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>Python introduction 简要记录。oop 部分先搁置。</p>
+<h5 id="运算符">运算符</h5>
+<ul>
+<li>算数运算符：<code>+-*/% ** //</code></li>
+<li>比较运算符：<code>== != &gt; &lt; &gt;= &lt;=</code></li>
+<li>赋值运算符：<code>= += -= *= /= **= //=</code></li>
+<li>逻辑运算符：<code>and or not</code></li>
+<li>成员运算符：<code>in/not in</code>
+对象是否存在于某个集合中（字符串，列表，元组）</li>
+<li>身份运算符：<code>is/is not</code> 比较内存位置是否相同</li>
+<li>位运算符：<code>&amp; | ^ ~</code></li>
+</ul>
+<h5 id="流程语句">流程语句</h5>
+<ul>
+<li>判断语句： <code>if/elif/else</code></li>
+<li>循环语句： <code>for in/else</code> <code>while/else</code>
+<code>continue</code> <code>break</code></li>
+<li>异常： <code>try/except as/else/finally</code>
+<code>raise</code></li>
+<li>module： <code>import</code> <code>from as</code></li>
+<li>switch： <code>match/case</code></li>
+<li>文件： <code>with as</code></li>
+<li>其他： <code>pass</code> <code>del</code> <code>assert</code></li>
+</ul>
+<h5 id="类型">类型</h5>
+<ul>
+<li>数字：<code>int/float/complex</code></li>
+<li>字符串： <code>str</code> <code>str[]</code> <code>str.find()</code>
+<code>str.maketrans()</code> <code>str.replace()</code>
+<code>str.split()</code> <code>str.join()</code> <code>len(str)</code>
+<code>format%</code> <code>f-string</code></li>
+<li>列表：<code>list</code> <code>list[]</code>
+<code>list.append()</code> <code>list.insert()</code>
+<code>list.pop()</code> <code>list.copy()</code>
+<code>list.count()</code> <code>list.clear()</code>
+<code>list.extend()</code> <code>list.remove()</code>
+<code>list.sort()</code> <code>list.reverse()</code>
+<code>len(list)</code></li>
+<li>元组：<code>tuple</code> <code>tuple[]</code>
+<code>len(tuple)</code></li>
+<li>字典：<code>dict</code> <code>dict.clear()</code>
+<code>dict.fromkeys()</code> <code>dict.pop()</code>
+<code>dict.update()</code> <code>dict.copy()</code>
+<code>dict.keys()</code> <code>dict.items()</code>
+<code>len(dict)</code></li>
+<li>集合：<code>set</code> <code>set.add()</code>
+<code>set.copy()</code> <code>set.clear()</code>
+<code>set.remove()</code></li>
+</ul>
+<p>注：常量的赋值是深拷贝，其他的复制时浅拷贝（使用
+<code>obj.copy()</code> 深拷贝）</p>
+<h5 id="函数">函数</h5>
+<ul>
+<li>自定义函数： <code>def fun(arg,arg=, *arg,arg,**arg)</code>
+，<code>arg=</code> 有默认值， <code>*arg</code>
+接受剩余参数，<code>*arg/*</code> 后的<code>arg</code> 接受关键字参数，
+<code>**arg</code> 接受所有关键字参数。 <code>*arg</code> 是
+<code>tuple</code> ， <code>**arg</code> 是 <code>dict</code>
+，反过来同理。</li>
+<li>内置函数： <code>input()</code> <code>print()</code>
+<code>abs()</code> <code>max()</code> <code>min()</code>
+<code>id()</code> <code>hash()</code> <code>eval()</code>
+<code>exec()</code> <code>enumerate()</code> <code>repr()</code>
+<code>type()</code> <code>locals()</code> <code>gobals()</code>
+<code>zip()</code></li>
+<li>高阶函数： <code>filter()/map()/reduce()/sorted()</code></li>
+<li>有关类的函数： <code>isinstance()</code> <code>type()</code>
+<code>dir()</code> <code>getattr()</code> <code>hasattr()</code>
+<code>setattr()</code> <code>delattr()</code></li>
+<li>匿名函数： <code>lambda return : expression</code></li>
+<li>闭包： <code>nonlocal</code> <code>global</code></li>
+</ul>
+<h5 id="feature">feature</h5>
+<ul>
+<li>切片： <code>slice(begin,end,step)</code>
+<code>[begin:end:step]</code></li>
+<li>生成器：<code>yield()/next(generator)</code>
+<code>StopIteration</code></li>
+<li>迭代器：<code>class.__iter__()/class.__next__()</code>
+（<code>iterator/generator/str/list/tuple/dict/set</code> 可迭代）</li>
+<li>range： <code>range(begin,end,step)</code>
+（是一种迭代器，左闭右开）</li>
+<li>列表推导式：
+<code>[expression for iterator in obj if condition]</code></li>
+<li>装饰器： <code>@decorator</code> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建 decorator</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">decorator</span>(<span class="params">func</span>):</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">wrapper</span>(<span class="params">*args, **kwargs</span>):</span><br><span class="line">		before()</span><br><span class="line">		result = func(*args, **kwargs)</span><br><span class="line">		after()</span><br><span class="line">		<span class="keyword">return</span> result</span><br><span class="line">	<span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@decorator</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">func</span>():</span><br><span class="line">	function()</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="object">object</h5>
+<ul>
+<li>继承： <code>class A(B,C)</code></li>
+<li>私有变量/函数： <code>__name</code></li>
+<li>函数：<code>def fun(self, args)</code> ，其中 <code>self</code>
+相当于 <code>this</code></li>
+<li>专有函数： <code>__init__</code> <code>__new__</code>
+<code>__del__</code></li>
+<li>运算符重载： <code>__repr__</code> <code>__setitem__</code>
+<code>__getitem__</code> <code>__le__</code> <code>__ge__</code>
+<code>__eq__</code> <code>__ne__</code> <code>__add__</code>
+<code>__sub__</code> <code>__mul__</code> <code>__truediv__</code>
+<code>__mod__</code> <code>__pow__</code> <code>__call__</code></li>
+<li>内置函数重载： <code>__str__</code> <code>__hash__</code>
+<code>__len__</code> <code>__iter__</code> <code>__next__</code>
+<code>__getattr__</code></li>
+<li>专有属性：<code>__class__</code> <code>__name__</code>
+<code>__dict__</code> <code>__base__</code> <code>__doc__</code>
+<code>__slots__</code></li>
+<li><code>@property</code> <code>@name.setter</code></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/ComputerScience/" rel="tag"># ComputerScience</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/02/04/Git_Note/" rel="prev" title="Git Note">
+                  <i class="fa fa-angle-left"></i> Git Note
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="valine-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Methane</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","single_dollars":true,"cjk_width":0.9,"normal_width":0.6,"append_css":true,"every_page":true,"cdn":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+<script>
+NexT.utils.loadComments('#valine-comments', () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
+    new Valine(Object.assign({"enable":true,"appId":"tphu2Q2JWb6juWQpRpoq2E77-gzGzoHsz","appKey":"k3cLBOlnwtC7Y23V4qvdXGAY","serverURLs":"https://tphu2q2j.lc-cn-n1-shared.com","placeholder":"Just go go","avatar":"mp","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":false,"enableQQ":false,"requiredFields":[],"avatar_cdn":"https://cravatar.cn/avatar/"}, {
+      el: '#valine-comments',
+      path: "/2025/02/05/Python_Introduction/",
+      serverURLs: "https://tphu2q2j.lc-cn-n1-shared.com"
+    }));
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

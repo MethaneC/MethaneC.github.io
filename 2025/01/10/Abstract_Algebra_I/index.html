@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.2.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Times+New+Roman:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="抽象代数。参考资料：近世代数（丘维生），科大丛书（欧阳毅），抽象代数学（姚慕生）。 Part 1 群 定义1.1.1 （群） 集合 \(G\) 和其上的二元运算 \(\cdot\) 满足以下三个条件： （1）结合律，即 \(\forall a,b,c\in G\) ，有 \((a\cdot b)\cdot c&#x3D;a\cdot(b\cdot c)\) 。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Abstract Algebra I">
+<meta property="og:url" content="http://example.com/2025/01/10/Abstract_Algebra_I/index.html">
+<meta property="og:site_name" content="Methane">
+<meta property="og:description" content="抽象代数。参考资料：近世代数（丘维生），科大丛书（欧阳毅），抽象代数学（姚慕生）。 Part 1 群 定义1.1.1 （群） 集合 \(G\) 和其上的二元运算 \(\cdot\) 满足以下三个条件： （1）结合律，即 \(\forall a,b,c\in G\) ，有 \((a\cdot b)\cdot c&#x3D;a\cdot(b\cdot c)\) 。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-01-09T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-01-23T13:08:19.649Z">
+<meta property="article:author" content="Methane">
+<meta property="article:tag" content="Note">
+<meta property="article:tag" content="Algebra">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2025/01/10/Abstract_Algebra_I/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2025/01/10/Abstract_Algebra_I/","path":"2025/01/10/Abstract_Algebra_I/","title":"Abstract Algebra I"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Abstract Algebra I | Methane</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Methane</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">subtitle</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Methane"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Methane</p>
+  <div class="site-description" itemprop="description">description</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/01/10/Abstract_Algebra_I/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Methane">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Methane">
+      <meta itemprop="description" content="description">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Abstract Algebra I | Methane">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Abstract Algebra I
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-01-10 00:00:00" itemprop="dateCreated datePublished" datetime="2025-01-10T00:00:00+08:00">2025-01-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-01-23 21:08:19" itemprop="dateModified" datetime="2025-01-23T21:08:19+08:00">2025-01-23</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Valine：</span>
+  
+    <a title="valine" href="/2025/01/10/Abstract_Algebra_I/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2025/01/10/Abstract_Algebra_I/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>抽象代数。参考资料：近世代数（丘维生），科大丛书（欧阳毅），抽象代数学（姚慕生）。</p>
+<h3 id="part-1-群">Part 1 群</h3>
+<h5 id="定义1.1.1-群">定义1.1.1 （群）</h5>
+<p>集合 <span class="math inline">\(G\)</span> 和其上的二元运算 <span
+class="math inline">\(\cdot\)</span> 满足以下三个条件：</p>
+<p>（1）结合律，即 <span class="math inline">\(\forall a,b,c\in
+G\)</span> ，有 <span class="math inline">\((a\cdot b)\cdot
+c=a\cdot(b\cdot c)\)</span> 。</p>
+<p>（2）存在单位元 <span class="math inline">\(1\)</span> ，即 <span
+class="math inline">\(\forall a\in G\)</span> ，有 <span
+class="math inline">\(a\cdot 1=1\cdot a=a\)</span> 。</p>
+<p>（3）所有元素有逆元，即 <span class="math inline">\(\forall a\in
+G\)</span> ， <span class="math inline">\(\exists b\in G\)</span> ，使得
+<span class="math inline">\(a\cdot b=b\cdot a=1\)</span> 。</p>
+<p>则称 <span class="math inline">\((G,\cdot)\)</span>
+为群。若满足（1），称为半群。若满足（1）（2），称为幺半群。若满足三个条件以外还满足交换律，则称
+<span class="math inline">\(G\)</span> 为 Abel 群。</p>
+<h5 id="性质1.1.2-群的简单性质">性质1.1.2 （群的简单性质）</h5>
+<p>设 <span class="math inline">\(G\)</span> 为群，则</p>
+<p>（1） 单位元唯一，每一个元素逆元唯一。</p>
+<p>（2）消去律，即，若 <span class="math inline">\(ab=ac\)</span> ，则
+<span class="math inline">\(b=c\)</span> 、若 <span
+class="math inline">\(ba=ca\)</span> ，则 <span
+class="math inline">\(b=c\)</span> 。</p>
+<p>（3） <span class="math inline">\((a^{-1})^{-1}=a\)</span> 。</p>
+<p>（4） <span class="math inline">\((ab)^{-1}=b^{-1}a^{-1}\)</span>
+。</p>
+<h5 id="定义1.1.4-子群">定义1.1.4 （子群）</h5>
+<p>设 <span class="math inline">\(G\)</span> 为群， 若 <span
+class="math inline">\(H\)</span> 是 <span
+class="math inline">\(G\)</span> 的子集，且 <span
+class="math inline">\(G\)</span> 运算封闭，则称 <span
+class="math inline">\(H\)</span> 是 <span
+class="math inline">\(G\)</span> 的子群，记 <span
+class="math inline">\(H\le G\)</span> ，若 <span class="math inline">\(H
+\ne G\)</span> ，称 <span class="math inline">\(H\)</span> 是 <span
+class="math inline">\(G\)</span> 的真子群，记 <span
+class="math inline">\(H&lt;G\)</span> 。其中 <span
+class="math inline">\(\{ 1 \},G\)</span> 称为 <span
+class="math inline">\(G\)</span> 的平凡子群。</p>
+<h5 id="性质1.1.5-子群的充要条件">性质1.1.5 （子群的充要条件）</h5>
+<p>设 <span class="math inline">\(H\subset G\)</span> ，那么 <span
+class="math inline">\(H \le G\)</span> 当且仅当 <span
+class="math inline">\(\forall a,b\in H\)</span> ，有 <span
+class="math inline">\(ab^{-1}\in H\)</span> 。</p>
+<h5 id="定义1.1.6-群的运算">定义1.1.6 （群的运算）</h5>
+<p>（1）设 <span class="math inline">\(G\)</span> 是群， <span
+class="math inline">\(H_{1},H_{2}\le G\)</span> ，记 <span
+class="math display">\[
+H_{1}H_{2}=\{ h_{1}h_{2}:h_{1}\in H_{1},h_{2}\in H_{2} \}
+\]</span> 为 <span class="math inline">\(H_{1},H_{2}\)</span>
+的乘积。可证 <span class="math inline">\(H_{1}H_{2}\le G\)</span> 。
+（2）设 <span class="math inline">\(G\)</span> 是群， <span
+class="math inline">\(H_{1},H_{2}\le G\)</span> ，记 <span
+class="math display">\[
+H_{1}\cap H_{2}=\{ h:h\in H_{1},h\in H_{2} \}
+\]</span> 为 <span class="math inline">\(H_{1},H_{2}\)</span> 的交。可证
+<span class="math inline">\(H_{1}\cap H_{2}\le G\)</span> 。</p>
+<hr />
+<h5 id="定义1.2.1-陪集">定义1.2.1 （陪集）</h5>
+<p>设 <span class="math inline">\(H\le G\)</span> ，对于 <span
+class="math inline">\(a\in G\)</span> ，称集合 <span
+class="math inline">\(aH=\{ ah:h\in H \}\)</span> 称为 <span
+class="math inline">\(G\)</span> 关于 <span
+class="math inline">\(H\)</span> 的左陪集， <span
+class="math inline">\(Ha=\{ ha \}\)</span> 是 <span
+class="math inline">\(G\)</span> 关于 <span
+class="math inline">\(H\)</span> 的右陪集。称 <span
+class="math inline">\(a\)</span> 为陪集代表。</p>
+<h5 id="性质1.2.2-陪集的性质">性质1.2.2 （陪集的性质）</h5>
+<p>设 <span class="math inline">\(H\le G\)</span> 。陪集 <span
+class="math inline">\(aH,bH\)</span> 要么不交，要么重合。即 <span
+class="math inline">\(aH=bH\)</span> 或者 <span class="math inline">\(aH
+\cap bH=\emptyset\)</span> 。 <span class="math inline">\(aH=bH\)</span>
+当且仅当 <span class="math inline">\(ab^{-1}\in H\)</span> 。</p>
+<h5 id="定义1.2.3-商集">定义1.2.3 （商集）</h5>
+<p>设 <span class="math inline">\(H\le G\)</span> ，称 <span
+class="math inline">\(G/H=\{ aH:a\in G \}\)</span> 为商集。</p>
+<h5 id="定义1.2.4-正规子群">定义1.2.4 （正规子群）</h5>
+<p>若 <span class="math inline">\(N\le G\)</span> ，满足 <span
+class="math inline">\(\forall g\in G\)</span> ，有 <span
+class="math inline">\(g^{-1}Ng=N\)</span> ，则称 <span
+class="math inline">\(N\)</span> 是 <span
+class="math inline">\(G\)</span> 的正规子群，记 <span
+class="math inline">\(N\lhd G\)</span> 。</p>
+<h5 id="定义1.2.5-商群">定义1.2.5 （商群）</h5>
+<p>设 <span class="math inline">\(N\lhd G\)</span> ，定义乘法 <span
+class="math inline">\((aH)\cdot (bH)=(ab)H\)</span> ，单位元 <span
+class="math inline">\(eH=H\)</span> ， <span
+class="math inline">\(aH\)</span> 逆元 <span
+class="math inline">\(a^{-1}H\)</span> ，则 <span
+class="math inline">\((G/H,\cdot)\)</span> 构成群，称为商群，记作 <span
+class="math inline">\(G/H\)</span>。</p>
+<h5 id="定义1.2.6-特殊的子群子集">定义1.2.6 （特殊的子群/子集）</h5>
+<p>（1） <span class="math inline">\(Z(G)=\{ x\in G:\forall g\in
+G,gxg^{-1}=x \}\)</span> 称为群 <span class="math inline">\(G\)</span>
+的<strong>中心</strong>。 <span class="math inline">\(Z(G)\lhd
+G\)</span> 。</p>
+<p>（2） <span class="math inline">\(Z(x)=\{ g\in G:gxg^{-1}=x
+\}\)</span> 称为 <span class="math inline">\(x\)</span>
+的<strong>中心化子</strong>。 <span class="math inline">\(Z(x)\le
+G\)</span> 。</p>
+<p>（3）若 <span class="math inline">\(H\le G\)</span> ， <span
+class="math inline">\(N_{G}(H)=\{ g\in G:gHg^{-1}=H \}\)</span> 称为
+<span class="math inline">\(H\)</span> 的<strong>正规化子</strong>。
+<span class="math inline">\(H\lhd N_{G}(H)\)</span> 。</p>
+<p>（4） <span class="math inline">\(O_{x}=\{ gxg^{-1}:g\in G
+\}\)</span> 称为 <span class="math inline">\(x\)</span>
+的<strong>共轭类</strong>。共轭类一般不是子群。</p>
+<p>（5）若 <span class="math inline">\(H\le G\)</span> ， <span
+class="math inline">\(O_{H}=\{ gHg^{-1}:g\in G \}\)</span> 称为 <span
+class="math inline">\(H\)</span> 的<strong>共轭类</strong>。 <span
+class="math inline">\(O_{H}\)</span> 的每个元素都是 <span
+class="math inline">\(G\)</span> 的子群。</p>
+<p>（6）<span class="math inline">\([a,b]=aba^{-1}b^{-1}\)</span> 称为
+<span class="math inline">\(a,b\)</span> 的<strong>换位子</strong>。
+<span class="math inline">\([G,G]=\{ [a,b]:a,b\in G \}\)</span> 称为
+<span class="math inline">\(G\)</span> 的<strong>换位子群</strong>。
+<span class="math inline">\([G,G]\lhd G\)</span> 。</p>
+<h5 id="定义1.2.6-生成群">定义1.2.6 （生成群）</h5>
+<p>设 <span class="math inline">\(S\subset G\)</span> ，称 <span
+class="math display">\[
+\langle S\rangle=\bigcap_{S\subset H\le G} H
+\]</span> 为 <span class="math inline">\(S\)</span> 的生成子群， <span
+class="math inline">\(\langle S\rangle\subset G\)</span> 。</p>
+<p>特别地，当 <span class="math inline">\(S=\{ x \}\)</span> ， <span
+class="math inline">\(\langle x\rangle=\{ g^{k}:k\in \mathbb{Z}
+\}\)</span> ， <span class="math inline">\(\langle x\rangle\)</span>
+称为循环群， <span class="math inline">\(g\)</span> 称为生成元。</p>
+<h5 id="性质1.2.8-循环群的性质">性质1.2.8 （循环群的性质）</h5>
+<p>（1）若 <span class="math inline">\(G\)</span> 为 <span
+class="math inline">\(n\)</span> 阶循环群，则 <span
+class="math inline">\(G\cong \mathbb{Z}/n\mathbb{Z}\)</span> 。若 <span
+class="math inline">\(G\)</span> 为无限循环群，则 。</p>
+<p>（2）若 <span class="math inline">\(G\)</span> 为无限循环群， <span
+class="math inline">\(g\)</span> 为 <span
+class="math inline">\(G\)</span> 的生成元，则 <span
+class="math inline">\(G\)</span> 的所有生成元是 <span
+class="math inline">\(g,g^{-1}\)</span> 。若 <span
+class="math inline">\(G\)</span> 为 <span
+class="math inline">\(n\)</span> 阶循环群， <span
+class="math inline">\(G\)</span> 的所有生成元为 <span
+class="math display">\[
+\{ g^{k}:0\le k&lt;n,(k,n)=1 \}
+\]</span> 个数为 <span class="math inline">\(\varphi(n)\)</span>
+（欧拉函数）。一般地， <span class="math inline">\(g^{k}\)</span> 阶数为
+<span class="math inline">\(\frac{n}{\gcd(k,n)}\)</span> 。</p>
+<p>（3）若 <span class="math inline">\(G\)</span> 为无限循环群，则 <span
+class="math display">\[
+\operatorname{Aut}G\cong \mathbb{Z}/2\mathbb{Z}
+\]</span> 若 <span class="math inline">\(G\)</span> 为 <span
+class="math inline">\(n\)</span> 阶循环群，则 <span
+class="math display">\[
+\operatorname{Aut}G\cong (\mathbb{Z}/n\mathbb{Z})^{\times}
+\]</span> 且将每个生成元映成生成元。</p>
+<hr />
+<h5 id="定义1.3.1-群同态和同构">定义1.3.1 （群同态和同构）</h5>
+<p>设 <span class="math inline">\(G_{1},G_{2}\)</span> 为群，有映射
+<span class="math inline">\(f:G_{1}\to G_{2}\)</span> 满足 <span
+class="math inline">\(\forall a,b\in G\)</span> ，有 <span
+class="math display">\[
+f(ab)=f(a)f(b)
+\]</span> 则称 <span class="math inline">\(f\)</span> 是群同态。若 <span
+class="math inline">\(f\)</span> 是单射，则称 <span
+class="math inline">\(f\)</span> 是单同态，若 <span
+class="math inline">\(f\)</span> 是满射，则称 <span
+class="math inline">\(f\)</span> 是满同态。若 <span
+class="math inline">\(f\)</span> 为双射，则称 <span
+class="math inline">\(f\)</span> 是同构， <span
+class="math inline">\(G_{1},G_{2}\)</span> 是同构的， <span
+class="math inline">\(G_{1}\cong
+G_{2}\)</span>。可以证明，群同构是一个等价关系。</p>
+<h5 id="性质1.3.2-群同态的性质">性质1.3.2 （群同态的性质）</h5>
+<p>若 <span class="math inline">\(f:G_{1}\to G_{2}\)</span>
+是群同态，则</p>
+<p>（1）将单位元映射到单位元，即 <span
+class="math inline">\(f(1_{G_{1}})=1_{G_{2}}\)</span></p>
+<p>（2）逆元映射到逆元，即 <span
+class="math inline">\(f(g^{-1})=f(g)^{-1}\)</span></p>
+<h5 id="定义1.3.3-群同态的核像">定义1.3.3 （群同态的核、像）</h5>
+<p>设 <span class="math inline">\(\varphi:G\to H\)</span> 是群同态，则称
+<span class="math display">\[
+\ker \varphi=\{ g\in G:f(g)=1_{H} \}
+\]</span> 是 <span class="math inline">\(\varphi\)</span> 的核，称 <span
+class="math display">\[
+\operatorname{im} \varphi=\{ h\in H: \exists g\in G,f(g)=h \}
+\]</span> 是 <span class="math inline">\(\varphi\)</span> 的像。</p>
+<h5 id="定理1.3.4-群同态基本定理">定理1.3.4 （群同态基本定理）</h5>
+<p>设 <span class="math inline">\(\varphi:G\to H\)</span> 是群同态，则
+<span class="math inline">\(\varphi\)</span> 诱导的群同态 <span
+class="math display">\[
+\bar{\varphi}:G/\ker \varphi\to
+\operatorname{im}\varphi,\bar{\varphi}(g\ker\varphi)=\varphi (g)
+\]</span> 是群同构。</p>
+<h5 id="性质1.3.5-群同态的其他性质">性质1.3.5 （群同态的其他性质）</h5>
+<p>（1） <span class="math inline">\(\varphi:G\to H\)</span>
+是群同态，则 <span class="math inline">\(\varphi\)</span>
+是单同态当且仅当 <span class="math inline">\(\ker\varphi=\{ 1
+\}\)</span> ； <span class="math inline">\(\varphi\)</span>
+是满同态当且仅当 <span class="math inline">\(G/\ker \varphi\cong
+H\)</span> 。</p>
+<p>（2）若 <span class="math inline">\(N\lhd G\)</span> ， <span
+class="math inline">\(H\le G\)</span> ，则 <span class="math display">\[
+(H\cap N)\lhd H,N\lhd NH\le G
+\]</span> 且 <span class="math display">\[
+NH/N\cong \frac{H}{H\cap N}
+\]</span></p>
+<p>（3）若 <span class="math inline">\(N,M\lhd G\)</span> 且 <span
+class="math inline">\(N\le M\)</span> ，则 <span class="math display">\[
+G/M\cong \frac{G/N}{M/N}
+\]</span></p>
+<h5 id="定义1.3.6-自同构群">定义1.3.6 （自同构群）</h5>
+<p>同构 <span class="math inline">\(G\to G\)</span> 称为 <span
+class="math inline">\(G\)</span> 的自同构。 <span
+class="math inline">\(G\)</span>
+的所有自同构在复合映射下构成群，称为自同构群，记为 <span
+class="math inline">\(\operatorname{Aut}G\)</span> 。</p>
+<p>设 <span class="math inline">\(x\in G\)</span> ，自同构 <span
+class="math inline">\(g\to xgx^{-1}\)</span>
+称为内自同构。所有内自同构在复合映射下构成群，称为内自同构群，记为 <span
+class="math inline">\(\operatorname{Inn} G\)</span> 。 <span
+class="math inline">\(\operatorname{Inn} G\le
+\operatorname{Aut}G\)</span> ， <span class="math inline">\(G/Z(G)\cong
+\operatorname{Inn}G\)</span> 。</p>
+<hr />
+<h5 id="定义1.4.1-阶">定义1.4.1 （阶）</h5>
+<p>设 <span class="math inline">\(G\)</span> 是群。 <span
+class="math inline">\(G\)</span> 中元素个数称为 <span
+class="math inline">\(G\)</span> 的阶，记为 <span
+class="math inline">\(|G|\)</span> 。若 <span
+class="math inline">\(G\)</span> 元素有限，称 <span
+class="math inline">\(G\)</span> 为有限群，否则为无限群。无限群的阶为
+<span class="math inline">\(\infty\)</span> 。</p>
+<p>设 <span class="math inline">\(x\in G\)</span> ， <span
+class="math inline">\(x^{k}=1\)</span> 的最小正整数解 <span
+class="math inline">\(k\)</span> ，称为 <span
+class="math inline">\(x\)</span> 的阶。 <span
+class="math inline">\(x\)</span> 的阶等于 <span
+class="math inline">\(|\langle x\rangle|\)</span> 。</p>
+<h5 id="定理1.4.2-lagrange-定理">定理1.4.2 （ Lagrange 定理）</h5>
+<p>设 <span class="math inline">\(H\le G\)</span> ， <span
+class="math inline">\(G\)</span> 是有限群，记 <span
+class="math inline">\([G:H]=|G/H|\)</span> 为 <span
+class="math inline">\(H\)</span> 在 <span
+class="math inline">\(G\)</span> 中的指数。则 <span
+class="math display">\[
+|G|=|H|[G:H]
+\]</span></p>
+<h5 id="性质1.4.3-子群的阶性质">性质1.4.3 （子群的阶性质）</h5>
+<p>（2）设 <span class="math inline">\(H\le G\)</span> 是有限群，则
+<span class="math display">\[
+|H|\bigg{|} |G|
+\]</span> （3）设 <span class="math inline">\(K\le H\le G\)</span>
+是有限群，则 <span class="math display">\[
+[G:K]=[G:H][H:K]
+\]</span> （4）设 <span class="math inline">\(H,K\le G\)</span> ， <span
+class="math inline">\(H,K\)</span> 是有限群，则 <span
+class="math display">\[
+|HK|= \frac{|H||K|}{|H\cap K|}
+\]</span> （5）设 <span class="math inline">\(H,K\le G\)</span> ， <span
+class="math inline">\(H,K\)</span> 是有限群，则 <span
+class="math display">\[
+[G:H\cap G]\le[G:H][G:K]
+\]</span> 当且仅当 <span class="math inline">\(HK=G\)</span> 取等。</p>
+<hr />
+<h5 id="定义1.4.1-轮换">定义1.4.1 （轮换）</h5>
+<p>设 <span class="math inline">\(k\le n\)</span> ， <span
+class="math inline">\(\{ a_{1},a_{2},\dots,a_{k} \}\subset
+X_{n}\)</span> ，则满足 <span class="math display">\[
+\sigma(a_{1})=a_{2},\sigma(a_{2})=a_{3},\dots,\sigma(a_{k})=a_{1};\forall
+x\not\in \{ a_{k} \},\sigma(x)=x
+\]</span> 的置换为轮换，记为 <span
+class="math inline">\(\sigma=(a_{1},a_{2},\dots ,a_{n})\)</span>
+。特别地， <span class="math inline">\(0\)</span> 轮换为单位元 <span
+class="math inline">\(1\)</span> ； <span
+class="math inline">\(2\)</span> 轮换记为对换。若 <span
+class="math inline">\(\{ a_{1},a_{2},\dots ,a_{n} \}\cap \{
+b_{1},b_{2},\dots,b_{n} \}=\emptyset\)</span> ，则称对换 <span
+class="math inline">\((a_{1}a_{2}\dots a_{n})\)</span> 和 <span
+class="math inline">\((b_{1}b_{2}\dots b_{n})\)</span> 不相交。</p>
+<h5 id="性质1.4.2-轮换的性质">性质1.4.2 （轮换的性质）</h5>
+<p>（1）不相交轮换可交换。</p>
+<p>（2） <span class="math inline">\(\forall \sigma\in S_{n}\)</span> ，
+<span class="math inline">\(\sigma\)</span>
+均可以写成不相交轮换的乘积，且在不计顺序下唯一。</p>
+<h5 id="定义1.4.3-置换的型">定义1.4.3 （置换的型）</h5>
+<p>设 <span class="math inline">\(\sigma\in S_{n}\)</span> ，当 <span
+class="math inline">\(\sigma\)</span> 写成不交轮换的乘积， <span
+class="math inline">\(k\)</span> 轮换个数为 <span
+class="math inline">\(\lambda_{k}\)</span> ，则记 <span
+class="math inline">\(\sigma\)</span> 的型为 <span
+class="math inline">\(1^{\lambda_{1}}2^{\lambda_{2}}\dots
+n^{\lambda_{n}}\)</span> 。</p>
+<h5 id="性质1.4.4-型与共轭">性质1.4.4 （型与共轭）</h5>
+<p>置换 <span class="math inline">\(\sigma,\sigma&#39;\)</span>
+型相同，当且仅当 <span class="math inline">\(\sigma,\sigma&#39;\)</span>
+在 <span class="math inline">\(S_{n}\)</span> 中共轭。</p>
+<h5 id="定义1.4.5-奇偶置换">定义1.4.5 （奇偶置换）</h5>
+<p>群同态 <span class="math inline">\(\varepsilon :S_{n}\to{\pm
+1}\)</span> ，使得 <span class="math inline">\(\forall \tau\)</span>
+为对换， <span class="math inline">\(\varepsilon(\tau)=-1\)</span> 。若
+<span class="math inline">\(\varepsilon(\sigma)=1\)</span> ，称 <span
+class="math inline">\(\sigma\)</span> 是偶置换；若 <span
+class="math inline">\(\varepsilon(\sigma)=-1\)</span> ，称 <span
+class="math inline">\(\sigma\)</span> 为奇置换。（可以证明 <span
+class="math inline">\(\varepsilon\)</span> 是唯一的）</p>
+<h5 id="定义1.4.6-交错群">定义1.4.6 （交错群）</h5>
+<p><span class="math inline">\(S_{n}\)</span> 中所有偶置换组成的子群，即
+<span class="math inline">\(\ker \varepsilon\)</span> ，称为 <span
+class="math inline">\(n\)</span> 阶交错群。</p>
+<h5 id="定义1.4.7-单群">定义1.4.7 （单群）</h5>
+<p>没有非平凡正规子群的群称为单群。</p>
+<h5 id="性质1.4.8-nge-5-时-a_n-是单群">性质1.4.8 （ <span
+class="math inline">\(n\ge 5\)</span> 时， <span
+class="math inline">\(A_{n}\)</span> 是单群）</h5>
+<p><span class="math inline">\(n\ge 5\)</span> 时， <span
+class="math inline">\(A_{n}\)</span> 是单群。</p>
+<h5 id="定理1.4.9-caylay-定理">定理1.4.9 （ Caylay 定理）</h5>
+<p>每个有限群都是对称群的子群。若 <span class="math inline">\(G\)</span>
+的阶为 <span class="math inline">\(n\)</span> ，则 <span
+class="math inline">\(G\)</span> 是 <span
+class="math inline">\(S_{n}\)</span> 的子群。</p>
+<hr />
+<h5 id="定义1.5.1-群作用">定义1.5.1 （群作用）</h5>
+<p>设 <span class="math inline">\(X\)</span> 为集合， <span
+class="math inline">\(G\)</span> 为群，称映射 <span
+class="math display">\[
+G\times X\to X,(g,x)=g\cdot x
+\]</span> 并满足（1） <span class="math inline">\(\forall x\in X,1\cdot
+x=x\)</span> （2） <span class="math inline">\(\forall x\in X,g,h\in
+G\)</span> ，有 <span class="math inline">\(g(hx)=(gh)x\)</span> ，是
+<span class="math inline">\(G\)</span> 在 <span
+class="math inline">\(X\)</span> 上的一个作用。</p>
+<h5 id="定义1.5.2-轨道">定义1.5.2 （轨道）</h5>
+<p>设 <span class="math inline">\(G\)</span> 为 <span
+class="math inline">\(X\)</span> 的作用，对于 <span
+class="math inline">\(x\in X\)</span> ，称 <span class="math display">\[
+O_{x}=Gx=\{ gx:g\in G \}
+\]</span> 为 <span class="math inline">\(x\)</span> 所在轨道。若 <span
+class="math inline">\(X\)</span> 有限，则 <span class="math display">\[
+|X|=\sum_{x} |O_{x}|
+\]</span> 其中 <span class="math inline">\(x\)</span>
+取所有不同轨道。</p>
+<h5 id="定义1.5.3-稳定子群">定义1.5.3 （稳定子群）</h5>
+<p>设 <span class="math inline">\(G\)</span> 为 <span
+class="math inline">\(X\)</span> 的作用，称 <span
+class="math display">\[
+G_{x}=\{ g\in G:gx=g \}
+\]</span> 为 <span class="math inline">\(x\)</span> 的稳定子群。</p>
+<h5 id="定理1.5.4-轨道-稳定子定理">定理1.5.4 （轨道-稳定子定理）</h5>
+<p>设 <span class="math inline">\(G\)</span> 为 <span
+class="math inline">\(X\)</span> 的作用， <span
+class="math inline">\(O_{x}\)</span> 是 <span
+class="math inline">\(x\)</span> 的轨道， <span
+class="math inline">\(x\)</span> 的稳定子群 <span
+class="math inline">\(G_{x}\)</span> ，则存在双射 <span
+class="math display">\[
+\varphi:G/G_{x}\to O_{x},\quad aG_{x}\to ax
+\]</span> 特别地，有 <span
+class="math inline">\(|O_{x}|=[G:G_{x}]\)</span> ， <span
+class="math inline">\(|X|=\sum |O_{x}|=\sum[G:G_{x}]\)</span> 。</p>
+<h5 id="定理1.5.5-burnside-定理">定理1.5.5 （ Burnside 定理）</h5>
+<p>设 <span class="math inline">\(G\)</span> 对 <span
+class="math inline">\(X\)</span> 的作用， <span
+class="math inline">\(G\)</span> 是有限群，则 <span
+class="math display">\[
+n=\frac{1}{|G|} \sum_{g\in G} |X_{g}|
+\]</span> 其中 <span class="math inline">\(n\)</span> 为 <span
+class="math inline">\(X\)</span> 上的轨道数量， <span
+class="math inline">\(X_{g}\)</span> 是 <span
+class="math inline">\(x\)</span> 作用下不动点数量。</p>
+<h5 id="定义1.5.5-左乘作用">定义1.5.5 （左乘作用）</h5>
+<p>群 <span class="math inline">\(G\)</span> 在自身上的作用 <span
+class="math display">\[
+G\times G\to G,\quad (g,x)\to gx
+\]</span> 称为左乘作用。</p>
+<h5 id="定义1.5.6-共轭作用">定义1.5.6 （共轭作用）</h5>
+<p>群 <span class="math inline">\(G\)</span> 在自身上的作用 <span
+class="math display">\[
+G\times G\to G,\quad (g,x)\to gxg^{-1}
+\]</span> 称为共轭作用。那么有 <span
+class="math inline">\(O_{x}\)</span> 是 <span
+class="math inline">\(x\)</span> 的共轭类， <span
+class="math inline">\(x\)</span> 的中心化子 <span
+class="math inline">\(Z(x)\)</span> 是 <span
+class="math inline">\(x\)</span> 的稳定子群。</p>
+<h5 id="定义1.5.7-子群的共轭作用">定义1.5.7 （子群的共轭作用）</h5>
+<p>设 <span class="math inline">\(H\le G\)</span> ，令 <span
+class="math inline">\(O_{H}=\{ gHg^{-1}:g\in G \}\)</span> ，则称 <span
+class="math display">\[
+G\times O_{H}\to O_{H},\quad(g,aHa^{-1})\to(ga)H(ga)^{-1}
+\]</span> 为 <span class="math inline">\(G\)</span> 在 <span
+class="math inline">\(O_{H}\)</span> 上的共轭作用。那么有 <span
+class="math inline">\(O_{H}\)</span> 是 <span
+class="math inline">\(H\)</span> 的共轭类， <span
+class="math inline">\(H\)</span> 的正规化子 <span
+class="math inline">\(N_{G}(H)\)</span> 是 <span
+class="math inline">\(H\)</span> 的稳定子群。</p>
+<h5 id="性质1.5.8-有限群的计数">性质1.5.8 （有限群的计数）</h5>
+<p>将稳定-轨道子定理带入共轭作用，有 <span class="math display">\[
+|G|=|Z(G)|+\sum[G:Z(x)]
+\]</span> 其中 <span class="math inline">\(x\)</span>
+取所有不止一个元素的共轭类。</p>
+<h5 id="定理1.5.9-sylow-定理">定理1.5.9 （ Sylow 定理 ）</h5>
+<p>设 <span class="math inline">\(G\)</span> 阶数为 <span
+class="math inline">\(p^{r}m\)</span> ，其中 <span
+class="math inline">\(p,m\)</span> 互素，记阶为 <span
+class="math inline">\(p^{r}\)</span> 的子群称为 <span
+class="math inline">\(G\)</span> 的 Sylow <span
+class="math inline">\(p\)</span> 子群。则</p>
+<p>（1） <span class="math inline">\(G\)</span> 存在 Sylow <span
+class="math inline">\(p\)</span> 子群。</p>
+<p>（2） <span class="math inline">\(G\)</span> 中所有 Sylow <span
+class="math inline">\(p\)</span> 子群共轭。</p>
+<p>（3） <span class="math inline">\(G\)</span> 中的 Sylow <span
+class="math inline">\(p\)</span> 子群个数 <span
+class="math inline">\(N(p) \bmod{p}=1\)</span> 且 <span
+class="math inline">\(N(p)\mid m\)</span> 。</p>
+<hr />
+<h5 id="定义1.6.1-外直积">定义1.6.1 （外直积）</h5>
+<p>设 <span class="math inline">\(G_{1},G_{2},\dots,G_{n}\)</span> 是
+<span class="math inline">\(n\)</span> 个群， <span
+class="math inline">\(G=G_{1}\times G_{2}\times\dots \times
+G_{n}\)</span> （集合意义下），定义乘法 <span class="math display">\[
+(g_{1},g_{2},\dots,g_{n})(h_{1},h_{2},\dots,h_{n})=(g_{1}h_{1},g_{2}h_{2},\dots
+,g_{n}h_{n})
+\]</span> 单位元为 <span
+class="math inline">\((1_{G_{1}},1_{G_{2}},\dots,1_{G_{n}})\)</span> ，
+<span class="math inline">\((g_{1},\dots ,g_{n})\)</span> 逆元为 <span
+class="math inline">\((g_{1}^{-1},\dots ,g_{n}^{-1})\)</span> 。 <span
+class="math inline">\(G\)</span> 构成一个群，称为 <span
+class="math inline">\(G_{1},G_{2},\dots, G_{n}\)</span> 的外直积。</p>
+<h5 id="定义1.6.2-内直积">定义1.6.2 （内直积）</h5>
+<p>设 <span class="math inline">\(G_{1},G_{2},\dots ,G_{n}\lhd
+G\)</span> ，且满足</p>
+<p>（1） <span class="math inline">\(G=G_{1}G_{2}\dots
+G_{n}\)</span></p>
+<p>（2） <span class="math inline">\(\forall 1\le k\le n\)</span> ，满足
+<span class="math inline">\(G_{k}\cap G_{1}\dots G_{k-1}G_{k+1}\dots
+G_{n}=\{ 1 \}\)</span></p>
+<p>则称 <span class="math inline">\(G\)</span> 是 <span
+class="math inline">\(G_{1},G_{2},\dots ,G_{n}\)</span> 的内直积。</p>
+<h5 id="性质1.6.3-内直积的性质">性质1.6.3 （内直积的性质）</h5>
+<p>（1）设 <span class="math inline">\(G\)</span> 为 <span
+class="math inline">\(G_{1},G_{2},\dots,G_{n}\)</span> 内直积，则 <span
+class="math inline">\(\forall g_{i}\in G_{i},g_{j}\in G_{j}\)</span>
+，<span class="math inline">\(g_{i}g_{j}=g_{j}g_{i}\)</span> 。</p>
+<p>（2）设 <span class="math inline">\(G\)</span> 为 <span
+class="math inline">\(G_{1},G_{2},\dots,G_{n}\)</span> 内直积，则 <span
+class="math inline">\(\forall g\in G\)</span> ， <span
+class="math inline">\(g=g_{1}g_{2}\dots g_{n},g_{i}\in G_{i}\)</span>
+表示方法存在且唯一。</p>
+<p>（3）设 <span class="math inline">\(G_{1},G_{2},\dots ,G_{n}\)</span>
+的内直积和外直积同构。于是内直积外直积统称为直积，记作 <span
+class="math inline">\(G=G_{1}\times G_{2}\times\dots \times
+G_{n}\)</span> 。加法群的直积称直和，记作 <span
+class="math inline">\(G=G_{1}\oplus G_{2}\oplus\dots \oplus
+G_{n}\)</span> 。</p>
+<h5 id="定理1.6.4-有限生成-abel-群结构定理">定理1.6.4 （有限生成 Abel
+群结构定理）</h5>
+<p>设 <span class="math inline">\(A\)</span> 是有限生成 Abel 群，则
+<span class="math display">\[
+\begin{aligned}
+A&amp;\cong \mathbb{Z}^{r}\oplus\mathbb{Z}/m_{1}\mathbb{Z}\oplus\dots
+\oplus \mathbb{Z}/m_{s}\mathbb{Z} \\
+&amp;\cong \mathbb{Z}^{r}\oplus
+\mathbb{Z}/p_{1}^{\alpha_{1}}\oplus\dots\oplus
+\mathbb{Z}/p_{t}^{\alpha_{t}}
+\end{aligned}
+\]</span> 满足</p>
+<p>（1） <span class="math inline">\(r\)</span> 由 <span
+class="math inline">\(A\)</span> 唯一确定，称为 <span
+class="math inline">\(A\)</span> 的秩</p>
+<p>（2）<span class="math inline">\(1&lt;m_{1}\mid m_{2}\mid \dots \mid
+m_{s}\)</span> 由 <span class="math inline">\(A\)</span> 唯一确定，
+<span class="math inline">\(\{ m_{1},m_{2},\dots ,m_{s} \}\)</span>
+称为不变因子组。</p>
+<p>（3） <span class="math inline">\(p_{i}\)</span> 为互不相等素数由
+<span class="math inline">\(A\)</span> 唯一确定， <span
+class="math inline">\(\{ p_{1}^{\alpha_{1}},\dots,p_{t}^{\alpha_{t}}
+\}\)</span> 称为初等因子组。 若
+初等因子分解和不变因子组分解相对应。有限生成 Abel 群 <span
+class="math inline">\(A,B\)</span> 同构，当且仅当， <span
+class="math inline">\(r\)</span> 相同，不变因子和初等因子相同。</p>
+<hr />
+<h5 id="定义1.7.1-正规群列合成群列">定义1.7.1
+（正规群列、合成群列）</h5>
+<p>（1）若群 <span class="math inline">\(G\)</span> 由以下子群序列 <span
+class="math display">\[
+\{ 1 \} =G_{0}\lhd G_{1}\lhd G_{2}\lhd \dots\lhd G_{n}=G
+\]</span> 其中 <span class="math inline">\(G_{k-1}\)</span> 是 <span
+class="math inline">\(G_{k}\)</span> 的正规子群。则称上述群列为 <span
+class="math inline">\(G\)</span> 的一个正规群列。</p>
+<p>（2）设 <span class="math inline">\(G\)</span> 的一个正规群列 <span
+class="math display">\[
+\{ 1 \} =G_{0}\lhd G_{1}\lhd G_{2}\lhd \dots\lhd G_{n}=G
+\]</span> 满足 <span class="math inline">\(G_{k}/G_{k-1}\)</span>
+是单群，则称其上述群列为 <span class="math inline">\(G\)</span>
+的一个合成群列。</p>
+<h5 id="定理1.7.2-jordan-holder-定理">定理1.7.2 （ Jordan-Holder
+定理）</h5>
+<p>设 <span class="math inline">\(G\)</span> 是有限群，且 <span
+class="math inline">\(G\)</span> 有两个合成群列 <span
+class="math display">\[
+\begin{aligned}
+\{ 1 \} =G_{0}\lhd G_{1}\lhd G_{2}\lhd \dots\lhd G_{r}=G \\
+\{ 1 \} =G_{0}\lhd H_{1}\lhd H_{2}\lhd \dots\lhd H_{s}=G
+\end{aligned}
+\]</span> 则 <span class="math inline">\(r=s\)</span> 且存在一个 <span
+class="math inline">\(r\)</span> 置换 <span
+class="math inline">\(\sigma\)</span> 使得 <span class="math display">\[
+G_{k}/G_{k-1} \cong H_{\sigma(k)}/H_{\sigma(k)-1}
+\]</span></p>
+<h5 id="定义1.7.3-可解群">定义1.7.3 （可解群）</h5>
+<p>若 <span class="math inline">\(G\)</span> 存在正规群列 <span
+class="math display">\[
+\{ 1 \} =G_{0}\lhd G_{1}\lhd G_{2}\lhd \dots\lhd G_{n}=G
+\]</span> 其中 <span class="math inline">\(G_{k}/G_{k-1}\)</span> 是
+Abel 群，则称 <span class="math inline">\(G\)</span>
+是可解群。若不存在则称 <span class="math inline">\(G\)</span>
+是不可解群。</p>
+<h5 id="定义1.7.4-可解群的性质">定义1.7.4 （可解群的性质）</h5>
+<p>（1） <span class="math inline">\(G\)</span>
+是可解群的充要条件是，存在 <span class="math inline">\(n\)</span> ，使得
+<span class="math inline">\(G^{(k)}=\{ 1 \}\)</span> 。其中 <span
+class="math inline">\(G^{(k)}=(G^{(k-1)})&#39;=[G^{(k-1)},G^{(k-1)}]\)</span>
+换位子群。</p>
+<p>（2）可解群的同态像、子群、商群是可解群。</p>
+<p>（3）若 <span class="math inline">\(K\lhd G\)</span> ，且 <span
+class="math inline">\(K,G/K\)</span> 是可解群，则 <span
+class="math inline">\(G\)</span> 是可解群。</p>
+<hr />
+<h5 id="定义1.8.1-自由群">定义1.8.1 （自由群）</h5>
+<p>设 <span class="math inline">\(S\)</span> 是一个集合，定义 <span
+class="math inline">\(S\)</span> 生成的自由群为 <span
+class="math display">\[
+F(S)=\{ 1 \} \cup \{ x_{1}x_{2}\dots x_{n}:x_{i}\in S\cup S^{-1} \}
+\]</span> 集合元素称为字，定义其乘法为字的串联，单位元为 <span
+class="math inline">\(1\)</span> ， <span
+class="math inline">\(x_{1},x_{2},\dots,x_{n}\)</span> 逆元是 <span
+class="math inline">\(x_{n}^{-1},\dots,x_{1}^{-1}\)</span>
+，其相等当且仅当其简化后相同。</p>
+<h5 id="性质1.8.2-自由群的泛性质">性质1.8.2 （自由群的泛性质）</h5>
+<p>设 <span class="math inline">\(G\)</span> 是群， <span
+class="math inline">\(S\)</span> 是集合，则 <span
+class="math inline">\(f:S\to G\)</span> 为集合间的映射，则 <span
+class="math inline">\(f\)</span> 可以唯一扩充为群同态 <span
+class="math inline">\(\varphi:F(S)\to G\)</span> 。其中对 <span
+class="math inline">\(w=a_{1}a_{2}\dots a_{n}\)</span> ，有 <span
+class="math display">\[
+\varphi(a_{1}\dots a_{n})=\varphi(a_{1})\dots \varphi(a_{n})
+\]</span> 若 <span class="math inline">\(S\subset G\)</span> ，且 <span
+class="math inline">\(\langle S\rangle=G\)</span> ，则 <span
+class="math inline">\(\varphi:F(S)\to G\)</span> 是满同态，即 <span
+class="math inline">\(F(S)/\ker \varphi \cong G\)</span> 。</p>
+<h5 id="定义1.8.3-群表现">定义1.8.3 （群表现）</h5>
+<p>若 <span class="math inline">\(G=F(S)/N\)</span> ，则 <span
+class="math inline">\(G\)</span> 的表现记为 <span
+class="math display">\[
+\langle S|r=1,r\in N \rangle
+\]</span></p>
+<p>其中 <span class="math inline">\(S\)</span> 中的元素称为 <span
+class="math inline">\(G\)</span> 的生成元， <span
+class="math inline">\(N\)</span> 中元素构成生成元的生成关系。</p>
+<h5 id="性质1.8.4-换位子群的性质">性质1.8.4 （换位子群的性质）</h5>
+<p>（1） <span class="math inline">\(G&#39;\lhd G\)</span> ，且 <span
+class="math inline">\(G/G&#39;\)</span> 是 Abel 群。</p>
+<p>（2）设 <span class="math inline">\(A\)</span> 是 Abel 群， <span
+class="math inline">\(\varphi:G\to A\)</span> 是满同态，则 <span
+class="math inline">\(G&#39;\subset \ker \varphi\)</span> ，且 <span
+class="math inline">\(\varphi\)</span> 诱导同态 <span
+class="math display">\[
+\bar{\varphi}:G/G&#39;\to A, \quad  \bar{\varphi}(\bar{g})=\varphi (g)
+\]</span></p>
+<h5 id="定义1.8.5-自由-abel-群">定义1.8.5 （自由 Abel 群）</h5>
+<p><span class="math display">\[
+\mathbb{Z}(S)=F(S)/F(S)&#39;=\langle S|xy=yx,x,y\in S\rangle
+\]</span> 称为 <span class="math inline">\(S\)</span> 生成的自由 Abel
+群，若 <span class="math inline">\(S\)</span> 是有限集，称 <span
+class="math inline">\(\mathbb{Z}(S)\)</span> 是有限生成自由 Abel
+群。</p>
+<hr />
+<h5 id="群的一些例子">群的一些例子</h5>
+<p>（1） <span
+class="math inline">\(\mathbb{Z},\mathbb{Q},\mathbb{R},\mathbb{C}\)</span>
+在加法运算中构成 Abel 群， <span class="math inline">\(0\)</span>
+是单位元 。 <span
+class="math inline">\(\mathbb{Z}^{\times},\mathbb{Q}^{\times},\mathbb{R}^{\times},\mathbb{C}^{\times}\)</span>
+（去掉 <span class="math inline">\(0\)</span> ）在乘法运算中构成 Abel
+群， <span class="math inline">\(1\)</span> 是单位元。</p>
+<p>（2） <span
+class="math inline">\(\mathbb{F}_{n}=\mathbb{Z}/n\mathbb{Z}\)</span>
+，在加法运算中构成 Abel 群， <span class="math inline">\(0\)</span>
+是单位元 。特别地， <span class="math inline">\(n=p\)</span> 为素数时，
+<span class="math inline">\(\mathbb{F}_{p}^{\times}\)</span>
+，在乘法运算中构成 Abel 群， <span class="math inline">\(1\)</span>
+是单位元。</p>
+<p>（3） <span class="math inline">\(n\)</span> 次单位根群 <span
+class="math inline">\(\left\{  \zeta_{n}=\cos \frac{2\pi}{n}+i\sin
+\frac{2\pi}{n} \right\}\)</span> 在乘法运算下构成 Abel 群。</p>
+<p>（4） <span class="math inline">\(M_{n}(F)\)</span> 为 <span
+class="math inline">\(F\)</span> 上 <span
+class="math inline">\(n\)</span> 阶方阵， <span
+class="math inline">\(GL_{n}(F)\)</span> 为 <span
+class="math inline">\(F\)</span> 上 <span
+class="math inline">\(n\)</span> 阶可逆方阵。 <span
+class="math inline">\(M_{n}(F)\)</span> 在加法运算中为 Abel
+群，乘法下为幺半群。 <span class="math inline">\(GL_{n}(F)\)</span>
+在乘法下为群，记为一般线性群。</p>
+<p>（5）特殊线性群 <span class="math inline">\(SL_{n}(F)\)</span> 为
+<span class="math inline">\(F\)</span> 上 <span
+class="math inline">\(\det=1\)</span> 的 <span
+class="math inline">\(n\)</span> 阶方阵。正交群 <span
+class="math inline">\(O_{n}(\mathbb{R})\)</span> 为 <span
+class="math inline">\(\mathbb{R}\)</span> 上 <span
+class="math inline">\(n\)</span> 阶正交阵。特殊正交群 <span
+class="math inline">\(SO_{n}(\mathbb{R})=O_{n}(\mathbb{R})\cap
+SL_{n}(\mathbb{R})\)</span> 。酉群 <span
+class="math inline">\(U(n)\)</span> 为复线性空间上的 <span
+class="math inline">\(n\)</span> 为酉阵。特殊酉群 <span
+class="math inline">\(SU(n)=U(n)\cap SL_{n}(\mathbb{C})\)</span> 。</p>
+<p>（6）集合 <span class="math inline">\(A\)</span> 到自身的双射称为
+<span class="math inline">\(A\)</span> 的置换。记 <span
+class="math inline">\(S_{A}\)</span> 为所有 <span
+class="math inline">\(A\)</span> 的置换集合， <span
+class="math inline">\(S_{A}\)</span>
+在映射复合下构成群，且恒等映射为单位元 ，称为 <span
+class="math inline">\(A\)</span> 的对称群或置换群。表示为 <span
+class="math display">\[
+\sigma =\begin{pmatrix}
+1&amp;2&amp;\dots&amp;n \\
+\sigma(1)&amp;\sigma(2)&amp;\dots&amp;\sigma(n)
+\end{pmatrix}
+\]</span> （7）设 <span class="math inline">\(P\)</span> 为正 <span
+class="math inline">\(n\)</span> 边形，保持 <span
+class="math inline">\(P\)</span> 不变的刚性运动构成群，称为二面体群
+<span class="math inline">\(D_{n}\)</span> 。 <span
+class="math inline">\(D_{n}\)</span> 包含：恒等变换、 <span
+class="math inline">\(n-1\)</span> 个旋转、 <span
+class="math inline">\(n\)</span> 个反射，为 <span
+class="math inline">\(2n\)</span> 阶群。</p>
+<h5 id="群同态的一些例子">群同态的一些例子</h5>
+<p>（1） <span class="math inline">\(\det:GL_{n}(F)\to
+F^{\times}\)</span> ， <span class="math inline">\(A\to \det A\)</span>
+为满同态。</p>
+<p>（2） <span class="math inline">\(U(1)=\{ z:|z|=1 \}\)</span> 同构于
+<span class="math inline">\(SO_{2}(\mathbb{R})\)</span> ，群同构为 <span
+class="math display">\[
+e^{2\pi i\theta}\to
+\begin{pmatrix}\cos\theta&amp;-\sin\theta\\sin\theta&amp;\cos\theta\end{pmatrix}
+\]</span></p>
+<p>（3）群 <span class="math inline">\(G\)</span> 上同构 <span
+class="math inline">\(f:G\to G\)</span> 在复合映射下构成群，称为 <span
+class="math inline">\(G\)</span> 的自同构群，记为 <span
+class="math inline">\(\operatorname{Aut} G\)</span> 。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Note/" rel="tag"># Note</a>
+              <a href="/tags/Algebra/" rel="tag"># Algebra</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/01/07/Article_Index/" rel="prev" title="Article Index">
+                  <i class="fa fa-angle-left"></i> Article Index
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/02/04/Git_Note/" rel="next" title="Git Note">
+                  Git Note <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="valine-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Methane</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","single_dollars":true,"cjk_width":0.9,"normal_width":0.6,"append_css":true,"every_page":true,"cdn":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+<script>
+NexT.utils.loadComments('#valine-comments', () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
+    new Valine(Object.assign({"enable":true,"appId":"tphu2Q2JWb6juWQpRpoq2E77-gzGzoHsz","appKey":"k3cLBOlnwtC7Y23V4qvdXGAY","serverURLs":"https://tphu2q2j.lc-cn-n1-shared.com","placeholder":"Just go go","avatar":"mp","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":false,"enableQQ":false,"requiredFields":[],"avatar_cdn":"https://cravatar.cn/avatar/"}, {
+      el: '#valine-comments',
+      path: "/2025/01/10/Abstract_Algebra_I/",
+      serverURLs: "https://tphu2q2j.lc-cn-n1-shared.com"
+    }));
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

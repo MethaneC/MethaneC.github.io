@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.2.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Times+New+Roman:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="写在前面： 高考完哩！估摸着笔记放一段时间就没了，先整理下笔记。例题太多了先不搬了！ Latex打的真累人(⊙_⊙;)。 大概是高考压轴题难度（？完美规避2024新一卷压轴题），有些冷门考点模拟题可能会出。除了压轴题，强基的话考点应该也就这些（主要是做题量与难度）。 注：这里面的公式证明均需会默写 7.25 Upd： 咕咕咕咕咕，咕了一个月多，终于想起来了要抄笔记。看样子还没有五分之一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高中数学笔记">
+<meta property="og:url" content="http://example.com/2024/06/23/Mathematics_Note_in_High_School/index.html">
+<meta property="og:site_name" content="Methane">
+<meta property="og:description" content="写在前面： 高考完哩！估摸着笔记放一段时间就没了，先整理下笔记。例题太多了先不搬了！ Latex打的真累人(⊙_⊙;)。 大概是高考压轴题难度（？完美规避2024新一卷压轴题），有些冷门考点模拟题可能会出。除了压轴题，强基的话考点应该也就这些（主要是做题量与难度）。 注：这里面的公式证明均需会默写 7.25 Upd： 咕咕咕咕咕，咕了一个月多，终于想起来了要抄笔记。看样子还没有五分之一">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-06-23T07:26:15.000Z">
+<meta property="article:modified_time" content="2025-01-04T10:58:04.051Z">
+<meta property="article:author" content="Methane">
+<meta property="article:tag" content="Note">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2024/06/23/Mathematics_Note_in_High_School/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2024/06/23/Mathematics_Note_in_High_School/","path":"2024/06/23/Mathematics_Note_in_High_School/","title":"高中数学笔记"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>高中数学笔记 | Methane</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Methane</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">subtitle</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Methane"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Methane</p>
+  <div class="site-description" itemprop="description">description</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/06/23/Mathematics_Note_in_High_School/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Methane">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Methane">
+      <meta itemprop="description" content="description">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="高中数学笔记 | Methane">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          高中数学笔记
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-06-23 15:26:15" itemprop="dateCreated datePublished" datetime="2024-06-23T15:26:15+08:00">2024-06-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-01-04 18:58:04" itemprop="dateModified" datetime="2025-01-04T18:58:04+08:00">2025-01-04</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Valine：</span>
+  
+    <a title="valine" href="/2024/06/23/Mathematics_Note_in_High_School/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2024/06/23/Mathematics_Note_in_High_School/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>写在前面：</p>
+<p>高考完哩！估摸着笔记放一段时间就没了，先整理下笔记。例题太多了先不搬了！
+Latex打的真累人(⊙_⊙;)。</p>
+<p>大概是高考压轴题难度（？完美规避2024新一卷压轴题），有些冷门考点模拟题可能会出。除了压轴题，强基的话考点应该也就这些（主要是做题量与难度）。</p>
+<p>注：这里面的公式证明均需会默写</p>
+<p>7.25 Upd：
+咕咕咕咕咕，咕了一个月多，终于想起来了要抄笔记。看样子还没有五分之一 o_o
+….</p>
+<p>7.31 Upd：
+终于写完哩！爽！上传之后发现手机渲染有bug，不想干辣，凑合着看罢，摆！</p>
+<h2 id="代数">1. 代数</h2>
+<p><del>不知从哪学的习惯</del> 先约定：<span
+class="math inline">\(\sum\)</span>未写范围，对所有可能取值求和；<span
+class="math inline">\(cyc\)</span>，对轮换式求和。例如： <span
+class="math display">\[
+\begin{aligned}
+\sum a_n&amp;=\sum_i a_i=\sum_{i=1}^n a_i \\
+\sum_{cyc}x^2y&amp;=x^2y+x^2z+y^2x+y^2z+z^2x+z^2y \qquad
+\text{(三元求和)}\\
+\sum \sin A&amp;=\sin A+\sin B+\sin C\qquad \text{(三角形)}
+\end{aligned}
+\]</span></p>
+<h3 id="恒等式">1.1 恒等式</h3>
+<p>上公式！</p>
+<p><span class="math display">\[
+\begin{aligned}
+x^n-y^n&amp;=(x-y)(\sum_{p+q=n-1}x^p y^q)\\
+x^n+y^n&amp;=(x-y)[\sum_{p+q=n-1}x^p (-y)^q]\qquad \text{(n is odd)}\\
+x^3+y^3&amp;=(x+y)(x^2-xy+y^2)\\
+x^3-y^3&amp;=(x-y)(x^2+xy+y^2)\\
+x^3+y^3+z^3-3xyz&amp;=(x+y+z)(x^2+y^2+z^2+xy+xz+yz)\\&amp;=\frac{1}{2}(x+y+z)[(x-y)^2+(x-z)^2+(y-z)^2]\\
+\sum k^2&amp;=\frac{n(n+1)(2n+1)}{6}\\
+\sum k^3&amp;=\frac{n^2(n+1)^2}{4}\\
+(x+y)^n&amp;=\sum_{p+q=n}\binom{p}{n} x^p y^q\\
+(a_1+a_2+...+a_k)^n&amp;=\sum_{\sum r_k=n}\binom{n}{r_1\ r_2\ ... \
+r_k}a^{r_1}_1a^{r_2}_2...a^{r_n}_n\\
+(\sum{x^2})(\sum{y^2})&amp;= (\sum{xy})^2+\sum_{p&lt;q}(x_py_q-x_qy_p)^2
+\qquad \text{(Lagrange恒等式)}\\
+\sum_{i=1}^{n}A_ib_i&amp;=a_nB_n-\sum_{i=1}^{n-1}a_{i+1}B_i\qquad
+\text{(Abel变换)}\\
+\binom{n}{k}&amp;=\frac{n}{k}\binom{n-1}{k-1}\qquad
+\text{(吸收恒等式)}\\
+\binom{n}{k}&amp;=\binom{n-1}{k}+\binom{n-1}{k-1}\\
+\sum_{k}\binom{r}{m+k}\binom{s}{n-k}&amp;=\binom{r+s}{m+n}\qquad
+\text{(Vandermonde卷积)}\\
+\end{aligned}
+\]</span></p>
+<h3 id="不等式">1.2 不等式</h3>
+<p>常 用 不 等
+式：（说实话只有AM-GM、Cauchy、Jensen常用，Chebyshev、Aczel小概率能见到，Holder、嵌入、Schur、Bernoulli只有不等式题里会用）
+<span class="math display">\[
+\begin{aligned}
+\sqrt{\frac{\sum{a_n^2}}{n}}\ge\frac{\sum{a_n}}{n}&amp;\ge\sqrt[n]{\prod{a_n}}\ge\frac{n}{\sum{a_n}}
+&amp;\text{AM-GM,a相等}\\
+(\sum{a_n^2})(\sum{b_n^2})&amp;\ge(\sum a_nb_n)^2
+&amp;\text{Cauchy,ab成比例}\\
+n(\sum xy)&amp;\ge(or \le)(\sum x)(\sum y)\quad
+\text{x,y有序}&amp;\text{Chebyshev,xy相等}\\
+\prod_i(\sum_ja_{i,j})^{\alpha_i}&amp;\ge\sum_j\prod_ia_{i,j}^{\alpha_i}\qquad
+(\sum{\alpha_i}=1) &amp;\text{Holder,a成比例}\\
+(AB-\sum{a_nb_n})^2&amp;\ge(A-\sum{a_n})(B-\sum{b_n})&amp;\text{Aczel,ab成比例}\\
+\sum{f(x_n)}&amp;\ge(or\le)
+f(\frac{\sum{x_i}}{n})\qquad{(f\text{有凸性})}&amp;\text{Jensen,x相等}\\
+f(x)&amp;=(\frac{\sum{a_n^x}}{n})^{\frac{1}{x}}\qquad
+f(x)\text{递增}&amp;\text{幂平均,a相等}\\
+\prod(1+x_n)&amp;\ge1+\sum{x_n}\quad
+(x_i\in[-1,0]or[0,+\infty)&amp;\text{Bernoulli,x=0}\\
+x^2+y^2+z^2&amp;\ge2yz\cos{A}+2xz\cos{B}+2xy\cos{C}&amp;\text{嵌入,x/sinA相等}\\
+\sum_{cyc}x^r(x-y)(x-z)&amp;\ge
+0&amp;\text{Schur,xyz相等或其一为0剩余相等}
+\end{aligned}
+\]</span></p>
+<p>几何，切线，配方，构造，过于显然，略。</p>
+<p>另：三次函数换元 <span class="math display">\[
+u=a+b+c,v=ab+bc+ac,w=abc;\\
+f(x)=x^3-ux^2+vx-w=(x-a)(x-b)(x-c)
+\]</span></p>
+<h3 id="三角函数">1.3 三角函数</h3>
+<p>名梗（？）：中国队，巴西队。 <span class="math display">\[
+\begin{aligned}
+\tan \frac{x}{2}&amp;=\frac{\sin x}{1+\cos x}\\
+&amp;=\frac{1-\cos x}{\sin x}\\
+\sin^2x-\sin^2y&amp;=\sin(x+y)\sin(x-y)\\
+\sin{x}+\sin{y}&amp;=2\sin\frac{x+y}{2}\cos\frac{x-y}{2}\\
+\sin{x}-\sin{y}&amp;=2\sin\frac{x-y}{2}\cos\frac{x+y}{2}\\
+\cos{x}+\cos{y}&amp;=2\cos\frac{x+y}{2}\cos\frac{x-y}{2}\\
+\cos{x}-\cos{y}&amp;=-2\sin\frac{x+y}{2}\sin\frac{x-y}{2}\\
+\tan(x+y+z)&amp;=\frac{\tan x+\tan y+\tan z-\tan x\tan y\tan z}{1-(\tan
+x\tan y+\tan x\tan z+\tan y\tan z)}\\
+\sin3x&amp;=3\sin x-4\sin^3x\\&amp;=4\sin
+x\sin(60^{\circ}-x)\sin(60^{\circ}+x)\\
+\cos3x&amp;=4\cos^3 x-3\cos x\\&amp;=4\cos
+x\cos(60^{\circ}-x)\cos(60^{\circ}+x)\\
+\tan3x&amp;=\tan x\tan(60^{\circ}-x)\tan(60^{\circ}+x)\\
+\arctan x + \arctan y&amp;=\arctan\frac{x+y}{1-xy}\\
+\end{aligned}
+\]</span></p>
+<p>注： <span class="math inline">\(\sin (kx+d),\cos (kx+d)\)</span>
+求和自己推导，反三角函数裂项不常用，略。</p>
+<p><del>人见人爱的</del>复数优雅解法（注：下面那个花体字是Re和Im） <span
+class="math display">\[
+\begin{aligned}
+\Re(z)&amp;=\frac{z+\bar{z}}{2}\\
+\Im(z)&amp;=\frac{z-\bar{z}}{2i}\\
+|z|^2&amp;=z\cdot \bar{z}\\
+\rho e^{ix}&amp;=\rho(i\sin x+\cos x)\qquad \text{(复数的指数表示)}\\
+\omega_n^k&amp;=i\sin\frac{2k\pi}{n}+\cos\frac{2k\pi}{n}=e^{\frac{2ki\pi}{n}}\quad\text{(单位根定义)}\\
+\sum \omega_n^k&amp;=
+\begin{cases}
+0,\quad n\nmid k\\
+n,\quad n\mid  k
+\end{cases}\quad \text{(单位根反演?至少oi是这么称呼的)}\\
+\end{aligned}
+\]</span></p>
+<h3 id="多项式">1.4 多项式</h3>
+<h4 id="vieta定理">1.4.1 Vieta定理</h4>
+<p>过于显然，略。</p>
+<h4 id="lagrange插值">1.4.2 Lagrange插值</h4>
+<p><del>不会，只知道和Crt有关。</del> <span class="math display">\[
+\begin{aligned}
+   F(x)=\sum_i{y_i\prod_{j,j\neq i}{\frac{x-x_j}{x_i-x_j}}}
+   \end{aligned}
+\]</span></p>
+<h4 id="chebyshev多项式">1.4.3 Chebyshev多项式</h4>
+<p>定义 <span class="math inline">\(T_n(x)=\arccos n\cos x\)</span> 为
+<span class="math inline">\(n\)</span> 阶Chebyshev多项式。例： <span
+class="math display">\[
+\begin{aligned}
+\cos 1x &amp;= \cos x &amp;T_1(x)&amp;=x\\
+\cos 2x &amp;= 2\cos^2x-1 &amp;T_2(x)&amp;=2x^2-1\\
+\cos 3x &amp;= 4\cos^3x-3\cos x &amp;T_3(x)&amp;=4x^3-3x\\
+\cos 4x &amp;= 8\cos^4x-8\cos^2x+1 &amp;T_4(x)&amp;=8x^4-8x^2+1\\
+\end{aligned}
+\]</span> 性质：</p>
+<ol type="1">
+<li>递推式 <span
+class="math inline">\(T_{n+2}(x)=2xT_{n+1}(x)-T_n(x)\)</span> 。</li>
+<li>最高次系数为<span class="math inline">\(2^{n-1}\)</span>。</li>
+<li>若 <span class="math inline">\(f(x)\)</span> 是 <span
+class="math inline">\(n\)</span> 次多项式，当 <span
+class="math inline">\(\max_{x\in[-1,1]}|f(x)|\)</span> 最小时， <span
+class="math inline">\(f(x)=T_n(x)\)</span> 。（Chebyshev最值理论）</li>
+</ol>
+<p><strong>还是不情愿地给了例题</strong>：（1）<span
+class="math inline">\(f(x)=|x^2+ax+b|,x\in[-1,1]\)</span>，求<span
+class="math inline">\(\min_{a,b\in \mathbf{R}}
+f(x)_{\max}\)</span>（2）数列 <span
+class="math inline">\(\{a_n\}\)</span> , <span
+class="math inline">\(a_1=1,a_2=2,a_3=2\)</span> ， <span
+class="math inline">\(a_n+a_{n+3}=2a_{n+1}a_{n+2}\)</span> ，求 <span
+class="math inline">\(a_n\)</span> 。（曾经拓宽我科技树的题）</p>
+<h4 id="newton多项式">1.4.4 Newton多项式</h4>
+<p><del>不会！当时只有一个例题，还很玄学！</del> 定义 <span
+class="math inline">\(\Delta f(x)=f(x+1)-f(x)\)</span> 为 <span
+class="math inline">\(f(x)\)</span> 的一阶差分， <span
+class="math inline">\(\Delta^nf(x)=\Delta^{n-1}f(x+1)-\Delta^{n-1}f(x)\)</span>
+为 <span class="math inline">\(f(x)\)</span> 的 <span
+class="math inline">\(n\)</span> 阶差分。可以推导： <span
+class="math display">\[
+\Delta^nf(x)=\sum_{k=0}^n(-1)^{n-k}\binom{n}{k}f(x+k)\\
+f(x+n)=\sum_{k=0}^n\binom{n}{k}\Delta^kf(x+k)
+\]</span></p>
+<h3 id="导数">1.5 导数</h3>
+<p>主要按照题型分类。</p>
+<h4 id="导数不等式">1.5.1 导数不等式</h4>
+<p><del>可增加瞪眼能力。</del> 过于简单，考试请快速默出证法。</p>
+<ul>
+<li><span class="math inline">\(e^x,\ln x\)</span>有关的简单不等式 <span
+class="math display">\[
+\begin{aligned}
+e^x &amp;\geq x+1\quad\text{(0处取等)} &amp;\ln x&amp;\leq
+x-1\quad\text{(1处取等)}\\
+e^x &amp;\geq ex\quad\text{(1处取等)}  &amp;\ln x&amp;\le
+\frac{x}{e}\quad\text{(e处取等)}\\
+e^x &amp;\geq ex+(x-1)^2\quad\text{(0,1处取等)}&amp;\ln x&amp;\le
+x^2-x\quad\text{(1处取等)}\\
+\ln x&amp;\sim \frac{1}{2}(x-\frac{1}{x})\quad\text{(1,先小后大)}&amp;
+\ln x&amp;\sim 2\frac{(x-1)}{x+1}\quad\text{(1,先大后小)}
+\end{aligned}
+\]</span></li>
+<li><span class="math inline">\(\sin,\cos,\tan\)</span>
+有关的简单不等式（注：对于第四个式子可以看看2023甲卷） <span
+class="math display">\[
+\begin{aligned}
+\sin x &amp;&lt; x &amp;x&gt;0 \\
+\cos x &amp;&gt;1-\frac{x^2}{2} &amp;x&gt;0 \\
+\tan x &amp;&gt; x&amp;x\in(0,\frac{\pi}{2})\\
+2\sin x+\tan x&amp;&gt;3x &amp;x\in(0,\frac{\pi}{2})\\
+\end{aligned}
+\]</span></li>
+<li>Taylor展开构造的不等式（注：不等号取决于最后一项的正负）
+高中范围内展开到四次足矣。主要用展开式预判求导的次数：展开到几阶就是求几阶导。
+<span class="math display">\[
+\begin{aligned}
+e^x &amp;\sim 1+x+\frac{x^2}{2}+\frac{x^3}{6}+\frac{x^4}{24}+... \\
+\ln(1+x) &amp;\sim x-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+... \\
+\sin x &amp;\sim x-\frac{x^3}{6}+... \\
+\cos x &amp;\sim 1-\frac{x^2}{2}+\frac{x^4}{24}+... \\
+\tan x &amp;\sim x+\frac{x^3}{3}+... \\
+\end{aligned}
+\]</span></li>
+<li>高精度不等式，除估值、浙江导数以外，几乎用不到，证法：1,2求导配方易得，3代换
+<span class="math inline">\(t=\frac{x-1}{x+1}\)</span>
+并求导易得（注：1,2式由Pade逼近，3式由Taylor展开作差得到，误差1&lt;3&lt;2）
+<span class="math display">\[
+\begin{aligned}
+\ln x &amp;\sim \frac{3x^2-3}{x^2+4x+1}\quad\text{(1处取等，先小后大)}\\
+\ln x &amp;\sim \frac{x^2+4x-5}{4x+2}\quad\text{(1处取等，恒小于)}\\
+\ln x &amp;\sim
+\frac{2(x-1)}{x+1}+\frac{2(x-1)^3}{3(x+1)^3}\quad\text{(1处取等，先小后大)}
+\end{aligned}
+\]</span></li>
+<li>其他（切割线、凹凸性不等式需按题分析，略）</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+\sqrt{xy}&amp;\le\frac{x-y}{\ln x-\ln
+y}\le\frac{x+y}{2}\quad\text{(ALG)}\\
+\frac{x}{y}&amp;\sim\frac{x+z}{y+z}\quad\text{(糖水)}\\
+\end{aligned}
+\]</span></p>
+<h4 id="不等式证明">1.5.2 不等式证明</h4>
+<p>​ 这种题目为 「证明 <span class="math inline">\(f(x)\ge0\)</span>
+」，简单粗暴，有时难度极大，方法有：</p>
+<ul>
+<li><p>同构，<span class="math inline">\(h(f(x))\le h(g(x))\)</span>
+，其中 <span class="math inline">\(h(x)\)</span> 单调，于是可以脱去
+<span class="math inline">\(h(x)\)</span> ，化简代数式。</p></li>
+<li><p>调整结构（在别的地方可能称为异构/极值点显化/凹凸性反转/分治）。一般有（1）增添多项式（主要是根据Taylor构造）（2）
+除以多项式（使其不单调）。使得 <span
+class="math inline">\(f(x)=f_1(x)+f_2(x)+...\ge0\)</span> 或 <span
+class="math inline">\(f_L(x)\ge T \ge f_R(x)\)</span>。</p></li>
+</ul>
+<p>Exercise（增添项）：（1） 证明 <span class="math inline">\(e^x+\cos
+x-\sin x\ge2,x\ge0\)</span> <span class="math display">\[
+\iff (e^x-\frac{1}{2}x^2-x-1)+(\cos x+\frac{1}{2}x^2-1)+(x-\sin x)\ge0
+\]</span> （2）证明 <span class="math inline">\(xe^x+x-\ln
+x&gt;\frac{3}{2},x&gt;0\)</span> <span class="math display">\[
+\iff x(e^x-1)+(\sqrt e x-\ln\sqrt ex-1)+(2-\sqrt e)x&gt;0
+\]</span> （3）证明 <span class="math inline">\(x^2e^x-(x+2)\ln x-2\sin
+x&gt;0\)</span> <span class="math display">\[
+\iff x[e^{x+\ln x}-(x+\ln x)-1]+(x^2-\ln x^2-1)+(x-\sin x)+(1-\sin
+x)&gt;0
+\]</span> （除项）（1） 证明 <span
+class="math inline">\(x^2e^{\frac{e}{3}x}-1-\ln x&gt;0\)</span> <span
+class="math display">\[
+\frac{e^{\frac{e}{3}x}}{x}&gt;\frac{e^2}{3}&gt;\frac{1+\ln x}{x^3}
+\]</span> (2) 证明 <span class="math inline">\(e^x - x\ln
+x-x^2&gt;1\)</span> <span class="math display">\[
+\frac{e^x-1}{x^2}&gt;\frac{3}{2}&gt;\frac{1}{e}+1&gt;\frac{\ln x}{x}+1
+\]</span> 注：这个 <span class="math inline">\(\frac{3}{2}\)</span>
+非常紧，需构造 <span
+class="math inline">\(f(x)=\frac{\frac{3}{2}x^2+1}{e^x}\)</span> 并证明
+<span class="math inline">\(f(x)&lt;1\)</span>
+（可以记一点类似的放缩式）。
+<strong>提取指数，对数的技巧过于常见，略去</strong> 。</p>
+<h4 id="求参数范围">1.5.3 求参数范围</h4>
+<p>这种题目为 「已知 <span class="math inline">\(f(x, a)\ge0\)</span>
+，<span class="math inline">\(x\)</span> 范围，求 <span
+class="math inline">\(a\)</span> 范围」，做法有：</p>
+<ul>
+<li><p>求导后因式分解+分类讨论/同构化简（过于简单，略）</p></li>
+<li><p>必要性检验，代入必要条件并得到 <span
+class="math inline">\(a\)</span>
+范围，并证明（用到1.5.2的方法）。有两种可能的必要条件：(1) 端点，若
+<span class="math inline">\(f(x)\)</span> 端点处为 <span
+class="math inline">\(0\)</span> ，那么 <span
+class="math inline">\(f&#39;(x)\)</span> 在端点处必 <span
+class="math inline">\(\ge 0\)</span>
+（注：需要讨论证明）（2）特殊点，取一个 <span
+class="math inline">\(x_0\)</span> （实际的数）， 得 <span
+class="math inline">\(f(x_0)\ge0\)</span> （此处 <span
+class="math inline">\(x_0\)</span> 通过解方程/猜特殊值 <span
+class="math inline">\(f(x_0)=0\)</span> 和 <span
+class="math inline">\(f&#39;(x_0)=0\)</span> 得到）。</p></li>
+<li><p>暴力出奇迹！有两种：（1）含参讨论：<del>导导导，猜答案，乱分类，瞎证明！</del>（2）参变分离：分离参数，求导化简，一步到位！</p></li>
+</ul>
+<p>另：实践发现，对于 <span class="math inline">\(ax^n\)</span> 型
+，两者的运算量等同！ <del>而参变分离需要洛！有概率扣分！</del> 例如
+<span class="math inline">\(f(x)\ge ax\)</span>： <span
+class="math display">\[
+\begin{aligned}
+h(x)&amp;=f(x)-ax \\
+h&#39;(x)&amp;=f&#39;(x)- a   \\
+h&#39;&#39;(x)&amp;=f&#39;&#39;(x) \ge 0 \\
+\end{aligned}
+\]</span> <span class="math display">\[
+\begin{aligned}
+h(x)&amp;=\frac{f(x)}{x} &amp;h&#39;(x)&amp;=\frac{xf&#39;(x)-f(x)}{x^2}
+\\
+r(x)&amp;=xf&#39;(x)-f(x)    &amp;r&#39;(x)&amp;=f&#39;&#39;(x) \ge0  \\
+\end{aligned}
+\]</span> 殊途同归。至少遇到 <span class="math inline">\(f(x)\ge
+ax^n\)</span> 这类题至少有底啦 (｡･∀･)ﾉﾞ</p>
+<p>一般来说，这三种方法做出的概率由大到小，挨个去试用不了多少时间哒！</p>
+<h4 id="多变量问题">1.5.5 多变量问题</h4>
+<p>近几年导数压轴喜欢出的题。主要有以下做法（涵盖绝大多数题<del>zj除外</del>）：</p>
+<ul>
+<li><p>消元/减元类：对称化构造、比值/差值换元</p></li>
+<li><p>不等式类：切割线放缩、构造辅助函数、单调性调整</p>
+<p>这些需要自己做题体会，方法略。不过一个有趣的做法（单调性调整）：若<span
+class="math inline">\(x_1&gt;x_2\)</span> <span class="math display">\[
+\begin{aligned}
+x_1+x_2&gt;T&amp;\iff (x_1-x_2)(x_1+x_2)&gt;T(x_1-x_2)\\
+&amp;\iff x_1^2-Tx_1&gt;x_2^2-Tx_2\\
+&amp;\iff g(x)=x^2-Tx, g(x_1)&gt;g(x_2)\\
+x_1\cdot x_2&gt;T&amp;\iff x_1-x_2&gt;T\frac{x_1-x_2}{x_1x_2}\\
+&amp;\iff x_1-\frac{T}{x_1}&gt;x_2-\frac{T}{x_2}\\
+&amp;\iff g(x)=x-\frac{T}{x}, g(x_1)&gt;g(x_2)\\
+\end{aligned}
+\]</span></p>
+<p>此时 <span class="math inline">\(g(x)\)</span> 需要调整，常见的可以
+<span class="math inline">\(+\lambda f(x)\)</span> 、 <span
+class="math inline">\(\times\frac{1}{f(x)}\)</span> ，使得 <span
+class="math inline">\(g(x)\)</span> 具有单调性。</p></li>
+</ul>
+<h4 id="数列与导数">1.5.6 数列与导数</h4>
+<p>这一部分主要解决「证明 <span class="math inline">\(f(n)\le\sum
+f(n)\le h(n)\)</span>
+」类型。一般方法是——裂项！放缩！不过公式过多，考到的概率极小，不建议背诵，做题即可。下面有几个考过的：
+<span class="math display">\[
+\ln(n+1)-\ln n&lt;\sin \frac{1}{n}&lt;\tan \frac{1}{n}&lt;\ln n-\ln(n-1)
+\\
+\frac{1}{n}&lt;\ln\frac{2n+1}{2n-1}
+\]</span> 若是差常数，可以考虑算前几项提升精度</p>
+<h4 id="其他">1.5.7 其他</h4>
+<ul>
+<li>在研究 <span class="math inline">\(a^x\)</span> 与 <span
+class="math inline">\(\log_ax\)</span>
+交点个数时，有两个神秘常数可能会遇到： <span
+class="math inline">\(e^{\frac{1}{e}},(\frac{1}{e})^e\)</span>
+。看到答案写这个不要惊慌 u( •̀ ω •́ )✧</li>
+<li><span class="math inline">\(\tan x=ax\)</span> 的正根从小到大记为
+<span class="math inline">\(x_1,x_2...\)</span>
+它是具有极值点偏移性质的（模拟题出过）</li>
+</ul>
+<h3 id="其他-1">1.6 其他</h3>
+<h4 id="数列">1.6.1 数列</h4>
+<p>可能用到的技巧：</p>
+<ul>
+<li><p>不动点/特征根法（各大参考书均含，略）</p></li>
+<li><p>蛛网作图法（<span
+class="math inline">\(a_{n+1}=f(a_n)\)</span>）（各大参考书均含，略）</p></li>
+<li><p>多项式与指数函数混合求和（ <span
+class="math inline">\(a_n=f(x)\)</span> ， <span
+class="math inline">\(f(x)\)</span> 含多项式与指数，求 <span
+class="math inline">\(S_n\)</span> ）（？有时还会有组合数）</p></li>
+<li><p>二阶线性递推（形如 <span
+class="math inline">\(a_n=pa_{n-1}+qa_{n-2}\)</span>
+）的有趣性质（这个参考书几乎没有）</p></li>
+</ul>
+<p>E.g. <span
+class="math inline">\(a_1=1,a_2=5,a_{n+2}=7a_{n+1}-a_n\)</span> 证明
+<span class="math inline">\(a_na_{n+1}-1\)</span> 是完全平方数 <span
+class="math display">\[
+\begin{aligned}
+&amp;\Longrightarrow&amp;\frac{a_{n+2}+a_n}{a_{n+1}}&amp;=\frac{a_{a_n+1}+a_{n-1}}{a_n}=7\\
+&amp;\Longrightarrow
+&amp;a_{n+2}a_n-a_{n+1}^2&amp;=a_{n+1}a_{n-1}-a_{n}^2=a_3a_2-a_2^2=9\\
+&amp;\Longrightarrow
+&amp;a_{n+1}a_n-1&amp;=(\frac{a_n+a_{n+1}}{3})^2\in\mathbf{N}\\
+&amp;\Longrightarrow
+&amp;\sqrt{a_{n+1}a_n-1}&amp;=\frac{a_n+a_{n+1}}{3}\in\mathbf{N}\\
+\end{aligned}
+\]</span> 注：2-&gt;3使用题设条件消去 <span
+class="math inline">\(a_{n+2}\)</span> ，
+由3可知右式为整数，故4右式为整数。通过这个推导逆向可以得到：遇到形如
+<span
+class="math inline">\(a_n=Aa_{n-1}+\sqrt{Ba_{n-1}a_{n-2}+C}\)</span>
+时不要惊慌，可能为二阶线性递推。</p>
+<h4 id="函数方程">1.6.2 函数方程</h4>
+<p>这种题仅需构造一组特解即可。除了同构做法和基本结论外，还有两个Trick</p>
+<ul>
+<li>导数法。使用导数定义消元。e.g. <span
+class="math inline">\(f(x+y)=f(x)+f(y)+x^2y+xy^2\)</span> ，求 <span
+class="math inline">\(f(x)\)</span> 。 <span class="math display">\[
+\begin{aligned}
+f&#39;(x)&amp;=\lim_{y\rightarrow0}\frac{f(x+y)-f(x)}{y}\\
+&amp;=\lim_{y\rightarrow0}\frac{f(y)+x^2y+xy^2}{y}\\
+&amp;=f&#39;(0)+x^2
+\end{aligned}
+\]</span>
+剩下的就好办了。不过有时可能需要解微分方程（在高中唯二的作用，另一种是直接给方程让你解
+<del>美其名曰同构</del> ）</li>
+<li>配复数。增添 <span class="math inline">\(i\)</span>
+使得符合熟悉的函数。 e.g. <span
+class="math inline">\(f(x+y)=\frac{f(x)+f(y)}{1+f(x)f(y)}\)</span> ，求
+<span class="math inline">\(f(x)\)</span>
+。如果分母是减号，就立刻做完了。如果变形为 <span class="math display">\[
+\begin{aligned}
+if(x+y)&amp;=\frac{if(x)+if(y)}{1-[if(x)][if(y)]}\\
+f(x)&amp;=i\tan wx
+\end{aligned}
+\]</span> 注：为使 <span class="math inline">\(f(x)\)</span>
+能在实数域内， <span class="math inline">\(w\)</span>
+可能为复数。（展开后貌似是双曲函数 <del>没学过不会</del> ）</li>
+</ul>
+<h2 id="几何">2. 几何</h2>
+<p>高考范围内几何题几乎都是暴力方法（指立体、解析、解三角形）。不过在模拟题上（特指2024奇妙的19题模式模拟题）有平面几何混入解析几何、解三角形的，而且难度不低。</p>
+<h3 id="平面几何">2.1 平面几何</h3>
+<p>正余弦定理过于简单已省略。简单的三角恒等式： <span
+class="math display">\[
+\begin{aligned}
+\sin A+\sin B+\sin C&amp;=4\cos \frac{A}{2}\cos \frac{B}{2}\cos
+\frac{C}{2}\\
+\cos A+\cos B+\cos C&amp;=1+4\sin \frac{A}{2}\sin \frac{B}{2}\sin
+\frac{C}{2}\\
+\sin 2A+\sin 2B+\sin 2C&amp;=4\sin A\sin B\sin C\\
+\cos 2A+\cos 2B+\cos 2C&amp;=-4\cos A\cos B\cos C-1\\
+\tan A +\tan B+\tan C&amp;=\tan A\tan B\tan C \\
+\end{aligned}
+\]</span> - <strong>奔驰定理</strong> ：<span
+class="math inline">\(\Delta ABC\)</span>，平面任意一点 <span
+class="math inline">\(P\)</span> ，则 <span
+class="math inline">\(\overrightarrow{PA}\cdot S_{\Delta
+PBC}+\overrightarrow{PB}\cdot S_{\Delta PAC}+\overrightarrow{PC}\cdot
+S_{\Delta PAB}=0\)</span>
+（若求面积的三角形在原三角形外，面积取负）。推论有：</p>
+$$
+<span class="math display">\[\begin{aligned}
+&amp;\text{重心：}\overrightarrow{PA}+\overrightarrow{PB}+\overrightarrow{PC}=0\\
+&amp;\text{内心：}\overrightarrow{PA}\cdot\sin
+2A+\overrightarrow{PB}\cdot\sin 2B+\overrightarrow{PC}\cdot\sin 2C=0\\
+&amp;\text{外心：}\overrightarrow{PA}\cdot\sin  A+\overrightarrow{PB}\cdot\sin
+B+\overrightarrow{PC}\cdot\sin  C=0\\
+&amp;\text{垂心：}\overrightarrow{PA}\cdot\tan
+A+\overrightarrow{PB}\cdot\tan B+\overrightarrow{PC}\cdot\tan C=0\\
+&amp;\text{旁心（A的）：}-\overrightarrow{PA}\cdot\sin  A+\overrightarrow{PB}\cdot\sin
+B+\overrightarrow{PC}\cdot\sin  C=0\\
+
+\end{aligned}\]</span>
+<p>$$ - <strong>极化恒等式</strong> ：（1） <span
+class="math inline">\(\triangle ABC\)</span>，<span
+class="math inline">\(BC\)</span> 中点 <span
+class="math inline">\(D\)</span> ，则 <span
+class="math inline">\(\overrightarrow{AB}\cdot\overrightarrow{AC}=AD^2+\frac{1}{4}BC^2\)</span>
+（2）矩形 <span class="math inline">\(ABCD\)</span> ，平面任意一点 <span
+class="math inline">\(P\)</span> ，则 <span
+class="math inline">\(PA^2+PC^2=PB^2+PD^2\)</span>
+（3）平行四边形中，对角线的平方和等于四边平方和。 -
+<strong>射影定理</strong> ：直角 <span class="math inline">\(\triangle
+ABC\)</span> 中，<span class="math inline">\(C\)</span> 为直角，作 <span
+class="math inline">\(CD\perp AB\)</span> 于 <span
+class="math inline">\(D\)</span> ，则 <span
+class="math inline">\(\frac{1}{CD^2}=\frac{1}{AC^2}+\frac{1}{BC^2}\)</span>
+（还有几个同名定理，过于显然，略） - <strong>中线长公式</strong> ：
+<span class="math inline">\(\triangle ABC\)</span>，<span
+class="math inline">\(BC\)</span> 中点 <span
+class="math inline">\(D\)</span> ，则 <span
+class="math inline">\(AD^2=\frac{AB^2+AC^2-2BD^2}{2}\)</span> -
+<strong>角平分线定理</strong> ： <span class="math inline">\(\triangle
+ABC\)</span>，<span class="math inline">\(\angle A\)</span> 角平分线
+<span class="math inline">\(AD\)</span> 交 <span
+class="math inline">\(BC\)</span> 于 <span
+class="math inline">\(D\)</span> ，则 <span
+class="math inline">\(\frac{AB}{AC}=\frac{DB}{DC}\)</span> . -
+角平分线长公式： <span class="math inline">\(\triangle
+ABC\)</span>，<span class="math inline">\(\angle A\)</span> 角平分线
+<span class="math inline">\(AD\)</span> 交 <span
+class="math inline">\(BC\)</span> 于 <span
+class="math inline">\(D\)</span> ，则 <span
+class="math inline">\(AD^2=AB\cdot AC-DB\cdot DC\)</span> . - 海伦公式：
+<span class="math inline">\(\Delta ABC\)</span> 中 <span
+class="math inline">\(S=\sqrt{p(p-a)(p-b)(p-c)}\)</span> ；四边形 <span
+class="math inline">\(ABCD\)</span> 中 <span class="math inline">\(S\le
+\sqrt{(p-a)(p-b)(p-c)(p-d)}\)</span>​ 当且仅当四点共圆取等。 -
+Ptolemy：凸四边形 <span class="math inline">\(ABCD\)</span> 中，<span
+class="math inline">\(AC\cdot BD\le AB\cdot CD+AD\cdot BC\)</span>
+，当且仅当四点共圆取等。 -
+Menelaus&amp;Ceva&amp;角元Ceva：式子有点长，自己bdfs，见到过模拟题出。 -
+其他： <del>不会用，记一下，图一乐，从来没考，内容省略，</del>
+具体内容请bdfs：
+Euler、Simson、Pascal、三角形五心结论、圆幂、根轴、根心</p>
+<h3 id="立体几何">2.2 立体几何</h3>
+<p>主要是小题的结论，传统立体几何大题没啥难度（特指与其相对的立体几何圆锥曲线）。</p>
+<h4 id="正四面体">2.2.1 正四面体</h4>
+<p>设边长为 <span class="math inline">\(a\)</span> ，则：</p>
+<ul>
+<li><p>高 <span
+class="math inline">\(\frac{\sqrt{6}}{3}a\)</span></p></li>
+<li><p>内切球半径 <span
+class="math inline">\(\frac{\sqrt{6}}{12}a\)</span></p></li>
+<li><p>外接球半径 <span
+class="math inline">\(\frac{\sqrt{6}}{4}a\)</span></p></li>
+<li><p>棱切球半径 <span
+class="math inline">\(\frac{\sqrt{2}}{4}a\)</span>​</p></li>
+<li><p>两顶点与体心呈角 <span
+class="math inline">\(\arccos(-\frac{1}{3})\approx109^{\circ}28&#39;\)</span>
+<del>（学化学的应该很熟悉）</del></p></li>
+<li><p>相邻两面二面角 <span
+class="math inline">\(\arccos\frac{1}{3}\)</span></p></li>
+</ul>
+<h4 id="一般四面体">2.2.2 一般四面体</h4>
+<p>四面体 <span class="math inline">\(ABCD\)</span>
+中，取一个顶点，三个平面角设为 <span
+class="math inline">\(\alpha,\beta,\gamma\)</span> ，所对的二面角为
+<span class="math inline">\(\alpha&#39;,\beta&#39;,\gamma&#39;\)</span>
+，则： <span class="math display">\[
+\begin{aligned}
+\frac{\sin\alpha}{\sin\alpha&#39;}&amp;=\frac{\sin\beta}{\sin\beta&#39;}=\frac{\sin\gamma}{\sin\gamma&#39;}
+\\
+\cos\alpha&#39;&amp;=\frac{\cos\alpha-\cos\beta\cos\gamma}{\sin\beta\sin\gamma}
+\\
+\cos\alpha&amp;=\frac{\cos\alpha&#39;+\cos\beta&#39;\cos\gamma&#39;}{\sin\beta&#39;\sin\gamma&#39;}
+\\
+\cos&lt;\overrightarrow{AB},\overrightarrow{CD}&gt;&amp;=\frac{(BC^2+AD^2)-(AC^2+BD^2)}{2AC\cdot
+BD}
+\end{aligned}
+\]</span></p>
+<p>#### 2.2.3 球体</p>
+<p>给定两个面上的图形，求外接球半径。</p>
+<ul>
+<li>blablabla公式1 <del>（名字没记下来）</del>
+：若两面垂直，外接圆分别半径为 <span class="math inline">\(R_1,
+R_2\)</span> ，交线长 <span class="math inline">\(L\)</span> ，则 <span
+class="math inline">\(R^2=R_1^2+R_2^2-\frac{L^2}{4}\)</span></li>
+<li>blablabla公式2 ：若两面夹角为 <span
+class="math inline">\(\theta\)</span> ，交线长 <span
+class="math inline">\(L\)</span> ，外接圆圆心到交线距离 <span
+class="math inline">\(d_1, d_2\)</span> ，则 <span
+class="math inline">\(R^2=\frac{d_1^2+d_2^2-2d_1d_2\cos\theta}{\sin^2\theta}+\frac{L^2}{4}\)</span></li>
+</ul>
+<h3 id="解析几何">2.3 解析几何</h3>
+<h4 id="选填题">2.3.1 选填题</h4>
+<p>以椭圆为例，双曲线、抛物线有相似结论，略。 <span
+class="math inline">\(P\)</span> 是曲线上一点，<span
+class="math inline">\(MN\)</span> 为焦点弦，<span
+class="math inline">\(a, b, c, e, p\)</span> 均为圆锥曲线参数，其中
+<span class="math inline">\(e=\frac{c}{a},p=\frac{b^2}{c}\)</span></p>
+<ul>
+<li><span class="math inline">\(|PF|= a\pm ex
+=\frac{ep}{1-e\cos\theta}\)</span></li>
+<li><span class="math inline">\(S_{\Delta PF_1F_2}=b^2\tan{\frac{\angle
+F_1PF_2}{2}}=c\cdot y_P\)</span>​</li>
+<li><span
+class="math inline">\(k_\text{弦}k_\text{中点}=e^2-1\)</span>​</li>
+<li><span class="math inline">\(\frac{PF}{PH}=e\)</span> 第二定义</li>
+<li>设 <span class="math inline">\(\lambda=\frac{MF}{NF}\)</span> ，则
+<span
+class="math inline">\(|e\cos\theta|=|\frac{1-\lambda}{1+\lambda}|\)</span></li>
+<li><span class="math inline">\(e=\frac{\sin\angle F_1PF_2}{\sin\angle
+PF_1F_2\sin\angle PF_2F_1}\)</span></li>
+<li><span class="math inline">\(R,S\)</span>
+是在曲线上关于原点对称的两点，则 <span
+class="math inline">\(k_{PR}k_{PS}=e^2-1\)</span> （第三定义）</li>
+<li>光学性质</li>
+</ul>
+<p>抛物线阿基米德三角形 <del>（多选考背诵）</del>
+：<del>不会画图，用文字叙述</del> 抛物线焦点弦 <span
+class="math inline">\(AB\)</span> ，<span
+class="math inline">\(A,B\)</span> 两点作抛物线的切线交与 <span
+class="math inline">\(P\)</span> ， <span
+class="math inline">\(AB\)</span> 中点 <span
+class="math inline">\(G\)</span> ， <span
+class="math inline">\(PG\)</span> 交抛物线于 <span
+class="math inline">\(H\)</span> ， 则： - <span
+class="math inline">\(P\)</span> 在准线上</p>
+<ul>
+<li><p><span class="math inline">\(PG//x\text{轴}\)</span></p></li>
+<li><p><span class="math inline">\(PH=GH\)</span></p></li>
+<li><p><span class="math inline">\(PF\perp AB\)</span></p></li>
+<li><p><span class="math inline">\(AP\perp BP\)</span></p></li>
+<li><p>若 <span class="math inline">\(AB\)</span>
+不是焦点弦，23成立，4改为 <span class="math inline">\(\angle PFA=\angle
+PFB\)</span> （ <span class="math inline">\(F\)</span>
+是原来那个焦点）</p></li>
+</ul>
+<p>内准圆：曲线上取 <span class="math inline">\(P,Q\)</span> 使得 <span
+class="math inline">\(OP\perp OQ\)</span>，作 <span
+class="math inline">\(OH\perp PQ\)</span> 交 <span
+class="math inline">\(PQ\)</span> 于 <span
+class="math inline">\(H\)</span>，则 <span
+class="math inline">\(H\)</span> 轨迹是以 <span
+class="math inline">\(O\)</span> 为中心，半径为 <span
+class="math inline">\(\frac{a^2b^2}{a^2+b^2}\)</span> 的圆（内准圆）
+外准圆（蒙日圆）：曲线上取 <span class="math inline">\(P,Q\)</span>
+作切线交于 <span class="math inline">\(H\)</span>， 使得 <span
+class="math inline">\(PH\perp QH\)</span>，则 <span
+class="math inline">\(H\)</span> 轨迹是以 <span
+class="math inline">\(O\)</span> 为中心，半径为 <span
+class="math inline">\(\sqrt{a^2+b^2}\)</span> 的圆（外准圆/蒙日圆）</p>
+<p>焦点三角形内心旁心：当 <span class="math inline">\(P\)</span>
+变化时，椭圆焦点三角形的旁心、双曲线焦点三角形的内心恒在 <span
+class="math inline">\(x=a\)</span> 上。这个
+<strong>性质可以出在解三角形</strong> 里。例：<span
+class="math inline">\(\triangle
+ABC,\tan\frac{A}{2}\tan\frac{B}{2}=1\)</span> 可以推断出 <span
+class="math inline">\(C\)</span> 在 <span
+class="math inline">\(A,B\)</span> 为焦点的椭圆上；<span
+class="math inline">\(\triangle
+ABC,\tan\frac{A}{2}=2\tan\frac{B}{2}\)</span> 可以推断出 <span
+class="math inline">\(C\)</span> 在 <span
+class="math inline">\(A,B\)</span>
+为焦点的双曲线上。（神奇的是，这个结论二模、强基都考了
+<del>考背诵了属于是</del> ）
+<del>（证明留作课后习题/读者自证不难）</del></p>
+<h4 id="大题">2.3.2. 大题</h4>
+<p>设线法：</p>
+<ul>
+<li>设 <span class="math inline">\(y=mx+n\)</span> 或 <span
+class="math inline">\(x=my+n\)</span>
+，联立韦达（可以通过背诵硬解定理加速），非常经典的做法
+（大多数标答会这样写）。有的时候可以两线乘在一起与曲线作差有奇效（见2022新高考二卷）</li>
+<li>设 <span class="math inline">\(mx+ny=1\)</span>
+齐次化，非常快，首选方法。当平移点位于包椭圆的矩形顶点时，计算会特别简介（经验之谈）。这里需要知道的是，以曲线上定点为中心作两条直线，满足形如
+<span class="math inline">\(A(k_1+k_2)+B k_1k_2=C\)</span>
+式子，那么另外两交点连线过顶点。</li>
+<li>设 <span
+class="math inline">\(x=t\cos\theta+x_0,y=t\sin\theta+y_0\)</span>
+参数方程，形如证明 <span
+class="math inline">\(|PT|\cdot|QT|=|RT|^2\)</span>
+长度类的可以选择。（见2023四省联考，2021新高考一卷）</li>
+</ul>
+<p>设点法，当题目有仿射痕迹（平面几何定理、面积比例）或者结构可疑（非常像某个公式）时可以尝试，这时可以绕过仿射防扣分：</p>
+<ul>
+<li>设 <span class="math inline">\(x_0,y_0\)</span>
+用曲线暴力消元，常用面积公式 <span
+class="math inline">\(S=\frac{1}{2}|x_1y_2-x_2y_1|\)</span>。过 <span
+class="math inline">\(x\)</span> 轴定点 <span
+class="math inline">\((m,0)\)</span> 的弦，
+已知一点坐标，另一点坐标有（若是在 <span
+class="math inline">\(y\)</span> 轴上 <span
+class="math inline">\(x,y\)</span> 、 <span
+class="math inline">\(a,b\)</span> 互换即可）：</li>
+</ul>
+<p><span class="math display">\[
+x_2=-\frac{(m+\frac{a^2}{m})x_1-2a^2}{(m+\frac{a^2}{m})-2x_1}\\
+y_2=\frac{(m-\frac{a^2}{m})y_1}{(m+\frac{a^2}{m})-2x_1}\\
+\]</span></p>
+<ul>
+<li><p>设 <span
+class="math inline">\(x=a\cos\theta,y=b\sin\theta\)</span>
+，上式的面积公式可以简化</p></li>
+<li><p>设 <span
+class="math inline">\(x=a\frac{t^2-1}{t^2+1},y=b\frac{2t}{t^2+1}\)</span>
+，当一点为椭圆顶点时，写直线方程有奇效</p></li>
+</ul>
+<p>其他：</p>
+<ul>
+<li><p>同构：对地位相同的点列方程（ <span
+class="math inline">\(k_i,x_i\)</span>
+的方程），使用根与系数的关系代换。（见2021甲卷）</p></li>
+<li><p>蝴蝶定理、坎迪定理（会考特殊位置下的证明）：
+<del>不会画图，自己百度，这里省略</del></p></li>
+<li><p>曲线系（会扣分，还不一定快，不建议用）</p></li>
+<li><p>仿射变换（小题玩玩就行了，大题几乎用不了平面几何）</p></li>
+<li><p>调和点列、完全四边形、极点极线（结论过多，大致了解即可，见参考书，略）（2024九省联考第二问里有个有趣的一般结论）</p></li>
+<li><p><del>射影变换、对合变换（还没学会，等我学成归来）</del></p></li>
+</ul>
+<h2 id="其他-2">3. 其他</h2>
+<p>### 3.1数论</p>
+<p>九省联考掀起了一股数论风。勉为其难地抄了一点。（主要还是做题，几乎都是考代数技巧，很少运用公式的）</p>
+<ul>
+<li><p>Wilson 定理： <span
+class="math inline">\((p-1)!\equiv-1\pmod{p}\quad\text{(p is
+prime)}\)</span> 更多的是设 <span class="math inline">\((p-1)!=kp-1,k
+\in\mathbf{Z}\)</span></p></li>
+<li><p>Fermat 小定理：<span
+class="math inline">\(a^{p-1}\equiv1\pmod{p}\quad\text{(p is
+prime)}\)</span> 更多的是设 <span class="math inline">\(a^{p-1}=kp+1,k
+\in\mathbf{Z}\)</span></p></li>
+<li><p>积性函数 <span
+class="math inline">\(\varphi,\mu,\sigma_k\)</span> 性质，Mobius反演
+<del>（见oi）</del></p></li>
+</ul>
+<h3 id="组合">3.2 组合</h3>
+<p>无定理，人 类 智 慧 题。2024新高考一卷：害害害，来了嗷。</p>
+<h3 id="统计">3.3 统计</h3>
+<ul>
+<li>二项分布： <span class="math inline">\(E(x)=np,D(x)=np(1-p)\)</span>
+，最大项：设 <span class="math inline">\(k=(n+1)p\)</span> ，若 <span
+class="math inline">\(k\in Z\)</span> ，最大项为 <span
+class="math inline">\(k,k-1\)</span> ，否则为 <span
+class="math inline">\(\lfloor k\rfloor\)</span><br />
+</li>
+<li>超几何分布： <span class="math inline">\(E(x)=np\)</span></li>
+<li>独立性检验：<span class="math inline">\(H_0\)</span>
+为：A与B相互独立，即…无影响。推断 <span
+class="math inline">\(H_0\)</span>
+不成立，即…不独立，且犯错概率…/无充分证据推断不成立，可认为…独立。</li>
+</ul>
+<h3 id="特殊值">3.3 特殊值</h3>
+<p>导数有时要估值，可以记一些特殊值。（注：之前记的位数不够，还不如不等式估的，被坑了，现在精度更高了，经过四舍五入）<del>表格不知怎地对不齐，凑合着看吧</del>
+<span class="math display">\[
+\begin{aligned}
+\ln2\approx0.69315\quad&amp;\ln3\approx1.09861\quad&amp;\ln5\approx1.0986\quad&amp;\ln7\approx1.098611\\
+\sqrt{e}\approx1.64872\quad&amp;e\approx2.71828\quad&amp;e^2\approx7.38906\quad&amp;e^3\approx20.08554\\
+\lg2\approx0.3010\quad&amp;\lg3\approx0.4771\quad&amp;\lg7\approx0.8451\quad&amp;\lg11\approx1.0414\\
+\sqrt{2}\approx1.414\quad&amp;\sqrt{3}\approx1.732\quad&amp;\sqrt{5}\approx2.236\quad&amp;\sqrt{10}\approx3.162\\
+\end{aligned}
+\]</span></p>
+<p>写在最后：背几个公式是远远不够滴！快去做题！！ ο(=•ω＜=)ρ</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Note/" rel="tag"># Note</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/06/23/Building_Process/" rel="prev" title="建Blog过程记录">
+                  <i class="fa fa-angle-left"></i> 建Blog过程记录
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/08/06/English-Bible/" rel="next" title="Sp2圣经">
+                  Sp2圣经 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="valine-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Methane</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","single_dollars":true,"cjk_width":0.9,"normal_width":0.6,"append_css":true,"every_page":true,"cdn":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+<script>
+NexT.utils.loadComments('#valine-comments', () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
+    new Valine(Object.assign({"enable":true,"appId":"tphu2Q2JWb6juWQpRpoq2E77-gzGzoHsz","appKey":"k3cLBOlnwtC7Y23V4qvdXGAY","serverURLs":"https://tphu2q2j.lc-cn-n1-shared.com","placeholder":"Just go go","avatar":"mp","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":false,"enableQQ":false,"requiredFields":[],"avatar_cdn":"https://cravatar.cn/avatar/"}, {
+      el: '#valine-comments',
+      path: "/2024/06/23/Mathematics_Note_in_High_School/",
+      serverURLs: "https://tphu2q2j.lc-cn-n1-shared.com"
+    }));
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
