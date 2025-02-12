@@ -87,7 +87,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-monitor"><a href="/monitor/" rel="section"><i class="fa-solid fa-microchip fa-fw"></i>monitor</a></li>
   </ul>
 </nav>
 
@@ -313,9 +313,15 @@ Geometry</a></li>
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2025-02-05 20:52:16 / 修改时间：21:49:46" itemprop="dateCreated datePublished" datetime="2025-02-05T20:52:16+08:00">2025-02-05</time>
+      <time title="创建时间：2025-02-05 00:00:00" itemprop="dateCreated datePublished" datetime="2025-02-05T00:00:00+08:00">2025-02-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-02-12 15:37:02" itemprop="dateModified" datetime="2025-02-12T15:37:02+08:00">2025-02-12</time>
     </span>
 
   
@@ -457,8 +463,8 @@ Geometry</a></li>
     
     <div class="post-body" itemprop="articleBody">
           <p>某 Proj 需要团队开发，故用 git 。流程如下图。</p>
-<style>.tvaqdyisydvo{zoom:130%}</style>
-<img src="/2025/02/04/Git_Note/git.jpg" class="tvaqdyisydvo">
+<style>.umeddmalbvqo{zoom:130%}</style>
+<img src="/2025/02/04/Git_Note/git.jpg" class="umeddmalbvqo">
 <h5 id="几个术语">几个术语</h5>
 <p>repository : 仓库</p>
 <p>workSpace : 本地文件（正在修改的）</p>
@@ -1332,7 +1338,22 @@ NexT.utils.loadComments('#valine-comments', () => {
       path: "/",
       serverURLs: "https://tphu2q2j.lc-cn-n1-shared.com"
     }));
+    setTimeout(()=>{
+      document.querySelectorAll('.variables').forEach(dm => {
+          const query = new AV.Query('Monitor');
+          query.equalTo('key', dm.dataset.var);
+          query.first().then((pm)=>{
+              if(dm.dataset.type=='time') {
+                  const tim = new Date(pm.updatedAt);
+                  dm.textContent = `${tim.getFullYear()}-${tim.getMonth()}-${tim.getDate()} ${tim.getHours()}:${tim.getMinutes()}:${tim.getSeconds()}`;
+              } else {
+                  dm.textContent = `${pm.attributes.value}`;
+              }
+          });
+      });
+  }, 1000);
   }, window.Valine);
+
 });
 </script>
 
