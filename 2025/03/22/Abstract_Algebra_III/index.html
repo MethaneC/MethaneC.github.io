@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.2.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Times+New+Roman:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Part 3 域 定义3.1.1 （域扩张） 若域 \(F\) 是域 \(E\) 的子域，则称 \(E\) 是 \(F\) 的扩张，记为 \(E&#x2F;F\) 。若 \(E&#x2F;F\) 是域扩张， \(S\subset E\) ，记 \(F(S)\) 是 \(E\) 中包含 \(S\) 和 \(F\) 的最小子域。特别地 \(\alpha\in E\) ，记 \(F(\alpha)\) 是 \(E\)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Abstract Algebra III">
+<meta property="og:url" content="http://example.com/2025/03/22/Abstract_Algebra_III/index.html">
+<meta property="og:site_name" content="Methane">
+<meta property="og:description" content="Part 3 域 定义3.1.1 （域扩张） 若域 \(F\) 是域 \(E\) 的子域，则称 \(E\) 是 \(F\) 的扩张，记为 \(E&#x2F;F\) 。若 \(E&#x2F;F\) 是域扩张， \(S\subset E\) ，记 \(F(S)\) 是 \(E\) 中包含 \(S\) 和 \(F\) 的最小子域。特别地 \(\alpha\in E\) ，记 \(F(\alpha)\) 是 \(E\)">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-03-21T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-04-02T15:34:37.391Z">
+<meta property="article:author" content="Methane">
+<meta property="article:tag" content="Note">
+<meta property="article:tag" content="Algebra">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2025/03/22/Abstract_Algebra_III/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2025/03/22/Abstract_Algebra_III/","path":"2025/03/22/Abstract_Algebra_III/","title":"Abstract Algebra III"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Abstract Algebra III | Methane</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Methane</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">subtitle</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-monitor"><a href="/monitor/" rel="section"><i class="fa-solid fa-microchip fa-fw"></i>monitor</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Methane"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Methane</p>
+  <div class="site-description" itemprop="description">description</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/22/Abstract_Algebra_III/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Methane">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Methane">
+      <meta itemprop="description" content="description">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Abstract Algebra III | Methane">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Abstract Algebra III
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-03-22 00:00:00" itemprop="dateCreated datePublished" datetime="2025-03-22T00:00:00+08:00">2025-03-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-04-02 23:34:37" itemprop="dateModified" datetime="2025-04-02T23:34:37+08:00">2025-04-02</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Valine：</span>
+  
+    <a title="valine" href="/2025/03/22/Abstract_Algebra_III/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2025/03/22/Abstract_Algebra_III/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h3 id="part-3-域">Part 3 域</h3>
+<h5 id="定义3.1.1-域扩张">定义3.1.1 （域扩张）</h5>
+<p>若域 <span class="math inline">\(F\)</span> 是域 <span
+class="math inline">\(E\)</span> 的子域，则称 <span
+class="math inline">\(E\)</span> 是 <span
+class="math inline">\(F\)</span> 的扩张，记为 <span
+class="math inline">\(E/F\)</span> 。若 <span
+class="math inline">\(E/F\)</span> 是域扩张， <span
+class="math inline">\(S\subset E\)</span> ，记 <span
+class="math inline">\(F(S)\)</span> 是 <span
+class="math inline">\(E\)</span> 中包含 <span
+class="math inline">\(S\)</span> 和 <span
+class="math inline">\(F\)</span> 的最小子域。特别地 <span
+class="math inline">\(\alpha\in E\)</span> ，记 <span
+class="math inline">\(F(\alpha)\)</span> 是 <span
+class="math inline">\(E\)</span> 包含 <span
+class="math inline">\(\alpha\)</span> 和 <span
+class="math inline">\(F\)</span> 的最小子域。</p>
+<h5 id="定义3.1.2-代数元超越元">定义3.1.2 （代数元、超越元）</h5>
+<p>设 <span class="math inline">\(E/F\)</span> 是域扩张， <span
+class="math inline">\(\alpha\in E\)</span> ，若对于 <span
+class="math inline">\(\forall 0\ne f(x)\in F[x]\)</span> ，有 <span
+class="math inline">\(f(\alpha)\neq 0\)</span> ，则称 <span
+class="math inline">\(\alpha\)</span> 在 <span
+class="math inline">\(F\)</span> 上超越。若 <span
+class="math inline">\(\exists 0\ne f(x)\in F[x]\)</span> ，使得 <span
+class="math inline">\(f(\alpha)=0\)</span> ，则称 <span
+class="math inline">\(\alpha\)</span> 在 <span
+class="math inline">\(F\)</span> 上代数。</p>
+<h5 id="定义3.1.3-最小多项式">定义3.1.3 （最小多项式）</h5>
+<p>若 <span class="math inline">\(\alpha\)</span> 在 <span
+class="math inline">\(F\)</span> 上代数，则存在首一唯一的多项式 <span
+class="math inline">\(f(x)\)</span> ，使得 <span
+class="math inline">\(f(\alpha)=0\)</span> ，称 <span
+class="math inline">\(f(x)\)</span> 是 <span
+class="math inline">\(F\)</span> 上 <span
+class="math inline">\(\alpha\)</span> 的最小多项式。</p>
+<h5 id="定义3.1.4-代数扩张超越扩张有限扩张无限扩张单扩张">定义3.1.4
+（代数扩张、超越扩张、有限扩张、无限扩张、单扩张）</h5>
+<p>设 <span class="math inline">\(E/F\)</span> 是域扩张，若 <span
+class="math inline">\(\exists\alpha\in E\)</span> 在 <span
+class="math inline">\(F\)</span> 上超越，则称 <span
+class="math inline">\(E/F\)</span> 是代数扩张；若 <span
+class="math inline">\(\forall\alpha\in E\)</span> 在 <span
+class="math inline">\(F\)</span> 上代数，则称 <span
+class="math inline">\(E/F\)</span> 是代数扩张。</p>
+<p>若 <span class="math inline">\(\exists S,|S|&lt;+\infty\)</span> ，且
+<span class="math inline">\(\forall\alpha\in S\)</span> 在 <span
+class="math inline">\(F\)</span> 上代数，使得 <span
+class="math inline">\(E=F(S)\)</span> ，则称 <span
+class="math inline">\(E/F\)</span>
+是有限（代数）扩张，否则为无限扩张。特别地，若 <span
+class="math inline">\(S=\{ \alpha \}\)</span> ，则称 <span
+class="math inline">\(E/F\)</span> 是单扩张。</p>
+<h5 id="定义3.1.5-扩张次数">定义3.1.5 （扩张次数）</h5>
+<p>设 <span class="math inline">\(E/F\)</span> 是域扩张，则称 <span
+class="math inline">\(E\)</span> 作为 <span
+class="math inline">\(F\)</span>
+上线性空间的维数为<strong>扩张次数</strong>，记为 <span
+class="math inline">\([E:F]\)</span> 。</p>
+<h5 id="性质3.1.6-域扩张的性质">性质3.1.6 （域扩张的性质）</h5>
+<p>（1）若 <span class="math inline">\(E\supset K\supset F\)</span>
+是域扩张，则 <span class="math display">\[
+[E:F]=[E:K][K:F]
+\]</span></p>
+<p>（2）若 <span class="math inline">\(E/F\)</span> 是有限扩张，则 <span
+class="math inline">\([E:F]\)</span> 有限；若 <span
+class="math inline">\(E/F\)</span> 是无限扩张，则 <span
+class="math inline">\([E:F]\)</span> 无限。</p>
+<p>（3）若 <span class="math inline">\(E=F(\alpha)\)</span> ， <span
+class="math inline">\(f(x)\)</span> 是 <span
+class="math inline">\(F\)</span> 上 <span
+class="math inline">\(\alpha\)</span> 的最小多项式，则 <span
+class="math display">\[
+[E:F]=\deg f(x)
+\]</span> 特别地，当 <span class="math inline">\([E:F]\)</span> 有限，
+<span class="math inline">\(\alpha\)</span> 在 <span
+class="math inline">\(F\)</span> 上代数。</p>
+<h5 id="性质3.1.7-代数元的性质">性质3.1.7 （代数元的性质）</h5>
+<p>（1）代数元的和、差、积、商是代数元。</p>
+<p>（2）设 <span class="math inline">\(E/F\)</span> 是域扩张， <span
+class="math inline">\(K\)</span> 是 <span
+class="math inline">\(E\)</span> 中 <span
+class="math inline">\(F\)</span> 的代数元组成的集合，则 <span
+class="math inline">\(K\)</span> 是 <span
+class="math inline">\(E\)</span> 的子域。</p>
+<p>（3）<span class="math inline">\(E/F\)</span>
+是有限扩张的充要条件是， <span class="math inline">\(\exists
+u_{1},u_{2},\dots,u_{n}\)</span> 代数元，使得 <span
+class="math inline">\(E=F(u_{1},u_{2},\dots,u_{n})\)</span> 。</p>
+<h5 id="定义3.1.8-代数闭包代数闭域">定义3.1.8
+（代数闭包、代数闭域）</h5>
+<p>设 <span class="math inline">\(F\)</span> 是域，若 <span
+class="math inline">\(F[x]\)</span> 上不可约因子均为一次因子，则称 <span
+class="math inline">\(F\)</span> 是代数闭域。若 <span
+class="math inline">\(E/F\)</span> 是代数扩张，且 <span
+class="math inline">\(E\)</span> 是代数闭域，则称 <span
+class="math inline">\(E\)</span> 是 <span
+class="math inline">\(F\)</span> 的代数闭包。</p>
+<h5 id="性质3.1.9-代数闭包的性质">性质3.1.9 （代数闭包的性质）</h5>
+<p>（1）设 <span class="math inline">\(F\)</span> 是域，则 <span
+class="math inline">\(F\)</span> 的代数闭包 <span
+class="math inline">\(\bar{F}\)</span> 存在且（在同构意义下）唯一。</p>
+<p>（2）设 <span class="math inline">\(F\)</span> 是域，则存在扩张 <span
+class="math inline">\(E/F\)</span> 使得 <span
+class="math inline">\(\forall f(x)\in F[x]\)</span> 在 <span
+class="math inline">\(E\)</span> 上有根。</p>
+<hr />
+<h5 id="定义3.2.1-分裂域">定义3.2.1 （分裂域）</h5>
+<p>设 <span class="math inline">\(f(x)\in F[x]\)</span> ，若域扩张 <span
+class="math inline">\(E/F\)</span> 满足：</p>
+<p>（1） <span class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\(E\)</span> 中可以分解成一次因子的乘积。</p>
+<p>（2）设 <span class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\(E\)</span> 中的根是 <span
+class="math inline">\(r_{1},r_{2},\dots,r_{n}\)</span> ，则 <span
+class="math inline">\(E=F(r_{1},r_{2},\dots,r_{n})\)</span> 。</p>
+<p>则称 <span class="math inline">\(E\)</span> 是 <span
+class="math inline">\(F\)</span> 中 <span
+class="math inline">\(f(x)\)</span> 的分裂域。</p>
+<h5 id="定义3.2.2-可分元可分多项式可分扩张">定义3.2.2
+（可分元、可分多项式、可分扩张）</h5>
+<p>若不可约多项式 <span class="math inline">\(f(x)\in F[x]\)</span>
+无重根，则称 <span class="math inline">\(f(x)\)</span>
+是<strong>可分多项式</strong>。若 <span
+class="math inline">\(E/F\)</span> 是代数扩张， <span
+class="math inline">\(\forall \alpha\in E\)</span> 的最小多项式 <span
+class="math inline">\(f(x)\in F[x]\)</span> 是可分多项式，则称 <span
+class="math inline">\(\alpha\)</span> 是<strong>可分元</strong>， <span
+class="math inline">\(E/F\)</span>
+是<strong>可分扩张</strong>，否则是不可分扩张。</p>
+<h5 id="性质3.2.3-可分扩张的条件">性质3.2.3 （可分扩张的条件）</h5>
+<p>设 <span class="math inline">\(F\)</span> 是域，若 <span
+class="math inline">\(\operatorname{char}F=0\)</span> ，则 <span
+class="math inline">\(F\)</span> 的代数扩张均为可分扩张；若 <span
+class="math inline">\(\operatorname{char}F=p\)</span> ，且有 <span
+class="math inline">\(F^{p}=F\)</span> ，则 <span
+class="math inline">\(F\)</span> 的代数扩张均为可分扩张。</p>
+<h5 id="定义3.2.4正规扩张">定义3.2.4（正规扩张）</h5>
+<p>设 <span class="math inline">\(E/F\)</span> 是代数扩张，若 <span
+class="math inline">\(\forall f(x)\in F[x]\)</span> 的不可约多项式在
+<span class="math inline">\(E\)</span> 中无根或者根全在 <span
+class="math inline">\(E\)</span> 中，则称 <span
+class="math inline">\(E/F\)</span> 是可分扩张。</p>
+<h5 id="性质3.2.5-正规扩张的条件">性质3.2.5 （正规扩张的条件）</h5>
+<p>设 <span class="math inline">\(E/F\)</span> 是有限扩张，则 <span
+class="math inline">\(E/F\)</span> 是正规扩张的充要条件是， <span
+class="math inline">\(E/F\)</span> 是某个多项式的分裂域。</p>
+<h5 id="定义3.2.6-galois-扩张">定义3.2.6 （ Galois 扩张）</h5>
+<p>若 <span class="math inline">\(E/F\)</span> 是可分、正规扩张，则称
+<span class="math inline">\(E/F\)</span> 是 Galois 扩张。</p>
+<hr />
+<h5 id="定义3.3.1-galois-群">定义3.3.1 （ Galois 群）</h5>
+<p>设 <span class="math inline">\(E/F\)</span> 是域扩张， <span
+class="math inline">\(\sigma:E\to E\)</span> 满足 <span
+class="math inline">\(F\subset\operatorname{Inv}\sigma\)</span>
+的映射，在复合运算下，组成群，记为 <span
+class="math inline">\(\operatorname{Gal}E/F\)</span> 。</p>
+<h5 id="性质3.3.2-galois-群和-galois-扩张">性质3.3.2 （ Galois 群和
+Galois 扩张）</h5>
+<p>设 <span class="math inline">\(E/F\)</span> 是有限扩张，则 <span
+class="math inline">\(|\operatorname{Gal}E/F|\le[E:F]\)</span>
+。当且仅当 <span class="math inline">\(E/F\)</span> 是 Galois
+扩张取等，并且 <span class="math inline">\(\operatorname{Inv}
+\operatorname{Gal}E/F=F\)</span> 。</p>
+<h5 id="定理3.3.3-galois-基本定理">定理3.3.3 （ Galois 基本定理）</h5>
+<p>设 <span class="math inline">\(E/F\)</span> 是 Galois 扩张，则</p>
+<p>（1）映射 <span class="math display">\[
+\begin{aligned}
+\{ H:H\le \operatorname{Gal}E/F \} &amp;\to \{K: E\ge K\ge F \} \\
+H&amp;\to \operatorname{Inv}K
+\end{aligned}
+\]</span> 是双射，且其逆为 <span class="math display">\[
+\begin{aligned}
+\{K: E\ge K\ge F \} &amp;\to  \{ H:H\le \operatorname{Gal}E/F \}\\
+K&amp;\to \operatorname{Gal}E/K
+\end{aligned}
+\]</span></p>
+<p>（2）特别地，对于正规子群（正规扩张） <span class="math display">\[
+\{ H:H\lhd \operatorname{Gal}E/F \}\leftrightarrow  \{ L:L/F\text{ is
+Galois Extention} \}
+\]</span> 是双射。</p>
+<hr />
+<h5 id="定义3.4.1-根式扩张根式可解">定义3.4.1
+（根式扩张、根式可解）</h5>
+<p>若 <span class="math inline">\(E=F(d)\)</span> ，且 <span
+class="math inline">\(d\)</span> 满足 <span
+class="math inline">\(\exists n,d^{n}\in F\)</span> ，则称 <span
+class="math inline">\(E/F\)</span> 是根式扩张。对于 <span
+class="math inline">\(E/F\)</span> 为 <span
+class="math inline">\(F\)</span> 中 <span
+class="math inline">\(f(x)\)</span> 的分裂域，方程 <span
+class="math inline">\(f(x)=0\)</span> 在 <span
+class="math inline">\(F\)</span> 上根式可解指，存在根式扩张序列 <span
+class="math display">\[
+F=F_{0}\subset  F_{1}\subset \dots \subset  F_{n}
+\]</span> 使得 <span class="math inline">\(E\le F_{n}\)</span> 。</p>
+<h5 id="定理3.4.2-根式可解的条件">定理3.4.2 （根式可解的条件）</h5>
+<p>若 <span class="math inline">\(\operatorname{ char}F=0\)</span> ，设
+<span class="math inline">\(E\)</span> 为 <span
+class="math inline">\(F\)</span> 中 <span class="math inline">\(f(x)\in
+F[x]\)</span> 的分裂域，则 <span class="math inline">\(f(x)\)</span> 在
+<span class="math inline">\(F\)</span> 上可解的充要条件是，则 <span
+class="math inline">\(\operatorname{Gal}E/F\)</span> 是可解群。</p>
+<h5 id="定理3.4.3-五次及以上方程无根式解">定理3.4.3
+（五次及以上方程无根式解）</h5>
+<p>设 <span class="math inline">\(\operatorname{char}F=0\)</span> ，
+<span class="math inline">\(n\ge 5\)</span> ， <span
+class="math inline">\(t_{1},t_{2},\dots, t_{n}\)</span> 是未定元，则方程
+<span class="math display">\[
+f(x)=x^{n}-t_{1}x^{n-1}+\dots+(-1)^{n}t_{n}=0
+\]</span> 在 <span
+class="math inline">\(F(t_{1},t_{2},\dots,t_{n})\)</span>
+根式不可解。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Note/" rel="tag"># Note</a>
+              <a href="/tags/Algebra/" rel="tag"># Algebra</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/03/21/Abstract_Algebra_I/" rel="prev" title="Abstract Algebra I">
+                  <i class="fa fa-angle-left"></i> Abstract Algebra I
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/03/22/Abstract_Algebra_II/" rel="next" title="Abstract Algebra II">
+                  Abstract Algebra II <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="valine-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Methane</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","single_dollars":true,"cjk_width":0.9,"normal_width":0.6,"append_css":true,"every_page":true,"cdn":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+<script>
+NexT.utils.loadComments('#valine-comments', () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
+    new Valine(Object.assign({"enable":true,"appId":"tphu2Q2JWb6juWQpRpoq2E77-gzGzoHsz","appKey":"k3cLBOlnwtC7Y23V4qvdXGAY","serverURLs":"https://tphu2q2j.lc-cn-n1-shared.com","placeholder":"Just go go","avatar":"mp","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":false,"enableQQ":false,"requiredFields":[],"avatar_cdn":"https://cravatar.cn/avatar/"}, {
+      el: '#valine-comments',
+      path: "/2025/03/22/Abstract_Algebra_III/",
+      serverURLs: "https://tphu2q2j.lc-cn-n1-shared.com"
+    }));
+    setTimeout(()=>{
+      document.querySelectorAll('.variables').forEach(dm => {
+          const query = new AV.Query('Monitor');
+          query.equalTo('key', dm.dataset.var);
+          query.first().then((pm)=>{
+              if(dm.dataset.type=='time') {
+                  const tim = new Date(pm.updatedAt);
+                  dm.textContent = `${tim.getFullYear()}-${tim.getMonth()}-${tim.getDate()} ${tim.getHours()}:${tim.getMinutes()}:${tim.getSeconds()}`;
+              } else {
+                  dm.textContent = `${pm.attributes.value}`;
+              }
+          });
+      });
+  }, 1000);
+  }, window.Valine);
+
+});
+</script>
+
+</body>
+</html>

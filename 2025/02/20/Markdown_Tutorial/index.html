@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.2.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Times+New+Roman:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Markdown 是一种轻量级的 标记语言，由 John Gruber 和 Aaron Swartz 于2004年共同设计。它通过简单的纯文本语法实现文档内容的格式化，目标是让用户专注于内容本身而非排版细节，同时保持文档的易读性和易写性。 核心特点  轻量简洁 语法简单直观，仅需少量符号即可完成排版。 跨平台兼容 纯文本格式可在任何设备上打开，支持转换为 HTML、PDF、Word">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown Tutorial">
+<meta property="og:url" content="http://example.com/2025/02/20/Markdown_Tutorial/index.html">
+<meta property="og:site_name" content="Methane">
+<meta property="og:description" content="Markdown 是一种轻量级的 标记语言，由 John Gruber 和 Aaron Swartz 于2004年共同设计。它通过简单的纯文本语法实现文档内容的格式化，目标是让用户专注于内容本身而非排版细节，同时保持文档的易读性和易写性。 核心特点  轻量简洁 语法简单直观，仅需少量符号即可完成排版。 跨平台兼容 纯文本格式可在任何设备上打开，支持转换为 HTML、PDF、Word">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2025/02/20/Markdown_Tutorial/picture.gif">
+<meta property="article:published_time" content="2025-02-19T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-04-02T15:33:15.756Z">
+<meta property="article:author" content="Methane">
+<meta property="article:tag" content="ComputerScience">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2025/02/20/Markdown_Tutorial/picture.gif">
+
+
+<link rel="canonical" href="http://example.com/2025/02/20/Markdown_Tutorial/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2025/02/20/Markdown_Tutorial/","path":"2025/02/20/Markdown_Tutorial/","title":"Markdown Tutorial"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Markdown Tutorial | Methane</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Methane</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">subtitle</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-monitor"><a href="/monitor/" rel="section"><i class="fa-solid fa-microchip fa-fw"></i>monitor</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Methane"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Methane</p>
+  <div class="site-description" itemprop="description">description</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/02/20/Markdown_Tutorial/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Methane">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Methane">
+      <meta itemprop="description" content="description">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Markdown Tutorial | Methane">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Markdown Tutorial
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-02-20 00:00:00" itemprop="dateCreated datePublished" datetime="2025-02-20T00:00:00+08:00">2025-02-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-04-02 23:33:15" itemprop="dateModified" datetime="2025-04-02T23:33:15+08:00">2025-04-02</time>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Valine：</span>
+  
+    <a title="valine" href="/2025/02/20/Markdown_Tutorial/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2025/02/20/Markdown_Tutorial/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>Markdown 是一种轻量级的 <strong>标记语言</strong>，由 John Gruber 和
+Aaron Swartz
+于2004年共同设计。它通过简单的纯文本语法实现文档内容的格式化，目标是让用户专注于内容本身而非排版细节，同时保持文档的易读性和易写性。</p>
+<h3 id="核心特点">核心特点</h3>
+<ol type="1">
+<li><strong>轻量简洁</strong>
+语法简单直观，仅需少量符号即可完成排版。</li>
+<li><strong>跨平台兼容</strong> 纯文本格式可在任何设备上打开，支持转换为
+HTML、PDF、Word 等格式。</li>
+<li><strong>应用场景广泛</strong>
+GitHub、API文档、团队文档、博客、笔记、论文、邮件、社交平台。</li>
+</ol>
+<hr />
+<h3 id="常用语法">常用语法</h3>
+<h5 id="标题">标题</h5>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 一级标题</span></span><br><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"><span class="section">### 三级标题</span></span><br><span class="line"><span class="section">#### 四级标题</span></span><br><span class="line"><span class="section">##### 五级标题</span></span><br><span class="line"><span class="section">###### 六级标题</span></span><br></pre></td></tr></table></figure>
+<h5 id="文本样式">文本样式</h5>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="strong">**加粗**</span></span><br><span class="line"><span class="emphasis">*斜体*</span></span><br><span class="line">~~删除线~~</span><br></pre></td></tr></table></figure>
+<h5 id="列表">列表</h5>
+<p>无序列表</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> A</span><br><span class="line"><span class="bullet">-</span> B</span><br><span class="line"><span class="bullet">-</span> C</span><br></pre></td></tr></table></figure>
+<p>有序列表</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1.</span> A</span><br><span class="line"><span class="bullet">2.</span> B</span><br><span class="line"><span class="bullet">3.</span> C</span><br></pre></td></tr></table></figure>
+<p>列表嵌套</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> A</span><br><span class="line"><span class="bullet">    -</span> A1</span><br><span class="line"><span class="code">        A1 的介绍文本</span></span><br><span class="line"><span class="code">    - A2</span></span><br><span class="line"><span class="code">        A2 的介绍文本</span></span><br><span class="line"><span class="code">- B</span></span><br><span class="line"><span class="code">    1. B1</span></span><br><span class="line"><span class="code">        B1 的介绍文本</span></span><br><span class="line"><span class="code">    2. B2</span></span><br><span class="line"><span class="code">        B2 的介绍文本</span></span><br></pre></td></tr></table></figure>
+<h5 id="链接和图片">链接和图片</h5>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">超链接显示文本</span>](<span class="link">url或path</span>)</span><br><span class="line">![<span class="string">替代文字</span>](<span class="link">url或path</span>)</span><br></pre></td></tr></table></figure>
+<img src="/2025/02/20/Markdown_Tutorial/picture.gif" class="" title="picture">
+<h5 id="代码块和-latex-块">代码块和 LaTeX 块</h5>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这是一个 <span class="code">`单行代码`</span>。</span><br></pre></td></tr></table></figure>
+<p>这是多行代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">多行代码</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">这是一个单行 $\LaTeX$ 公式</span><br><span class="line"></span><br><span class="line">$$</span><br><span class="line">\text&#123;这是一个多行公式&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<h5 id="引用和分割线">引用和分割线</h5>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="quote">&gt; 这是一个引用</span></span><br><span class="line">&gt;&gt; 这是引用中的引用</span><br><span class="line">&gt;&gt;&gt; 这是引用中的引用的引用</span><br><span class="line">&gt;&gt; 这是引用中的引用</span><br><span class="line"><span class="quote">&gt; 这是一个引用</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">下面是一个分隔线</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+<h5 id="表格">表格</h5>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">| 列1 | 列2 |</span><br><span class="line">|-----|-----|</span><br><span class="line">| 内容 | 内容 |</span><br></pre></td></tr></table></figure>
+<h5 id="高亮">高亮</h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这是==高亮==字符</span><br></pre></td></tr></table></figure>
+<h5 id="清单">清单</h5>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> [x] 完成</span><br><span class="line"><span class="bullet">-</span> [ ] 未完成</span><br></pre></td></tr></table></figure>
+<h5 id="脚注">脚注</h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">这是一条引用[^1]</span><br><span class="line">这是一条引用[^2]</span><br><span class="line"></span><br><span class="line">[^1]: 文献1</span><br><span class="line">[^2]: 文献2</span><br></pre></td></tr></table></figure>
+<h5 id="卡片">卡片</h5>
+<blockquote>
+<p>[!quote] 这是卡片标题 这是卡片内容</p>
+</blockquote>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="quote">&gt; [!quote] 这是卡片标题</span></span><br><span class="line"><span class="quote">&gt; 这是卡片内容</span></span><br></pre></td></tr></table></figure>
+<p><code>quote</code> 可以替换为以下风格</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">note, summary, info, tip, success, warning, error, bug, fail, question, quote, example</span><br></pre></td></tr></table></figure>
+<h3 id="更多用法">更多用法</h3>
+<h5 id="html嵌入">HTML嵌入</h5>
+<p>几乎所有的 HTML 语法都可以使用。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span>.gnhhvwvogffu&#123;&#125;<span class="tag">&lt;/<span class="name">style</span>&gt;</span>&#123;% asset_img gnhhvwvogffu picture.gif &#x27;&quot;&quot;&quot;&quot;&#x27; %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">&quot;https://xbeibeix.com/api/bilibili/biliplayer/?url=https://www.bilibili.com/video/BV1GJ411x7h7&quot;</span> <span class="attr">scrolling</span>=<span class="string">&quot;no&quot;</span> <span class="attr">border</span>=<span class="string">&quot;0&quot;</span> <span class="attr">frameborder</span>=<span class="string">&quot;no&quot;</span> <span class="attr">framespacing</span>=<span class="string">&quot;0&quot;</span> <span class="attr">allowfullscreen</span>=<span class="string">&quot;true&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="latex">LaTeX</h5>
+<p>LaTeX 的基本用法见 <a
+target="_blank" rel="noopener" href="https://www.cnblogs.com/1024th/p/11623258.html">LaTeX公式手册</a>
+。</p>
+<p>如需使用宏包，在公式块最前面 <code>\require&#123;&#125;</code> ，支持
+<code>mathjax</code> 的宏包（转换格式有时会出bug）</p>
+<p><span class="math display">\[
+\begin{align} \require{AMScd} \begin{CD} \rm\LaTeX@&gt;&gt;&gt; \rm
+K\kern-.2em\raise.21em{\scriptstyle{A}}\kern-.17emT\kern-.14em\lower.5ex{E}\kern-.115em
+X\\ @VVV \text{VS Code}@VVV@&gt;&gt;&gt;\ce{N2 + 3H2 &lt;=&gt; 2NH3}\\
+\text{MathJax} @&gt;&gt;&gt; \text{markdown} \end{CD} \end{align}
+\]</span></p>
+<h5 id="属性">属性</h5>
+<p>在文章的最前面增添 <code>yaml</code> 属性</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Markdown</span> <span class="string">Tutorial</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2025-02-20</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Mathematics</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">ComputerScience</span></span><br><span class="line"><span class="attr">property:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">xxxxxx</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">yyyyyy</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<h5 id="mermaid">Mermaid</h5>
+<p>可以参考 <a target="_blank" rel="noopener" href="https://mermaid.nodejs.cn/">Mermaid文档</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">gitGraph</span><br><span class="line">   commit</span><br><span class="line">   commit</span><br><span class="line">   branch develop</span><br><span class="line">   commit</span><br><span class="line">   commit</span><br><span class="line">   commit</span><br><span class="line">   checkout main</span><br><span class="line">   commit</span><br><span class="line">   commit</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">gitGraph</span><br><span class="line">   commit</span><br><span class="line">   commit</span><br><span class="line">   branch develop</span><br><span class="line">   commit</span><br><span class="line">   commit</span><br><span class="line">   commit</span><br><span class="line">   checkout main</span><br><span class="line">   commit</span><br><span class="line">   commit</span><br></pre></td></tr></table></figure>
+<h3 id="写作规范">写作规范</h3>
+<p>参考 <a
+target="_blank" rel="noopener" href="https://github.com/google/styleguide/blob/gh-pages/docguide/style.md">google
+style guide</a>、<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/29587837">latex
+规范</a>、<a
+target="_blank" rel="noopener" href="https://www.luogu.com.cn/discuss/174934">Markdown规范</a>。</p>
+<ul>
+<li>段首<strong>无缩进</strong>，段与段之间<strong>两个换行</strong>。</li>
+<li>英文/公式/引用/代码块与中文之间<strong>一个空格</strong>，与中文标点之间<strong>无空格</strong>。</li>
+<li>所有数学符号均<strong>使用
+LaTeX</strong>，其他英语名词<strong>不使用LaTeX</strong>。</li>
+<li>列表嵌套使用 <code>tab</code>
+分层，列表标题如果是单词/短语<strong>不加句号</strong>。</li>
+<li>长公式尽量写在<strong>行间公式</strong>。</li>
+</ul>
+<h3 id="一些工具">一些工具</h3>
+<h5 id="latex-suite">Latex Suite</h5>
+<p><strong>Latex Suite</strong> 是 Obsidian 中的一款高效插件，旨在提升
+LaTeX
+数学公式的输入体验。功能有：<strong>自动补全</strong>、<strong>实时预览</strong>公式。<a
+href="Markdown_Tutorial/latex-suite-intro.md">插件介绍</a>。</p>
+<p>支持使用 JavaScript 自定义。<a
+href="Markdown_Tutorial/latex-suite-docs.md">官方文档</a>。</p>
+<p><a
+target="_blank" rel="noopener" href="https://www.cnblogs.com/zd2021/articles/15410243.html">Obsidian如何手动安装插件</a>
+的教程。</p>
+<h5 id="tikzjax">TikZJax</h5>
+<p><strong>TikZJax</strong> 是 Obsidian 中添加 <strong>LaTeX
+TikZ</strong> 的插件。TikZ 具体用法见 <a
+target="_blank" rel="noopener" href="https://sg.mirrors.cicku.me/ctan/info/visualtikz/VisualTikZ.pdf">VisualTikZ</a>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;pgfplots&#125;</span><br><span class="line">\pgfplotsset&#123;compat=1.16&#125;</span><br><span class="line"></span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line"></span><br><span class="line">\begin&#123;tikzpicture&#125;</span><br><span class="line">\begin&#123;axis&#125;[colormap/viridis]</span><br><span class="line">\addplot3[</span><br><span class="line">	surf,</span><br><span class="line">	samples=18,</span><br><span class="line">	domain=-3:3</span><br><span class="line">]</span><br><span class="line">&#123;exp(-x^2-y^2)*x&#125;;</span><br><span class="line">\end&#123;axis&#125;</span><br><span class="line">\end&#123;tikzpicture&#125;</span><br><span class="line"></span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;pgfplots&#125;</span><br><span class="line">\pgfplotsset&#123;compat=1.16&#125;</span><br><span class="line"></span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line"></span><br><span class="line">\begin&#123;tikzpicture&#125;</span><br><span class="line">\begin&#123;axis&#125;[colormap/viridis]</span><br><span class="line">\addplot3[</span><br><span class="line">	surf,</span><br><span class="line">	samples=18,</span><br><span class="line">	domain=-3:3</span><br><span class="line">]</span><br><span class="line">&#123;exp(-x^2-y^2)*x&#125;;</span><br><span class="line">\end&#123;axis&#125;</span><br><span class="line">\end&#123;tikzpicture&#125;</span><br><span class="line"></span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;chemfig&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line"></span><br><span class="line">\definesubmol\fragment1&#123;</span><br><span class="line"></span><br><span class="line">    (-[:#1,0.85,,,draw=none]</span><br><span class="line">    -[::126]-[::-54](=_#(2pt,2pt)[::180])</span><br><span class="line">    -[::-70](-[::-56.2,1.07]=^#(2pt,2pt)[::180,1.07])</span><br><span class="line">    -[::110,0.6](-[::-148,0.60](=^[::180,0.35])-[::-18,1.1])</span><br><span class="line">    -[::50,1.1](-[::18,0.60]=_[::180,0.35])</span><br><span class="line">    -[::50,0.6]</span><br><span class="line">    -[::110])</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">\chemfig&#123;</span><br><span class="line">!\fragment&#123;18&#125;</span><br><span class="line">!\fragment&#123;90&#125;</span><br><span class="line">!\fragment&#123;162&#125;</span><br><span class="line">!\fragment&#123;234&#125;</span><br><span class="line">!\fragment&#123;306&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="abc-music-notation">ABC music notation</h5>
+<p><strong>ABC music notation</strong> 是 Obsidian 中添加 <strong>abc
+notation</strong> 的插件。abc notation 具体用法见 <a
+target="_blank" rel="noopener" href="https://abcnotation.com/">abc notation</a>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">X:1</span><br><span class="line">T:Speed the Plough</span><br><span class="line">M:4/4</span><br><span class="line">C:Trad.</span><br><span class="line">K:G</span><br><span class="line">|:GABc dedB|dedB dedB|c2ec B2dB|c2A2 A2BA|</span><br><span class="line">  GABc dedB|dedB dedB|c2ec B2dB|A2F2 G4:|</span><br><span class="line">|:g2gf gdBd|g2f2 e2d2|c2ec B2dB|c2A2 A2df|</span><br><span class="line">  g2gf g2Bd|g2f2 e2d2|c2ec B2dB|A2F2 G4:|</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">X:1</span><br><span class="line">T:Speed the Plough</span><br><span class="line">M:4/4</span><br><span class="line">C:Trad.</span><br><span class="line">K:G</span><br><span class="line">|:GABc dedB|dedB dedB|c2ec B2dB|c2A2 A2BA|</span><br><span class="line">  GABc dedB|dedB dedB|c2ec B2dB|A2F2 G4:|</span><br><span class="line">|:g2gf gdBd|g2f2 e2d2|c2ec B2dB|c2A2 A2df|</span><br><span class="line">  g2gf g2Bd|g2f2 e2d2|c2ec B2dB|A2F2 G4:|</span><br></pre></td></tr></table></figure>
+<h5 id="pandoc">Pandoc</h5>
+<p><strong>Pandoc</strong> 是一款文档转换工具，它能够将多种标记语言和文档<strong>格式转换</strong>。</p>
+<p>在 shell 中输入，其中 [input] 和 [output] 换成输入输出文件。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pandoc -s [input] -o [output]</span><br></pre></td></tr></table></figure>
+<h3 id="一些方案">一些方案</h3>
+<h5 id="同步笔记">同步笔记</h5>
+<ul>
+<li><p><strong>方案一</strong> keywords: Obsidian + OneDrive</p></li>
+<li><p><strong>方案二</strong> keywords: Obsidian + git + GitHub #####
+发布笔记</p></li>
+<li><p><strong>方案一</strong> keywords: Obsidian + jekyll/hexo/hugo +
+GitHubPage</p></li>
+<li><p><strong>方案二</strong> keywords: 博客园/wordpress</p></li>
+</ul>
+<h5 id="同步发布">同步+发布</h5>
+<p>keywords: Obsidian + git + GitHubActions + GitHubPage</p>
+<h5 id="学术写作">学术写作</h5>
+<p>参考 <a
+target="_blank" rel="noopener" href="https://st1020.com/write-thesis-with-markdown-part1/">使用
+Markdown 写论文</a>，<a
+target="_blank" rel="noopener" href="https://www.jianshu.com/p/ae6fb8e31340">用Markdown编写接口文档</a>。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/ComputerScience/" rel="tag"># ComputerScience</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/02/16/Docker_Note/" rel="prev" title="Docker Note">
+                  <i class="fa fa-angle-left"></i> Docker Note
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/03/21/Abstract_Algebra_I/" rel="next" title="Abstract Algebra I">
+                  Abstract Algebra I <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="valine-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Methane</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","single_dollars":true,"cjk_width":0.9,"normal_width":0.6,"append_css":true,"every_page":true,"cdn":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+<script>
+NexT.utils.loadComments('#valine-comments', () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
+    new Valine(Object.assign({"enable":true,"appId":"tphu2Q2JWb6juWQpRpoq2E77-gzGzoHsz","appKey":"k3cLBOlnwtC7Y23V4qvdXGAY","serverURLs":"https://tphu2q2j.lc-cn-n1-shared.com","placeholder":"Just go go","avatar":"mp","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":false,"enableQQ":false,"requiredFields":[],"avatar_cdn":"https://cravatar.cn/avatar/"}, {
+      el: '#valine-comments',
+      path: "/2025/02/20/Markdown_Tutorial/",
+      serverURLs: "https://tphu2q2j.lc-cn-n1-shared.com"
+    }));
+    setTimeout(()=>{
+      document.querySelectorAll('.variables').forEach(dm => {
+          const query = new AV.Query('Monitor');
+          query.equalTo('key', dm.dataset.var);
+          query.first().then((pm)=>{
+              if(dm.dataset.type=='time') {
+                  const tim = new Date(pm.updatedAt);
+                  dm.textContent = `${tim.getFullYear()}-${tim.getMonth()}-${tim.getDate()} ${tim.getHours()}:${tim.getMinutes()}:${tim.getSeconds()}`;
+              } else {
+                  dm.textContent = `${pm.attributes.value}`;
+              }
+          });
+      });
+  }, 1000);
+  }, window.Valine);
+
+});
+</script>
+
+</body>
+</html>
