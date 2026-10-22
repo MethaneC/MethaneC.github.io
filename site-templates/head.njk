@@ -1,0 +1,7 @@
+<script>
+  (() => {
+    const saved = localStorage.getItem('note-color-mode');
+    const dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.dataset.noteTheme = dark ? 'dark' : 'light';
+  })();
+</script>
