@@ -88,22 +88,29 @@ Dataview、Templater 等插件脚本不会在静态网站运行；其代码块�
 
 ## GitHub Pages
 
-把 **project 文件夹里面的内容** 作为新仓库根目录上传（包含 `.github`），不要把外层旧项目上传。依赖锁文件 `package-lock.json` 也要提交。
+在本地编译，通过 Git 发布生成的静态页面，无需自定义 GitHub Actions 构建工作流。
 
-1. 在 `_config.yml` 修改站点标题、作者与 `url`。
-2. GitHub 仓库 Settings → Pages → Build and deployment，选择 **GitHub Actions**。
-3. 推送到 `main` 或 `master`，或在 Actions 手动运行 “Build and deploy notes”。
+首次配置仓库：Settings → Pages → Build and deployment → Source 选择 **Deploy from a branch**，Branch 选择 **gh-pages**，目录选择 **/ (root)**，点击 Save。
 
-工作流会自动识别用户站点 `/` 和项目站点 `/仓库名/`。不需要手动写死仓库前缀，也不需要部署 SSH 密钥。这里仅提供部署配置，没有代你上传或发布。
+以后在项目目录运行：
 
-本地检查项目站点路径：
+~~~powershell
+npm run deploy
+~~~
 
-```powershell
-$env:SITE_ROOT = '/my-notes/'
-$env:SITE_URL = 'https://你的用户名.github.io/my-notes'
-npm run build
-Remove-Item Env:SITE_ROOT, Env:SITE_URL
-```
+命令会先编译网站，再更新 `.cache/pages-deploy` 中的独立发布目录，将 `public` 的内容与 `.nojekyll` 提交并推送到 `gh-pages`。保留原有发布历史，不使用强制推送。需要本机 Git 已登录 GitHub。
+
+源码备份单独进行：在 `main` 提交笔记与配置，然后运行 `git push origin main`。不要把生成文件提交到 `main`。
+
+仅生成并准备发布内容，暂不提交或上传：
+
+~~~powershell
+npm run deploy -- --prepare-only
+~~~
+
+若发布到项目子路径，构建前设置 `SITE_ROOT` 与 `SITE_URL`。当前个人站在 `_config.yml` 中保持 `root: /`、`url: https://methanec.github.io` 即可。
+
+分支推送后，GitHub 可能仍显示平台自身的 Pages 发布任务；Hexo 编译完全在本机执行。
 
 ## 自动化浏览器检查（可选）
 

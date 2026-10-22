@@ -7,6 +7,7 @@
   "hexo": { "version": "7.2.0" },
   "scripts": {
     "build": "node tools/run.cjs build",
+    "deploy": "node tools/deploy.cjs",
     "server": "node tools/run.cjs server",
     "start": "npm run server",
     "clean": "node tools/run.cjs clean",
