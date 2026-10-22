@@ -1,0 +1,51 @@
+/* Obsidian's core Reading-view defaults that are not contained in theme.css. */
+body.theme-light {
+  --background-primary: #fff; --background-secondary: #f6f7f8;
+  --text-normal: #222; --text-muted: #666; --text-faint: #999;
+  --background-modifier-border: #ddd; --interactive-accent: #477dad;
+  --callout-color: 68, 138, 255;
+}
+body.theme-dark {
+  --background-primary: #22262d; --background-secondary: #292e36;
+  --text-normal: #dadde2; --text-muted: #a6adb8; --text-faint: #838b99;
+  --background-modifier-border: #444b56; --interactive-accent: #9ecdf4;
+  --callout-color: 100, 160, 255;
+}
+.markdown-reading-view { font-size: 18px; line-height: 1.65; }
+.markdown-reading-view .markdown-rendered { overflow-wrap: break-word; color: var(--text-normal); }
+.markdown-rendered p { margin-block: 1em; }
+.markdown-rendered ul, .markdown-rendered ol { padding-inline-start: 2em; margin-block: 1em; }
+.markdown-rendered li { margin-block: .3em; }
+.markdown-rendered li > p { margin-block: .5em; }
+.markdown-rendered img { max-width: 100%; height: auto; }
+.markdown-rendered code { font-size: .88em; }
+.markdown-rendered pre { padding: 1em; overflow-x: auto; border-radius: 3px; }
+.markdown-rendered pre code { padding: 0; white-space: pre; }
+.markdown-rendered blockquote { margin-inline: 0; padding-inline: 1em 0; border-inline-start: 2px solid var(--background-modifier-border); }
+.markdown-rendered table { border-collapse: collapse; margin-block: 1em; }
+.markdown-rendered th, .markdown-rendered td { padding: .4em .75em; }
+.markdown-rendered .callout { --callout-color: 68,138,255; margin-block: 1em; padding: .8em 1em; border-radius: 4px; background: rgba(var(--callout-color), .08); }
+.callout > .callout-title { display: flex; align-items: baseline; gap: .5em; font-weight: 600; color: rgb(var(--callout-color)); }
+.callout-title-inner { min-width: 0; }
+.callout > .callout-content > :first-child { margin-top: .65em; }
+.callout > .callout-content > :last-child { margin-bottom: 0; }
+.callout[data-callout="warning"], .callout[data-callout="caution"] { --callout-color: 220,145,40; }
+.callout[data-callout="tip"], .callout[data-callout="success"] { --callout-color: 40,145,120; }
+.callout[data-callout="danger"], .callout[data-callout="failure"] { --callout-color: 205,65,65; }
+.callout[data-callout="example"] { --callout-color: 135,95,185; }
+.callout-fold { display: inline-flex; }
+.callout-fold svg { width: 1em; height: 1em; transform: rotate(90deg); transition: transform .15s; }
+.is-collapsed > .callout-title .callout-fold svg { transform: rotate(0); }
+.callout-content[hidden] { display: none !important; }
+.callout.is-collapsible > .callout-title { cursor: pointer; }
+.callout-title:focus-visible { outline: 2px solid var(--interactive-accent); outline-offset: 4px; }
+.markdown-rendered .task-list-item { list-style-type: none; }
+.markdown-rendered .task-list-item-checkbox { margin-inline: -1.4em .5em; }
+.markdown-rendered .internal-link.is-unresolved { opacity: .75; text-decoration: underline dotted; cursor: help; }
+.markdown-embed { border: 1px solid var(--background-modifier-border); padding: 1em; margin-block: 1em; }
+.markdown-embed-title { font: 600 .8em system-ui; opacity: .75; margin-bottom: 1em; }
+.pdf-embed { width: 100%; height: 70vh; }
+.markdown-rendered video { max-width: 100%; }
+.math-block { overflow-x: auto; overflow-y: hidden; padding-block: .15em; }
+mjx-container { font-size: 105% !important; }
+.markdown-rendered .block-id { scroll-margin-top: 2em; }
