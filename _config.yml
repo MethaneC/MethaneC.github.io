@@ -1,0 +1,40 @@
+title: Methane
+subtitle: 数学 · 学习笔记
+description: 数学与学习笔记
+author: Methane
+language: zh-CN
+timezone: Asia/Shanghai
+url: https://methanec.github.io
+root: /
+permalink: notes/:title/
+source_dir: .cache/source
+public_dir: public
+default_layout: post
+new_post_name: :title.md
+post_asset_folder: false
+relative_link: false
+future: true
+updated_option: empty
+theme: next
+syntax_highlighter: false
+highlight:
+  enable: false
+prismjs:
+  enable: false
+index_generator:
+  path: posts
+  per_page: 12
+  order_by: title
+per_page: 12
+archive_generator:
+  enabled: true
+  per_page: 24
+date_format: YYYY-MM-DD
+time_format: HH:mm
+skip_render:
+  - attachments/**
+  - vendor/**
+  - assets/**
+exclude:
+  - '**/.obsidian/**'
+  - '**/.trash/**'

@@ -1,0 +1,57 @@
+scheme: Mist
+darkmode: false
+menu:
+  home: / || fa fa-home
+  archives: /archives/ || fa fa-book
+  tags: /tags/ || fa fa-tags
+menu_settings:
+  icons: true
+  badges: false
+sidebar:
+  position: right
+  display: hide
+toc:
+  enable: false
+  number: false
+  wrap: true
+post_meta:
+  item_text: false
+  created_at: false
+  updated_at: false
+  categories: false
+tag_icon: false
+post_navigation: left
+excerpt_description: false
+read_more_btn: false
+footer:
+  since: 2026
+  icon:
+    name: fa fa-book-open
+    animated: false
+  powered: false
+font:
+  enable: false
+motion:
+  enable: false
+pjax: false
+back2top:
+  enable: true
+  sidebar: false
+  scrollpercent: false
+math:
+  every_page: false
+  mathjax:
+    enable: false
+  katex:
+    enable: false
+vendors:
+  plugins: cdnjs
+  fontawesome: /vendor/fontawesome/css/all.min.css
+fancybox: false
+mediumzoom: false
+creative_commons:
+  license: ''
+  sidebar: false
+  post: false
+custom_file_path:
+  head: site-templates/head.njk

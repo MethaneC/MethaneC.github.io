@@ -1,0 +1,9 @@
+node_modules/
+public/
+.cache/
+db.json
+_multiconfig.yml
+test-results/
+site/vendor/
+.DS_Store
+Thumbs.db

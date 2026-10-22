@@ -1,0 +1,37 @@
+{
+  "name": "methanec-obsidian-next",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hexo + NexT with an Obsidian-compatible note publishing pipeline",
+  "engines": { "node": ">=20" },
+  "hexo": { "version": "7.2.0" },
+  "scripts": {
+    "build": "node tools/run.cjs build",
+    "server": "node tools/run.cjs server",
+    "start": "npm run server",
+    "clean": "node tools/run.cjs clean",
+    "test": "node --test test",
+    "test:browser": "node tools/verify-browser.cjs",
+    "test:server": "node tools/verify-server.cjs"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "6.5.2",
+    "chokidar": "3.6.0",
+    "hexo": "7.2.0",
+    "hexo-generator-archive": "2.0.0",
+    "hexo-generator-category": "2.0.0",
+    "hexo-generator-index": "4.0.0",
+    "hexo-generator-tag": "2.0.0",
+    "hexo-renderer-stylus": "3.0.1",
+    "hexo-server": "3.0.0",
+    "hexo-theme-next": "8.29.0",
+    "highlight.js": "11.11.1",
+    "js-yaml": "4.1.0",
+    "markdown-it": "14.1.0",
+    "markdown-it-footnote": "4.0.0",
+    "markdown-it-mark": "4.0.0",
+    "markdown-it-task-lists": "2.1.1",
+    "mathjax-full": "3.2.2"
+  },
+  "devDependencies": { "playwright": "1.51.1" }
+}
