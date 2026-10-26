@@ -98,9 +98,9 @@ Dataview、Templater 等插件脚本不会在静态网站运行；其代码块�
 npm run deploy
 ~~~
 
-命令会先编译网站，再更新 `.cache/pages-deploy` 中的独立发布目录，将 `public` 的内容与 `.nojekyll` 提交并推送到 `gh-pages`。保留原有发布历史，不使用强制推送。需要本机 Git 已登录 GitHub。
+命令会先运行自动测试并在本地编译网站，然后自动提交当前项目中所有未被 Git 忽略的改动（包括新增、修改和删除的笔记、附件及配置），推送到 `main`；没有改动时跳过源码提交。随后更新 `.cache/pages-deploy` 中的独立发布目录，将 `public` 的内容与 `.nojekyll` 提交并推送到 `gh-pages`。保留原有发布历史，不使用强制推送。需要本机 Git 已登录 GitHub，并在 `main` 分支运行。
 
-源码备份单独进行：在 `main` 提交笔记与配置，然后运行 `git push origin main`。不要把生成文件提交到 `main`。
+不再需要手动运行 `git add`、`git commit` 和 `git push`。生成文件由 `.gitignore` 排除，不会提交到 `main`。测试、构建或源码推送失败时，脚本会停止，不继续发布静态网站；如果静态页面推送失败，源码可能已备份成功，排除问题后重新运行即可。
 
 仅生成并准备发布内容，暂不提交或上传：
 

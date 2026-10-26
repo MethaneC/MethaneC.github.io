@@ -1,13 +1,13 @@
 ---
-title: Smooth_Manifold_I
+title: 
 date:
 tags:
 ---
 
 
-在这门课中，许多概念翻译成中文非常容易弄混，索性不翻译了。
+在学习这门课之前，仅需要掌握基本点集拓扑概念，多元微积分。
 
-具体这门课的逻辑期末再总结。
+在这门课中，许多概念翻译成中文非常容易弄混，索性不翻译了。这门课的脉络期末再总结。
 
 ---
 
@@ -30,6 +30,9 @@ tags:
 >1. 局部道路连通。
 >2. locally compact。
 >3. paracompact。
+
+>[!math]- **Proof:** 
+> 证明还在施工中，我会把所有定理先抄完，再写证明。
 
 流形的紧性非常重要，在后续证明中多次用到。
 
@@ -104,6 +107,29 @@ diffeomorphic 和同胚性质相同。
 >$$
 
 
->[!math] **Definition:** 设 $M$ 是拓扑空间，$\{ X_{\alpha} \}$ 是集族，若 $\forall p\in M$，$\exists U\in \mathcal{N}(p)$ 满足与有限个 $\{ X_{\alpha} \}$ 相交，则称 $\{ X_{\alpha} \}$ locally finite。
+>[!math] **Definition:** 设 $M$ 是拓扑空间，$\{ X_{\alpha} \}$ 是集族，若 $\forall p\in M$，$\exists U\in \mathcal{N}(p)$ 满足与有限个 $\{ X_{\alpha} \}$ 相交，则称 $\{ X_{\alpha} \}$ **locally finite**。
+
+
+>[!math] **Definition:** 设 $M$ 是拓扑空间，$\{ X_{\alpha} \}$ 是开覆盖。若连续函数族 $\{ \psi_{\alpha} \}$ 满足
+>1. $0\le \psi_{\alpha}\le 1$
+>2. $\mathrm{supp}\psi_{\alpha}\subset X_{\alpha}$
+>3. $\{ \mathrm{supp} \psi_{\alpha} \}$ 是 locally finite。
+>4. $\sum_{\alpha} \psi_{\alpha}=1$
+> 
+> 则称 $\{ \psi_{\alpha} \}$ 是 $\{ X_{\alpha} \}$ 的 partition of unity。若 $M$ 是光滑流形，$\psi_{\alpha}$ 是光滑函数，则称 $\{ \psi_{\alpha} \}$ 是 smooth partition of unity。
+
+>[!math] **Theorem:** 设 $M$ 是光滑流形，$\{ X_{\alpha} \}$ 是开覆盖。则存在 $\{ X_{\alpha} \}$ 的 **smooth partition of unity**。
+
+
+>[!math] **Theorem:** 设 $M$ 是光滑流形，$A$ 是闭集，$U$ 是 $A$  的邻域。则存在  $\psi:M\to \mathbb{R}$ 光滑满足
+>1. $0\le \psi\le 1$
+>2. 在 $A$ 上 $\psi\equiv 1$ 
+>3. $\mathrm{supp\psi}\subset U$
+>
+> 称为  **bump function for $A$ supported in $U$**。
+
+>[!math] **Theorem:** 设 $M$ 是光滑流形，则存在光滑非负函数  $f$ ，满足  $f^{-1}(-\infty,c])$ 是紧集，称为  **exaution function for $M$**。
+
+>[!math] **Theorem:** 设 $M$ 是光滑流形， $K$ 是闭集，则存在光滑非负函数  $f$，满足 $f^{-1}(0)=K$。
 
 

@@ -22,6 +22,8 @@ function readGit(argv, cwd = base) {
   return result.stdout.trim();
 }
 try {
+  if (readGit(['branch', '--show-current']) !== 'main') throw new Error('Deploy must run on main; switch to main first.');
+  run(process.execPath, ['--test', 'test']);
   if (!args.includes('--skip-build')) run(process.execPath, ['tools/run.cjs', 'build']);
   if (!fs.existsSync(path.join(output, 'index.html'))) throw new Error('Build has no index.html');
   const remote = readGit(['remote', 'get-url', 'origin']);
@@ -51,11 +53,17 @@ try {
   if (args.includes('--prepare-only')) {
     console.log('Static site staged in .cache/pages-deploy; nothing committed or pushed.');
   } else {
+    // Back up source first. A rejected source push must stop website publication.
+    git(['add', '--all']);
+    if (readGit(['diff', '--cached', '--name-only'])) {
+      git(['commit', '-m', 'Update notes and site source']);
+    }
+    git(['push', 'origin', 'HEAD:main']);
     const changed = readGit(['diff', '--cached', '--name-only'], checkout);
     if (changed) git(['commit', '-m', `Publish notes from ${readGit(['rev-parse', '--short', 'HEAD'])}`], checkout);
     // Never force-push. Concurrent remote changes must be reconciled explicitly.
     git(['push', 'origin', 'HEAD:gh-pages'], checkout);
-    console.log('Static site pushed to gh-pages. Pages must publish gh-pages / (root).');
+    console.log('Source pushed to main and static site pushed to gh-pages. Pages must publish gh-pages / (root).');
   }
 } catch (error) {
   console.error(error.message);
