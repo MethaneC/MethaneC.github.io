@@ -115,7 +115,7 @@ print("嵌套代码围栏")
 
 ### 链接、脚注与图片
 
-[返回目录](/) · [[Manifold/Smooth_Manifold_I|光滑流形]] · [引用式链接][home]
+[返回目录](/) · [[Smooth_Manifold_I]] · [引用式链接][home]
 
 自动链接：<https://www.mathjax.org/>。
 

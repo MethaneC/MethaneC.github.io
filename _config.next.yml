@@ -20,7 +20,7 @@ post_meta:
   updated_at: false
   categories: false
 tag_icon: false
-post_navigation: left
+post_navigation: right
 excerpt_description: false
 read_more_btn: false
 footer:

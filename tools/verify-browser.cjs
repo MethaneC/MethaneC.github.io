@@ -38,6 +38,35 @@ async function main() {
   });
   const goto = async url => { await page.goto(address + url, { waitUntil: 'networkidle' }); await page.evaluate(() => document.fonts.ready); };
   try {
+    await goto(manifest.root + 'archives/');
+    assert.equal(await page.locator('.folder-archive a').count(), manifest.notes.length);
+    assert.equal(await page.locator('.post-body time, .collection-year, .posts-collapse').count(), 0);
+    for (const note of manifest.notes) {
+      const link = page.locator('.folder-archive a').filter({ hasText: note.title });
+      assert.ok((await link.evaluateAll(elements => elements.map(element => new URL(element.href).pathname))).includes(note.url));
+    }
+    await page.screenshot({ path: path.join(results, 'archive-desktop.png'), fullPage: true });
+    await page.setViewportSize({ width: 390, height: 844 });
+    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1), false);
+    await page.screenshot({ path: path.join(results, 'archive-mobile.png'), fullPage: true });
+    await page.setViewportSize({ width: 1440, height: 1000 });
+    // Use the displayed archive order as the independent expected reading order.
+    const folderGroups = await page.locator('.folder-archive .archive-folder').evaluateAll(folders =>
+      folders.map(folder => [...folder.querySelectorAll(':scope > ul > li > a')].map(link => new URL(link.href).pathname))
+    );
+    for (const group of folderGroups) {
+      for (let index = 0; index < group.length; index++) {
+        await goto(group[index]);
+        if (group.length === 1) {
+          assert.equal(await page.locator('.post-nav').count(), 0, 'A folder with one note has no navigation');
+        } else {
+          const previous = await page.locator('.post-nav a[rel="prev"]').getAttribute('href');
+          const next = await page.locator('.post-nav a[rel="next"]').getAttribute('href');
+          assert.equal(new URL(previous, address).pathname, group[(index + group.length - 1) % group.length]);
+          assert.equal(new URL(next, address).pathname, group[(index + 1) % group.length]);
+        }
+      }
+    }
     await goto(manifest.root);
     const home = manifest.pages.find(note => note.source === 'index.md');
     assert.ok(home, 'The editable Markdown homepage must exist');
@@ -57,28 +86,60 @@ async function main() {
     await goto(manifest.root + 'posts/');
     const excerpts = await page.locator('.post-body').allTextContents();
     assert.ok(excerpts.every(text => text.trim() === ''), 'The optional post list has no excerpts');
-    const note = manifest.notes.find(n => n.source === 'Manifold.md');
+    const note = manifest.notes.find(n => n.source.endsWith('/Smooth_Manifold_I.md'))
+      || manifest.notes.find(n => n.source === 'Manifold.md');
     assert.ok(note, 'Manifold reference note must exist');
     await goto(note.url);
     assert.equal(await page.locator('.post-toc').count(), 0, 'Article table of contents is disabled');
     assert.equal(await page.locator('body.sidebar-active').count(), 0, 'The sidebar does not open automatically');
-    assert.equal(await page.locator('.callout[data-callout="math"]').count(), 17);
+    assert.equal(await page.locator('.callout[data-callout="math"]').count(), (note.body.match(/\[!math\]/gi) || []).length);
     assert.equal(await page.locator('mjx-container').count() > 70, true);
     assert.equal(await page.locator('mjx-merror').count(), 0);
     const colors = await page.evaluate(() => ({
       label: getComputedStyle(document.querySelector('.callout-title-inner > strong')).color,
       rule: getComputedStyle(document.querySelector('.callout[data-callout="math"]')).borderLeftWidth,
+      boxBorders: ['borderTopWidth', 'borderRightWidth', 'borderBottomWidth'].map(side => getComputedStyle(document.querySelector('.callout[data-callout="math"]'))[side]),
+      boxBackground: getComputedStyle(document.querySelector('.callout[data-callout="math"]')).backgroundColor,
       key: getComputedStyle(document.querySelector('.callout-title-inner > strong:not(:first-child)') || document.querySelectorAll('.callout-title-inner > strong')[1]).color,
       overflow: document.documentElement.scrollWidth > innerWidth + 1,
       formulas: document.querySelectorAll('mjx-container').length
     }));
     assert.equal(colors.label, 'rgb(53, 94, 133)');
     assert.equal(colors.key, 'rgb(152, 81, 59)');
-    assert.equal(colors.rule, '2px');
+    assert.equal(colors.rule, '1px');
+    assert.deepEqual(colors.boxBorders, ['0px', '0px', '0px']);
+    assert.equal(colors.boxBackground, 'rgb(249, 250, 251)');
     assert.equal(colors.overflow, false);
+    const checkSpacing = async () => {
+      const measurements = await page.locator('.post-body .markdown-rendered').first().evaluate(root => ({
+        ratios: [...root.querySelectorAll('p, li, .callout-title, .callout-content')].map(el => {
+          const style = getComputedStyle(el);
+          return parseFloat(style.lineHeight) / parseFloat(style.fontSize);
+        }),
+        formulaMargins: [...root.querySelectorAll('.math-block > mjx-container[display="true"]')].map(el => {
+          const style = getComputedStyle(el);
+          return [style.marginTop, style.marginBottom];
+        })
+      }));
+      assert.ok(measurements.ratios.length > 0);
+      assert.ok(measurements.ratios.every(ratio => Math.abs(ratio - 1.65) < .01), 'Text, lists and callout titles share the same line spacing');
+      assert.ok(measurements.formulaMargins.every(margins => margins.every(margin => margin === '0px')), 'Display math spacing comes from its wrapper without duplicate margins');
+    };
+    await checkSpacing();
     await page.screenshot({ path: path.join(results, 'manifold-desktop.png'), fullPage: true });
     await page.locator('.theme-toggle').click();
     assert.equal(await page.evaluate(() => document.body.classList.contains('theme-dark')), true);
+    const darkBox = await page.locator('.callout[data-callout="math"]').first().evaluate(el => {
+      const background = getComputedStyle(el).backgroundColor;
+      const pageBackground = getComputedStyle(document.body).backgroundColor;
+      const luminance = color => color.match(/\d+/g).slice(0, 3).map(Number).map(value => {
+        const channel = value / 255;
+        return channel <= .04045 ? channel / 12.92 : ((channel + .055) / 1.055) ** 2.4;
+      }).reduce((sum, channel, index) => sum + channel * [.2126, .7152, .0722][index], 0);
+      return { background, contrast: (luminance(background) + .05) / (luminance(pageBackground) + .05) };
+    });
+    assert.equal(darkBox.background, 'rgb(48, 54, 64)');
+    assert.ok(darkBox.contrast >= 1.2, 'Dark math blocks must remain distinguishable from the page');
     await page.screenshot({ path: path.join(results, 'manifold-dark.png'), fullPage: true });
     await page.emulateMedia({ media: 'print' });
     assert.equal(await page.locator('.header').isVisible(), false);
@@ -89,6 +150,8 @@ async function main() {
     await page.emulateMedia({ media: 'screen' });
     await page.locator('.theme-toggle').click();
     await page.setViewportSize({ width: 390, height: 844 });
+    await checkSpacing();
+    assert.equal(await page.locator('.post-body .markdown-rendered').first().evaluate(el => getComputedStyle(el).fontSize), '16px');
     await page.screenshot({ path: path.join(results, 'manifold-mobile.png'), fullPage: true });
     if (await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1)) {
       console.log('Mobile overflow:', await page.evaluate(() => [...document.querySelectorAll('body *')].map(el => ({ tag: el.tagName, cls: el.className?.baseVal ?? el.className, right: el.getBoundingClientRect().right, width: el.getBoundingClientRect().width })).filter(el => el.right > innerWidth + 1).slice(0, 12)));
